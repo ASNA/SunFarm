@@ -1,0 +1,84 @@
+﻿{
+    "version": "1.0",
+    "defaultProvider": "cdnjs",
+    "libraries": [
+        {
+            "provider": "filesystem",
+            "library": "QSys/src/Expo/ExpoTags/src/WebsiteResources/css/",
+            "files": [
+                "expo.css",
+                "5250.css"
+            ],
+            "destination": "wwwroot/lib/asna-expo/css"
+        },
+        {
+            "provider": "filesystem",
+            "library": "QSys/src/Expo/ExpoTags/src/WebsiteResources/js/",
+          "files": [
+            "ajax/ajax-fetch.js",
+            "calendar/calendar.css",
+            "calendar/calendar.js",
+            "calendar/calendar-ui.js",
+            "calendar/ibm-date.js",
+            "asna.js",
+            "asna-data-attr.js",
+            "dom-events.js",
+            "feedback-area.js",
+            "invert-font-colors.js",
+            "kbd.js",
+            "letter-spacing.js",
+            "page.js",
+            "dds-grid.js",
+            "dropdown.js",
+            "page-position-cursor.js",
+            "wait-response/spinning-wheel.css",
+            "wait-response/wait-response-animation.js",
+            "nav-menu.js",
+            "dds-window.js",
+            "base-64.js",
+            "bterm/terminal.js",
+            "bterm/terminal-html.js",
+            "bterm/terminal-macros.js",
+            "bterm/ibm-codes.js",
+            "bterm/terminal-dom.js",
+            "bterm/terminal-screen.js",
+            "bterm/buffer-mapping.js",
+            "bterm/terminal-labels.js",
+            "bterm/terminal-validate.js",
+            "bterm/terminal-render.js",
+            "bterm/terminal-text-selection.js",
+            "bterm/terminal-keyboard.js",
+            "bterm/terminal-dbcs.js",
+            "bterm/terminal-fkey-hotspot.js",
+            "bterm/terminal-ajax.js",
+            "bterm/terminal-device-pointers.js",
+            "bterm/terminal-copy-paste.js",
+            "bterm/terminal-settings.js",
+            "bterm/terminal-toggle-switch.js",
+            "bterm/terminal-settings-colors.js",
+            "bterm/terminal-dialog-polyfill.js",
+            "bterm/terminal-redux.js",
+            "bterm/terminal-ibm-keypad.js",
+            "bterm/terminal-ibm-enter-reset-buttons.js",
+            "bterm/terminal-error.js",
+            "subfile-paging/dom-init.js",
+            "subfile-paging/paging-store.js",
+            "subfile-paging/paging.js",
+            "icon.js",
+            "validate.js",
+            "page-alert.js",
+            "string.js"
+          ],
+            "destination": "wwwroot/lib/asna-expo/js"
+        },
+        {
+            "provider": "filesystem",
+            "library": "../../../AsnaRnD/QSys/src/Expo/ExpoTags/src/WebsiteResources/js/bterm/",
+            "files": [
+                "audio/beep.mp3",
+                "audio/beep.ogg"
+            ],
+            "destination": "wwwroot/lib/asna-expo"
+        }
+    ]
+}
