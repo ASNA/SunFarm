@@ -1,4 +1,5 @@
 ﻿# SunFarm Customer App Site
+Use this Project's History to identify the different steps in the development of the "Enhancing Expo Displayfile Razor Pages" Guide.
 This Sample Project depends on the following ASNA-RND github project
 
 [ASNA Expo Support](https://github.com/asnarnd/QSys)
