@@ -21,17 +21,15 @@ namespace CustomerAppSite
 
         void ConfigureMonaLisa(IServiceCollection services)
         {
-            MonaLisaServer monaLisaServer = new MonaLisaServer();
-            Configuration.GetSection("MonaLisaServer").Bind(monaLisaServer);
+            MonaServerConfig monaServerConfig = new MonaServerConfig();
+            Configuration.GetSection("MonaServer").Bind(monaServerConfig);
 
-            if (monaLisaServer.InProcess &&
-                string.Compare(monaLisaServer.HostName, "*LoopBack", true) == 0)
+            if (string.Compare(monaServerConfig.HostName, "*InProcess", true) == 0)
             {
-                monaLisaServer.Port = ASNA.QSys.MonaServer.Server.StartService(monaLisaServer.Port);
+                monaServerConfig.Port = ASNA.QSys.MonaServer.Server.StartService("*LoopBack", monaServerConfig.Port);
             }
 
-            //services.AddMonaLisa();
-            services.AddSingleton<IMonaLisaServer>(s=> monaLisaServer);
+            services.AddSingleton<IMonaServerConfig>(s => monaServerConfig);
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -60,7 +58,7 @@ namespace CustomerAppSite
 
             services.AddRazorPages(razorOptions =>
             {
-                razorOptions.Conventions.AddAreaPageRoute("IronViews","/CUSTDSPF", "");
+                razorOptions.Conventions.AddAreaPageRoute("CustomerAppViews", "/CUSTDSPF", "");
             }).AddMvcOptions (mvcOptions =>
             {
                 mvcOptions.ValueProviderFactories.Insert(0, new EditedValueProviderFactory());

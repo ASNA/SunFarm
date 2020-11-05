@@ -14,11 +14,11 @@
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.76" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="AsnaRnD\QSys\src\Expo\ExpoModel\src\ExpoModel.csproj" />
-    <ProjectReference Include="AsnaRnD\QSys\src\Expo\ExpoTags\src\\ExpoTags.csproj" />
-    <ProjectReference Include="AsnaRnD\QSys\src\MonaServer\MonaServer.csproj" />
+    <Folder Include="MessageFiles\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MessageFiles\" />
+    <ProjectReference Include="..\..\..\Source\AsnaRnD\QSys\src\Expo\ExpoModel\src\ExpoModel.csproj" />
+    <ProjectReference Include="..\..\..\Source\AsnaRnD\QSys\src\Expo\ExpoTags\src\ExpoTags.csproj" />
+    <ProjectReference Include="..\..\..\Source\AsnaRnD\QSys\src\MonaServer\MonaServer.csproj" />
   </ItemGroup>
 </Project>

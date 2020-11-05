@@ -3,36 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CustomerAppSite", "CustomerAppSite\", "{ABB3AEF1-ED18-4876-89E7-37B523A08123}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7"
-		ProjectReferences = "{F5AD085F-70F7-4B22-B6D5-DF8A6394B80B}|SunFarm.Customers.Application.dll;"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_54620"
-		Debug.AspNetCompiler.PhysicalPath = "CustomerAppSite\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54620\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_54620"
-		Release.AspNetCompiler.PhysicalPath = "CustomerAppSite\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54620\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "54620"
-		SlnRelativePath = "CustomerAppSite\"
-		DefaultWebSiteLanguage = "Visual RPG"
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASNA.DataGate.Client", "C:\Source\AsnaRnD\ASNA.DataGate.Client\src\ASNA.DataGate.Client.csproj", "{C886C545-4D92-4926-AF3C-4986C23630B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASNA.DataGate.Client", "..\..\Source\AsnaRnD\ASNA.DataGate.Client\src\ASNA.DataGate.Client.csproj", "{CBFA1599-3857-47EB-BC79-7E2020D51CEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Runtime", "C:\Source\AsnaRnD\QSys\src\Runtime\Runtime.csproj", "{FF9B3FE7-80E6-4A8C-B869-66590C873739}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpoModel", "..\..\Source\AsnaRnD\QSys\src\Expo\ExpoModel\src\ExpoModel.csproj", "{65F96B9C-163C-49D8-B5F1-C62D06874A08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpoModel", "C:\Source\AsnaRnD\QSys\src\Expo\ExpoModel\src\ExpoModel.csproj", "{9D9D7A76-9182-4418-8D5E-759BDA69A509}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonaServer", "..\..\Source\AsnaRnD\QSys\src\MonaServer\MonaServer.csproj", "{DE0E28AC-2048-4704-92FE-91486AA4798E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpoTags", "C:\Source\AsnaRnD\QSys\src\Expo\ExpoTags\src\ExpoTags.csproj", "{FB0FF66D-6605-45E4-B02B-521168862698}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Runtime", "..\..\Source\AsnaRnD\QSys\src\Runtime\Runtime.csproj", "{3A65E5FC-A7F0-4C9F-B8E5-1BB0922EB2D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonaServer", "C:\Source\AsnaRnD\QSys\src\MonaServer\MonaServer.csproj", "{97CACEDE-5A28-43D5-A645-32BE42774C15}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerAppLogic", "CustomerAppLogic\CustomerAppLogic.csproj", "{B2261784-FF1A-4B97-99DB-CC306EA2EFF2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerAppSite", "CustomerAppSite\CustomerAppSite.csproj", "{75643D34-D599-4A5D-8379-720E7C01B7D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,31 +23,39 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ABB3AEF1-ED18-4876-89E7-37B523A08123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ABB3AEF1-ED18-4876-89E7-37B523A08123}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ABB3AEF1-ED18-4876-89E7-37B523A08123}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{ABB3AEF1-ED18-4876-89E7-37B523A08123}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{CBFA1599-3857-47EB-BC79-7E2020D51CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBFA1599-3857-47EB-BC79-7E2020D51CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBFA1599-3857-47EB-BC79-7E2020D51CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBFA1599-3857-47EB-BC79-7E2020D51CEB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65F96B9C-163C-49D8-B5F1-C62D06874A08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65F96B9C-163C-49D8-B5F1-C62D06874A08}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65F96B9C-163C-49D8-B5F1-C62D06874A08}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65F96B9C-163C-49D8-B5F1-C62D06874A08}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DE0E28AC-2048-4704-92FE-91486AA4798E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE0E28AC-2048-4704-92FE-91486AA4798E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE0E28AC-2048-4704-92FE-91486AA4798E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE0E28AC-2048-4704-92FE-91486AA4798E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A65E5FC-A7F0-4C9F-B8E5-1BB0922EB2D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A65E5FC-A7F0-4C9F-B8E5-1BB0922EB2D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A65E5FC-A7F0-4C9F-B8E5-1BB0922EB2D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A65E5FC-A7F0-4C9F-B8E5-1BB0922EB2D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C886C545-4D92-4926-AF3C-4986C23630B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C886C545-4D92-4926-AF3C-4986C23630B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C886C545-4D92-4926-AF3C-4986C23630B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C886C545-4D92-4926-AF3C-4986C23630B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF9B3FE7-80E6-4A8C-B869-66590C873739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF9B3FE7-80E6-4A8C-B869-66590C873739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF9B3FE7-80E6-4A8C-B869-66590C873739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF9B3FE7-80E6-4A8C-B869-66590C873739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D9D7A76-9182-4418-8D5E-759BDA69A509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D9D7A76-9182-4418-8D5E-759BDA69A509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D9D7A76-9182-4418-8D5E-759BDA69A509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D9D7A76-9182-4418-8D5E-759BDA69A509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB0FF66D-6605-45E4-B02B-521168862698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB0FF66D-6605-45E4-B02B-521168862698}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB0FF66D-6605-45E4-B02B-521168862698}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB0FF66D-6605-45E4-B02B-521168862698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97CACEDE-5A28-43D5-A645-32BE42774C15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97CACEDE-5A28-43D5-A645-32BE42774C15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97CACEDE-5A28-43D5-A645-32BE42774C15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97CACEDE-5A28-43D5-A645-32BE42774C15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2261784-FF1A-4B97-99DB-CC306EA2EFF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2261784-FF1A-4B97-99DB-CC306EA2EFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2261784-FF1A-4B97-99DB-CC306EA2EFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2261784-FF1A-4B97-99DB-CC306EA2EFF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75643D34-D599-4A5D-8379-720E7C01B7D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75643D34-D599-4A5D-8379-720E7C01B7D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75643D34-D599-4A5D-8379-720E7C01B7D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75643D34-D599-4A5D-8379-720E7C01B7D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {26ABCF03-9DA8-4853-B3BF-BFA0231EBBC2}
+		SolutionGuid = {BD418056-4C13-473D-A6DB-5D8A39CB5D29}
 	EndGlobalSection
 EndGlobal
