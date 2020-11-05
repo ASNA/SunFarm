@@ -50,7 +50,7 @@ namespace SunFarm.Customers.CustomerAppViews
             public List<SFL1_Model> SFL1 { get; set; } = new List<SFL1_Model>();
 
             [Dec(4, 0)]
-            private decimal SFLRRN { get; set; }
+            public decimal SFLRRN { get; set; }
 
             public class SFL1_Model : SubfileRecordModel
             {

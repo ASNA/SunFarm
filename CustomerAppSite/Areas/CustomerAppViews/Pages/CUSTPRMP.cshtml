@@ -19,7 +19,7 @@
                     int SFLC_SubfilePage = 8;
                     int SFLC_SubfileRowsPerRecord = 1;
                 }
-                <DdsSubfileControl For="SFLC" KeyNames="ENTER 'Enter'; " SubfilePage="@SFLC_SubfilePage" ShowRecordNumber="(int)@Model.SFLC.SFLRRN" CueCurrentRecord=true ClickSetsCurrentRecord=true>
+                <DdsSubfileControl For="SFLC" KeyNames="ENTER 'Enter'; " SubfilePage=@SFLC_SubfilePage ShowRecordNumber=(int)@Model.SFLC.SFLRRN CueCurrentRecord=true ClickSetsCurrentRecord=true>
                     <div Row="2">
                         <DdsConstant Col="2" Text="1=Select" Color="Blue" />
                     </div>
