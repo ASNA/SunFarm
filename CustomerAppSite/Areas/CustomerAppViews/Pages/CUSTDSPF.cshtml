@@ -11,14 +11,14 @@
 <form id="MonarchForm" method="post">
     <DdsFile DisplayPageModel="Model">
 
-        <DdsFunctionKeys />
+        <DdsFunctionKeys Location="HorizontalBottom" />
 
         <main role="main" class="display-element-uninitialized">
             @{
                 int SFLC_SubfilePage = 14;
                 int SFLC_SubfileRowsPerRecord = 1;
             }
-            <DdsSubfileControl For="SFLC" KeyNames="ENTER 'Enter'; PageUp; PageDown;" SubfilePage="@SFLC_SubfilePage" CueCurrentRecord=true ClickSetsCurrentRecord=true>
+            <DdsSubfileControl For="SFLC" KeyNames="ENTER 'Submit'; F3 'Exit'; PageUp '◀ Page'; PageDown 'Next ▶';" SubfilePage="@SFLC_SubfilePage" CueCurrentRecord=true ClickSetsCurrentRecord=true>
                 <div Row="1">
                     <DdsConstant Col="2" Text="*USER" />
                     <DdsConstant Col="31+1" Text="M5 Customer Inquiry" Color="DarkBlue" />
