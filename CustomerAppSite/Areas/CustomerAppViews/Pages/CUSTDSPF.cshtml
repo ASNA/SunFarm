@@ -18,10 +18,8 @@
                 int SFLC_SubfilePage = 14;
                 int SFLC_SubfileRowsPerRecord = 1;
             }
-            <DdsSubfileControl For="SFLC" KeyNames="ENTER 'Submit'; F3 'Exit'; PageUp '◀ Page'; PageDown 'Next ▶';" SubfilePage="@SFLC_SubfilePage" CueCurrentRecord=true ClickSetsCurrentRecord=true>
-                <div Row="1">
-                    <DdsConstant Col="31+1" Text="M5 Customer Inquiry" Color="DarkBlue" />
-                </div>
+            <DdsSubfileControl For="SFLC" StretchConstantText=false KeyNames="ENTER 'Submit'; F3 'Exit'; PageUp '◀ Page'; PageDown 'Next ▶';" SubfilePage="@SFLC_SubfilePage" CueCurrentRecord=true ClickSetsCurrentRecord=true>
+                <div id="page-title">Customer Inquiry</div>
                 <div Row="2">
                     <DdsConstant Col="52+1" Text="Position to name:" />
                     <DdsCharField Col="70+1" For="SFLC.SETNAME" Lower="true" VirtualRowCol="2,70" tabIndex=1 />
@@ -33,7 +31,7 @@
                     <DdsConstant Col="55+1" Text="City / State / Zip" Color="DarkBlue" Underline="*True" />
                 </div>
                 <div Row="4" RowSpan="@SFLC_SubfilePage * @SFLC_SubfileRowsPerRecord">
-                    @for (int rrn=0, row = 8; rrn < Model.SFLC.SFL1.Count; rrn++, row += @SFLC_SubfileRowsPerRecord)
+                    @for (int rrn = 0, row = 8; rrn < Model.SFLC.SFL1.Count; rrn++, row += @SFLC_SubfileRowsPerRecord)
                     {
                         <DdsSubfileRecord RecordNumber="rrn" For="SFLC.SFL1">
                             <div IsGridRow>
