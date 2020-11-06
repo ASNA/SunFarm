@@ -37,7 +37,7 @@ namespace SunFarm.Customers.CustomerAppViews
                 FunctionKeys = "PageUp 51:!76;PageDown 50:!77",
                 DisplayFields = "!90",
                 DisplayRecords = "!90",
-                Size = 14,
+                Size = 20,
                 IsExpandable = false,
                 EraseFormats = "CUSTREC SALESREC"
             )

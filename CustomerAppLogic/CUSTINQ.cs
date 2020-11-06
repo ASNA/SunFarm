@@ -15,6 +15,8 @@ namespace SunFarm.Customers
     [ProgramEntry("_ENTRY")]
     public partial class Custinq : ASNA.QSys.HostServices.Program
     {
+        const int SFLC_SubfilePage = 20;
+
         protected Indicator _INLR;
         protected Indicator _INRT;
         protected IndicatorArray<Len<_1, _0, _0>> _IN;
@@ -524,7 +526,7 @@ namespace SunFarm.Customers
             sflrrn = 0;
             _IN[77] = CUSTOMERL2.ReadNext(true) ? '0' : '1';
             //----------------------------------------------------------
-            while (!(bool)_IN[77] && (sflrrn < 14))
+            while (!(bool)_IN[77] && (sflrrn < SFLC_SubfilePage))
             {
                 SFCUSTNO = (decimal)CMCUSTNO;
                 SFNAME1 = CMNAME;
@@ -563,7 +565,7 @@ namespace SunFarm.Customers
             CMCUSTNO = (decimal)SFCUSTNO;
             CUSTOMERL2.Chain(true, CMNAME, CMCUSTNO);
             _IN[76] = CUSTOMERL2.ReadPrevious(true) ? '0' : '1';
-            while (!(bool)_IN[76] && (X < 14))
+            while (!(bool)_IN[76] && (X < SFLC_SubfilePage))
             {
                 /* EOF or full s/f. */
                 X += 1;
