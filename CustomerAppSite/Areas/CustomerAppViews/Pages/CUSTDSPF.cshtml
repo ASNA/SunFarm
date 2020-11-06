@@ -45,13 +45,8 @@
                     }
                 </div>
             </DdsSubfileControl>
-            <DdsRecord For="CUSTREC" KeyNames="ENTER 'Enter'; F4 'Prompt'; F6 'New'; F11 'Delete'; F12 'Cancel';">
-                <div Row="1">
-                    <DdsConstant Col="2" Text="*USER" />
-                    <DdsConstant Col="29+1+2+2" Text="M5 Customer Maintenance" Color="DarkBlue" />
-                    <DdsConstant Col="64+1+2+2" Text="*DATE" />
-                    <DdsConstant Col="73+1+2+2" Text="*TIME" />
-                </div>
+            <DdsRecord For="CUSTREC" StretchConstantText=false KeyNames="ENTER 'Submit'; F3 'Exit'; F4 'Prompt'; F6 'New Customer'; F11 'Remove Customer'; F12 'Back';">
+                <div id="page-title">Customer Maintenance</div>
                 <div Row="2">
                     <DdsCharField Col="2" For="CUSTREC.SCPGM" VirtualRowCol="2,2" />
                 </div>
