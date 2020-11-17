@@ -40,3 +40,7 @@ for details on configuring this project to bundle and minify static web assets. 
 .right-aligned-constant {
     text-align: right;
 }
+
+.left-aligned-field {
+    text-align: left;
+}
