@@ -53,6 +53,8 @@ namespace SunFarm.Customers
         //                                    HANDLER('ASNAWINGS')
         DatabaseFile CUSTOMERL2;
         DatabaseFile CUSTOMERL1;
+        DatabaseFile CSMASTERL1;    // Sales and Returns file
+
         //********************************************************************
         DataStructure _DS0 = new DataStructure(3);
         FixedDecimal<_3, _0> _lb_pNbrs { get => _DS0.GetZoned(0, 3, 0); set => _DS0.SetZoned(value, 0, 3, 0); } 
@@ -108,6 +110,9 @@ namespace SunFarm.Customers
             CUSTOMERL1.Open(Job.Database, AccessMode.RWCD, false, false, ServerCursors.Default);
             CUSTOMERL2.Overrider = Job;
             CUSTOMERL2.Open(Job.Database, AccessMode.Read, false, false, ServerCursors.Default);
+
+            CSMASTERL1.Overrider = Job;
+            CSMASTERL1.Open(Job.Database, AccessMode.Read, false, false, ServerCursors.Default);
         }
 
         override public void Dispose(bool disposing)
@@ -118,6 +123,8 @@ namespace SunFarm.Customers
                 CUSTDSPF.Close();
                 CUSTOMERL2.Close();
                 CUSTOMERL1.Close();
+
+                CSMASTERL1.Close();
             }
             base.Dispose(disposing);
         }
@@ -721,6 +728,10 @@ namespace SunFarm.Customers
             { IsDefaultRFN = true };
             CUSTOMERL1 = new DatabaseFile(PopulateBufferCUSTOMERL1, PopulateFieldsCUSTOMERL1, null, "CUSTOMERL1", "*LIBL/CUSTOMERL1", CUSTOMERL1FormatIDs, blockingFactor : 0)
             { IsDefaultRFN = true };
+
+            CSMASTERL1 = new DatabaseFile(PopulateBufferCSMASTERL1, PopulateFieldsCSMASTERL1, null, "CSMASTERL1", "*LIBL/CSMASTERL1", CSMASTERL1FormatIDs)
+            { IsDefaultRFN = true };
+
             CUSTDS = new DataStructure(CUSTDS_000, CUSTDS_001, CUSTDS_002, CUSTDS_003, CUSTDS_004, CUSTDS_005, CUSTDS_006, 
                 CUSTDS_007, CUSTDS_008, CUSTDS_009, CUSTDS_010, CUSTDS_011, CUSTDS_012, CUSTDS_013, CUSTDS_014, CUSTDS_015);
         }
