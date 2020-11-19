@@ -319,6 +319,20 @@ namespace SunFarm.Customers
             _row["SFCONTACT"] = ((string)(SFCONTACT));
             _row["SFCONEMAL"] = ((string)(SFCONEMAL));
             _row["SFYN01"] = ((string)(SFYN01));
+
+            // Important: match the CUSTREC_Model field declaration field names and order.
+            _row["CSSALES01"] = ((decimal)(CSSALES01));
+            _row["CSSALES02"] = ((decimal)(CSSALES02));
+            _row["CSSALES03"] = ((decimal)(CSSALES03));
+            _row["CSSALES04"] = ((decimal)(CSSALES04));
+            _row["CSSALES05"] = ((decimal)(CSSALES05));
+            _row["CSSALES06"] = ((decimal)(CSSALES06));
+            _row["CSSALES07"] = ((decimal)(CSSALES07));
+            _row["CSSALES08"] = ((decimal)(CSSALES08));
+            _row["CSSALES09"] = ((decimal)(CSSALES09));
+            _row["CSSALES10"] = ((decimal)(CSSALES10));
+            _row["CSSALES11"] = ((decimal)(CSSALES11));
+            _row["CSSALES12"] = ((decimal)(CSSALES12));
         }
         private void PopulateFieldsCUSTDSPFCUSTREC(AdgDataSet _dataSet)
         {
@@ -338,6 +352,20 @@ namespace SunFarm.Customers
             SFCONTACT = ((string)(_row["SFCONTACT"]));
             SFCONEMAL = ((string)(_row["SFCONEMAL"]));
             SFYN01 = ((string)(_row["SFYN01"]));
+
+            // Important: match the CUSTREC_Model field declaration field names and order.
+            CSSALES01 = ((decimal)(_row["CSSALES01"]));
+            CSSALES02 = ((decimal)(_row["CSSALES02"]));
+            CSSALES03 = ((decimal)(_row["CSSALES03"]));
+            CSSALES04 = ((decimal)(_row["CSSALES04"]));
+            CSSALES05 = ((decimal)(_row["CSSALES05"]));
+            CSSALES06 = ((decimal)(_row["CSSALES06"]));
+            CSSALES07 = ((decimal)(_row["CSSALES07"]));
+            CSSALES08 = ((decimal)(_row["CSSALES08"]));
+            CSSALES09 = ((decimal)(_row["CSSALES09"]));
+            CSSALES10 = ((decimal)(_row["CSSALES10"]));
+            CSSALES11 = ((decimal)(_row["CSSALES11"]));
+            CSSALES12 = ((decimal)(_row["CSSALES12"]));
         }
         private void PopulateBufferCUSTDSPFSALESREC(AdgDataSet _dataSet)
         {

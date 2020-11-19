@@ -296,6 +296,8 @@ namespace SunFarm.Customers
             //-------------------------------------------------------
             do
             {
+                LoadLastSalesAndReturns();
+
                 CUSTDSPF.Write("MSGSFC", _IN.Array);
                 CUSTDSPF.ExFmt("CUSTREC", _IN.Array);
                 _IN[40] = '0';
@@ -424,6 +426,16 @@ namespace SunFarm.Customers
                 }
             } while (!((bool)_IN[12]));
         }
+
+        private void LoadLastSalesAndReturns()
+        {
+            FixedDecimal<_9, _0> CustomerNumber = new FixedDecimal<_9, _0>();
+
+            CustomerNumber = CMCUSTNO.MoveRight(CustomerNumber);
+            if ( CSMASTERL1.Seek(SeekMode.SetLL, CustomerNumber) )
+                CSMASTERL1.ReadNextEqual(false, CustomerNumber);
+        }
+
         //*********************************************************************
         //  EDIT THE SCREEN FIELDS
         //*********************************************************************
