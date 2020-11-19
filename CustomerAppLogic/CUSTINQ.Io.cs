@@ -269,6 +269,19 @@ namespace SunFarm.Customers
         private FixedDecimal<_11, _2> CSSALES11;
         private FixedDecimal<_11, _2> CSSALES12;
 
+        private FixedDecimal<_11, _2> CSRETURN01;
+        private FixedDecimal<_11, _2> CSRETURN02;
+        private FixedDecimal<_11, _2> CSRETURN03;
+        private FixedDecimal<_11, _2> CSRETURN04;
+        private FixedDecimal<_11, _2> CSRETURN05;
+        private FixedDecimal<_11, _2> CSRETURN06;
+        private FixedDecimal<_11, _2> CSRETURN07;
+        private FixedDecimal<_11, _2> CSRETURN08;
+        private FixedDecimal<_11, _2> CSRETURN09;
+        private FixedDecimal<_11, _2> CSRETURN10;
+        private FixedDecimal<_11, _2> CSRETURN11;
+        private FixedDecimal<_11, _2> CSRETURN12;
+
         private void PopulateBufferCUSTDSPFSFLC(AdgDataSet _dataSet)
         {
         }
@@ -333,6 +346,19 @@ namespace SunFarm.Customers
             _row["CSSALES10"] = ((decimal)(CSSALES10));
             _row["CSSALES11"] = ((decimal)(CSSALES11));
             _row["CSSALES12"] = ((decimal)(CSSALES12));
+
+            _row["CSRETURN01"] = ((decimal)(CSRETURN01));
+            _row["CSRETURN02"] = ((decimal)(CSRETURN02));
+            _row["CSRETURN03"] = ((decimal)(CSRETURN03));
+            _row["CSRETURN04"] = ((decimal)(CSRETURN04));
+            _row["CSRETURN05"] = ((decimal)(CSRETURN05));
+            _row["CSRETURN06"] = ((decimal)(CSRETURN06));
+            _row["CSRETURN07"] = ((decimal)(CSRETURN07));
+            _row["CSRETURN08"] = ((decimal)(CSRETURN08));
+            _row["CSRETURN09"] = ((decimal)(CSRETURN09));
+            _row["CSRETURN10"] = ((decimal)(CSRETURN10));
+            _row["CSRETURN11"] = ((decimal)(CSRETURN11));
+            _row["CSRETURN12"] = ((decimal)(CSRETURN12));
         }
         private void PopulateFieldsCUSTDSPFCUSTREC(AdgDataSet _dataSet)
         {
@@ -366,6 +392,19 @@ namespace SunFarm.Customers
             CSSALES10 = ((decimal)(_row["CSSALES10"]));
             CSSALES11 = ((decimal)(_row["CSSALES11"]));
             CSSALES12 = ((decimal)(_row["CSSALES12"]));
+
+            CSRETURN01 = ((decimal)(_row["CSRETURN01"]));
+            CSRETURN02 = ((decimal)(_row["CSRETURN02"]));
+            CSRETURN03 = ((decimal)(_row["CSRETURN03"]));
+            CSRETURN04 = ((decimal)(_row["CSRETURN04"]));
+            CSRETURN05 = ((decimal)(_row["CSRETURN05"]));
+            CSRETURN06 = ((decimal)(_row["CSRETURN06"]));
+            CSRETURN07 = ((decimal)(_row["CSRETURN07"]));
+            CSRETURN08 = ((decimal)(_row["CSRETURN08"]));
+            CSRETURN09 = ((decimal)(_row["CSRETURN09"]));
+            CSRETURN10 = ((decimal)(_row["CSRETURN10"]));
+            CSRETURN11 = ((decimal)(_row["CSRETURN11"]));
+            CSRETURN12 = ((decimal)(_row["CSRETURN12"]));
         }
         private void PopulateBufferCUSTDSPFSALESREC(AdgDataSet _dataSet)
         {

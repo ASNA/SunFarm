@@ -429,7 +429,13 @@ namespace SunFarm.Customers
 
         private void LoadLastSalesAndReturns()
         {
-            FixedDecimal<_9, _0> CustomerNumber = new FixedDecimal<_9, _0>();
+            CSSALES01 = CSSALES02 = CSSALES03 = CSSALES04 = CSSALES05 = CSSALES06 = 0;
+            CSSALES07 = CSSALES08 = CSSALES09 = CSSALES10 = CSSALES11 = CSSALES12 = 0;
+
+            CSRETURN01 = CSRETURN02 = CSRETURN03 = CSRETURN04 = CSRETURN05 = CSRETURN06 = 0;
+            CSRETURN07 = CSRETURN08 = CSRETURN09 = CSRETURN10 = CSRETURN11 = CSRETURN12 = 0;
+
+            FixedDecimal < _9, _0> CustomerNumber = new FixedDecimal<_9, _0>();
 
             CustomerNumber = CMCUSTNO.MoveRight(CustomerNumber);
             if ( CSMASTERL1.Seek(SeekMode.SetLL, CustomerNumber) )
