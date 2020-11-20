@@ -64,3 +64,7 @@ for details on configuring this project to bundle and minify static web assets. 
     color: white;
     text-align: center;
 }
+
+.present-no-visible-field {
+    opacity:0.1;
+}
