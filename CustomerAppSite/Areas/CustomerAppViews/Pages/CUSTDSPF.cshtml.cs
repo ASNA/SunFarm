@@ -217,6 +217,15 @@ namespace SunFarm.Customers.CustomerAppViews
 
             [Char(20)]
             public string PERCENT_CHANGE_SALES { get; private set; }
+
+            [Char(20)]
+            public string YEAR_RETURNS { get; private set; }
+
+            [Dec(13, 2)]
+            public decimal TOTAL_RETURNS { get; private set; }
+
+            [Char(20)]
+            public string PERCENT_CHANGE_RETURNS { get; private set; }
         }
 
         [

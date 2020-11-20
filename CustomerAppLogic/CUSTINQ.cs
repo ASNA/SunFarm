@@ -439,6 +439,10 @@ namespace SunFarm.Customers
             TOTAL_SALES = 0;
             PERCENT_CHANGE_SALES = string.Empty;
 
+            YEAR_RETURNS = string.Empty;
+            TOTAL_RETURNS = 0;
+            PERCENT_CHANGE_RETURNS = string.Empty;
+
             FixedDecimal< _9, _0> CustomerNumber = new FixedDecimal<_9, _0>();
 
             CustomerNumber = CMCUSTNO.MoveRight(CustomerNumber);
@@ -508,6 +512,23 @@ namespace SunFarm.Customers
                 CSRETURN10 = returnsForCustomer[lastYearReturns].month[9];
                 CSRETURN11 = returnsForCustomer[lastYearReturns].month[10];
                 CSRETURN12 = returnsForCustomer[lastYearReturns].month[11];
+
+                YEAR_RETURNS = $"(Year {lastYearReturns})";
+                TOTAL_RETURNS = returnsForCustomer[lastYearReturns].Sum();
+
+                decimal janReturns = Math.Abs(CSRETURN01);
+                decimal decReturns = Math.Abs(CSRETURN12);
+
+                if (decReturns > janReturns && decReturns > 0)
+                {
+                    decimal calc = (janReturns * 100) / decReturns;
+                    PERCENT_CHANGE_RETURNS = $"🠕 +{Math.Round(calc, 1)}%";
+                }
+                else if (decReturns < janReturns && CSRETURN01 > 0)
+                {
+                    decimal calc = (decReturns * 100) / janReturns;
+                    PERCENT_CHANGE_RETURNS = $"↓ +{Math.Round(calc, 1)}%";
+                }
             }
         }
 

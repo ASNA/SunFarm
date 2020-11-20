@@ -286,6 +286,10 @@ namespace SunFarm.Customers
         FixedDecimal<_13, _2> TOTAL_SALES;
         FixedString<_20> PERCENT_CHANGE_SALES;
 
+        FixedString<_20> YEAR_RETURNS;
+        FixedDecimal<_13, _2> TOTAL_RETURNS;
+        FixedString<_20> PERCENT_CHANGE_RETURNS;
+
         private void PopulateBufferCUSTDSPFSFLC(AdgDataSet _dataSet)
         {
         }
@@ -367,8 +371,12 @@ namespace SunFarm.Customers
             _row["YEAR_SALES"] = ((string)(YEAR_SALES));
             _row["TOTAL_SALES"] = ((decimal)(TOTAL_SALES));
             _row["PERCENT_CHANGE_SALES"] = ((string)(PERCENT_CHANGE_SALES));
-    }
-    private void PopulateFieldsCUSTDSPFCUSTREC(AdgDataSet _dataSet)
+
+            _row["YEAR_RETURNS"] = ((string)(YEAR_RETURNS));
+            _row["TOTAL_RETURNS"] = ((decimal)(TOTAL_RETURNS));
+            _row["PERCENT_CHANGE_RETURNS"] = ((string)(PERCENT_CHANGE_RETURNS));
+        }
+        private void PopulateFieldsCUSTDSPFCUSTREC(AdgDataSet _dataSet)
         {
             var _table = _dataSet.GetAdgTable("CUSTREC");
             System.Data.DataRow _row = _table.Row;
@@ -417,6 +425,11 @@ namespace SunFarm.Customers
             YEAR_SALES = ((string)(_row["YEAR_SALES"]));
             TOTAL_SALES = ((decimal)(_row["TOTAL_SALES"]));
             PERCENT_CHANGE_SALES = ((string)(_row["PERCENT_CHANGE_SALES"]));
+
+            YEAR_RETURNS = ((string)(_row["YEAR_RETURNS"]));
+            TOTAL_RETURNS = ((decimal)(_row["TOTAL_RETURNS"]));
+            PERCENT_CHANGE_RETURNS = ((string)(_row["PERCENT_CHANGE_RETURNS"]));
+
         }
         private void PopulateBufferCUSTDSPFSALESREC(AdgDataSet _dataSet)
         {
