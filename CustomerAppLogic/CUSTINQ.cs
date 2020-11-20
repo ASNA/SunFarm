@@ -435,7 +435,11 @@ namespace SunFarm.Customers
             CSRETURN01 = CSRETURN02 = CSRETURN03 = CSRETURN04 = CSRETURN05 = CSRETURN06 = 0;
             CSRETURN07 = CSRETURN08 = CSRETURN09 = CSRETURN10 = CSRETURN11 = CSRETURN12 = 0;
 
-            FixedDecimal < _9, _0> CustomerNumber = new FixedDecimal<_9, _0>();
+            YEAR_SALES = string.Empty;
+            TOTAL_SALES = 0;
+            PERCENT_CHANGE_SALES = string.Empty;
+
+            FixedDecimal< _9, _0> CustomerNumber = new FixedDecimal<_9, _0>();
 
             CustomerNumber = CMCUSTNO.MoveRight(CustomerNumber);
             if (!CSMASTERL1.Seek(SeekMode.SetLL, CustomerNumber))
@@ -474,6 +478,20 @@ namespace SunFarm.Customers
                 CSSALES10 = salesForCustomer[lastYearSales].month[9];
                 CSSALES11 = salesForCustomer[lastYearSales].month[10];
                 CSSALES12 = salesForCustomer[lastYearSales].month[11];
+
+                YEAR_SALES = $"(Year {lastYearSales})";
+                TOTAL_SALES = salesForCustomer[lastYearSales].Sum();
+
+                if (CSSALES12 > CSSALES01 && CSSALES12 > 0)
+                {
+                    decimal calc = (CSSALES01 * 100) / CSSALES12;
+                    PERCENT_CHANGE_SALES = $"🠕 +{Math.Round(calc, 1)}%";
+                }
+                else if (CSSALES12 < CSSALES01 && CSSALES01 > 0)
+                {
+                    decimal calc = (CSSALES12 * 100) / CSSALES01;
+                    PERCENT_CHANGE_SALES = $"↓ +{Math.Round(calc, 1)}%";
+                }
             }
 
             if (lastYearReturns > decimal.MinValue)

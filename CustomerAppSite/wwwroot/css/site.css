@@ -53,3 +53,8 @@ for details on configuring this project to bundle and minify static web assets. 
     border-style: solid;
     background-color: white;
 }
+
+.large-bold-text {
+    font-size: large !important;
+    font-weight: bold;
+}
