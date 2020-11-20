@@ -58,3 +58,9 @@ for details on configuring this project to bundle and minify static web assets. 
     font-size: large !important;
     font-weight: bold;
 }
+
+.box-highlight-center-field {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
