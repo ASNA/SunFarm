@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using ASNA.QSys.ExpoModel;
+using System.Text.Json;
 
 // Migrated on 11/4/2020 at 12:31 PM by ASNA Monarch(R) version 10.0.24.0
 // Legacy location: library ERNUBO, file QDDSSRC, member CUSTDSPF
@@ -247,6 +248,42 @@ namespace SunFarm.Customers.CustomerAppViews
 
             [Char(20)]
             public string PERCENT_CHANGE_RETURNS { get; private set; }
+
+            public string SALES_CHART_DATA { get { return FormatChartData(); } }
+
+            private string FormatChartData()
+            {
+                SalesChartData chart = new SalesChartData();
+                chart.data = new SalesSeriesPoint[12];
+
+                chart.data[0] = new SalesSeriesPoint("Jan", CSSALES01);
+                chart.data[1] = new SalesSeriesPoint("Feb", CSSALES02);
+                chart.data[2] = new SalesSeriesPoint("Mar", CSSALES03);
+                chart.data[3] = new SalesSeriesPoint("Apr", CSSALES04);
+                chart.data[4] = new SalesSeriesPoint("May", CSSALES05);
+                chart.data[5] = new SalesSeriesPoint("Jun", CSSALES06);
+                chart.data[6] = new SalesSeriesPoint("Jul", CSSALES07);
+                chart.data[7] = new SalesSeriesPoint("Aug", CSSALES08);
+                chart.data[8] = new SalesSeriesPoint("Sep", CSSALES09);
+                chart.data[9] = new SalesSeriesPoint("Oct", CSSALES10);
+                chart.data[10] = new SalesSeriesPoint("Nov", CSSALES11);
+                chart.data[11] = new SalesSeriesPoint("Dec", CSSALES12);
+
+                JsonSerializerOptions serializerOptions = new JsonSerializerOptions();
+                return JsonSerializer.Serialize<SalesChartData>(chart, serializerOptions);
+            }
+
+            class SalesSeriesPoint
+            {
+                public SalesSeriesPoint(string month, decimal sales) { this.month = month; this.sales = sales; }
+                public string month { get; set; }
+                public decimal sales { get; set; }
+            }
+
+            class SalesChartData
+            {
+                public SalesSeriesPoint[] data { get; set; }
+            }
         }
 
         [
