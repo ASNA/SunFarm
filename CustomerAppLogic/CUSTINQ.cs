@@ -738,9 +738,10 @@ namespace SunFarm.Customers
         //********************************************************************
         void CustChk()
         {
-            if (LockRec == "N")
-                _IN[80] = CUSTOMERL2.Chain(false, CMCUSTNO) ? '0' : '1';
-            else
+            // *NoLock is not supported on DSS 
+            //if (LockRec == "N")
+            //    _IN[80] = CUSTOMERL2.Chain(false, CMCUSTNO) ? '0' : '1';
+            //else
                 _IN[80] = CUSTOMERL1.Chain(true, CMCUSTNO) ? '0' : '1';
         }
 
