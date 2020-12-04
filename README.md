@@ -9,3 +9,7 @@ Reference Sources for **Enhancing Expo Displayfile Guide**:
 
 
 [Part 3 - Adding a 3rd Party Chart.](https://github.com/ASNA/SunFarm/blob/master/Enhancing%20Expo%20Displayfile%20Guide%20Part%203.pdf)
+
+[Part 4 - Replacing YES/NO fields with Check-boxes.](https://github.com/ASNA/SunFarm/blob/master/Enhancing%20Expo%20Displayfile%20Guide%20Part%204.pdf)
+
+
