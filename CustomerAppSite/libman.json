@@ -30,6 +30,7 @@
         "page.js",
         "dds-grid.js",
         "dropdown.js",
+        "multiple-choice.js",
         "page-position-cursor.js",
         "wait-response/spinning-wheel.css",
         "wait-response/wait-response-animation.js",
