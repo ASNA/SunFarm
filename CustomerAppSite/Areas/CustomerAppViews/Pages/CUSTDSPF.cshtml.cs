@@ -69,7 +69,6 @@ namespace SunFarm.Customers.CustomerAppViews
                 public string SFCSZ { get; private set; } // CITY-STATE-ZIP
 
             }
-
         }
 
         [
@@ -249,10 +248,6 @@ namespace SunFarm.Customers.CustomerAppViews
 
             [Char(20)]
             public string PERCENT_CHANGE_RETURNS { get; private set; }
-
-            [Dec(1, 0)]
-            [Values(typeof(decimal), 1, 0)]
-            public decimal DECSNDCONF { get; set; }
 
             public string SALES_CHART_DATA { get { return FormatChartData(); } }
 
