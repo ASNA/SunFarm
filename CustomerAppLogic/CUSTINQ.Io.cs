@@ -290,6 +290,8 @@ namespace SunFarm.Customers
         FixedDecimal<_13, _2> TOTAL_RETURNS;
         FixedString<_20> PERCENT_CHANGE_RETURNS;
 
+        private decimal DECSNDCONF;
+
         private void PopulateBufferCUSTDSPFSFLC(AdgDataSet _dataSet)
         {
         }
@@ -375,6 +377,8 @@ namespace SunFarm.Customers
             _row["YEAR_RETURNS"] = ((string)(YEAR_RETURNS));
             _row["TOTAL_RETURNS"] = ((decimal)(TOTAL_RETURNS));
             _row["PERCENT_CHANGE_RETURNS"] = ((string)(PERCENT_CHANGE_RETURNS));
+
+            _row["DECSNDCONF"] = (SFYN01 == "Y") ? 1 : 0;
         }
         private void PopulateFieldsCUSTDSPFCUSTREC(AdgDataSet _dataSet)
         {
@@ -430,6 +434,9 @@ namespace SunFarm.Customers
             TOTAL_RETURNS = ((decimal)(_row["TOTAL_RETURNS"]));
             PERCENT_CHANGE_RETURNS = ((string)(_row["PERCENT_CHANGE_RETURNS"]));
 
+            DECSNDCONF = ((decimal)(_row["DECSNDCONF"]));
+
+            SFYN01 = DECSNDCONF == 1 ? "Y" : "N";
         }
         private void PopulateBufferCUSTDSPFSALESREC(AdgDataSet _dataSet)
         {
