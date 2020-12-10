@@ -12,8 +12,8 @@ Reference Sources for **Enhancing Expo Displayfile Guide** covering topics:
 
 [4 - Replacing YES/NO fields with Check-boxes.](https://github.com/ASNA/SunFarm/blob/master/Enhancing%20Expo%20Displayfile%20Guide%20Part%204.pdf)
 
-[6 - More on multiple-choice selection user interfaces: Radio-button groups.](https://github.com/ASNA/SunFarm/blob/master/Enhancing%20Expo%20Displayfile%20Guide%20Part%205.pdf)
+[5 - More on multiple-choice selection user interfaces: Radio-button groups.](https://github.com/ASNA/SunFarm/blob/master/Enhancing%20Expo%20Displayfile%20Guide%20Part%205.pdf)
 
-[5 - Replacing Prompt constant (F4) with a clickable icon.](https://github.com/ASNA/SunFarm/blob/master/Enhancing%20Expo%20Displayfile%20Guide%20Part%206.pdf)
+[6 - Replacing Prompt constant (F4) with a clickable icon.](https://github.com/ASNA/SunFarm/blob/master/Enhancing%20Expo%20Displayfile%20Guide%20Part%206.pdf)
 
 
