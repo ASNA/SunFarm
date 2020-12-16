@@ -78,3 +78,12 @@ for details on configuring this project to bundle and minify static web assets. 
     border-color: lightgrey;
     border-width: medium;
 }
+
+.prompt-column-header, .prompt-first-column-header {
+    background-color: steelblue;
+    color: white;
+}
+
+.prompt-first-column-header {
+    padding-left: 1em;
+}

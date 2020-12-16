@@ -55,6 +55,7 @@ namespace SunFarm.Customers.CustomerAppViews
             public class SFL1_Model : SubfileRecordModel
             {
                 [Dec(1, 0)]
+                [Values(typeof(decimal),1,0)]
                 public decimal SFLSEL { get; set; }
 
                 [Char(5)]
