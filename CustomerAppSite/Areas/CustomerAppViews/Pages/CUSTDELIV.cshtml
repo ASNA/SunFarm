@@ -36,11 +36,11 @@
                     {
                         <DdsSubfileRecord RecordNumber="rrn" For="SFLC.SFL1">
                             <div IsGridRow>
-                                <DdsCharField Col="6" For="SFLC.SFL1[rrn].SFLSEL" VisibleCondition="!( 60 )" VirtualRowCol="@row,6" tabIndex=1 />
+                                <DdsCharField Col="6" For="SFLC.SFL1[rrn].SFLSEL" Upper=true VisibleCondition="!( 60 )" VirtualRowCol="@row,6" tabIndex=1 />
                                 <DdsDecField Col="8+2" For="SFLC.SFL1[rrn].SFLCUSTh" VirtualRowCol="@row,8" EditCode="Z" />
-                                <DdsCharField Col="18+2" For="SFLC.SFL1[rrn].SFLCUST" VirtualRowCol="@row,18" />
-                                <DdsCharField Col="46+2" For="SFLC.SFL1[rrn].SFLCITY" VirtualRowCol="@row,46" />
-                                <DdsCharField Col="72+2" For="SFLC.SFL1[rrn].SFLZIP" VirtualRowCol="@row,72" />
+                                <DdsCharField Col="18+2" For="SFLC.SFL1[rrn].SFLCUST" Upper=true VirtualRowCol="@row,18" />
+                                <DdsCharField Col="46+2" For="SFLC.SFL1[rrn].SFLCITY" Upper=true VirtualRowCol="@row,46" />
+                                <DdsCharField Col="72+2" For="SFLC.SFL1[rrn].SFLZIP" Upper=true VirtualRowCol="@row,72" />
                             </div>
                         </DdsSubfileRecord>
                     }

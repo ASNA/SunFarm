@@ -17,7 +17,7 @@
             <DdsRecord For="MYWINDOW" KeyNames="ENTER 'Enter'; F12 'Previous';" WindowLeftCol=26 WindowTopRow=9 WindowWidthCols=25 WindowHeightRows=6 WindowTitle=@Model.MYWINDOW.WINTITLE ReturnData="True"> 
                 <DdsRecord For="ORDLINE" KeyNames="ENTER 'Enter'; F4 'Prompt';">
                     <div Row="1">
-                        <DdsCharField Col="2" For="ORDLINE.SDUMMY" VisibleCondition="!( !89 )" VirtualRowCol="1,2" tabIndex=1 />
+                        <DdsCharField Col="2" For="ORDLINE.SDUMMY" Upper=true VisibleCondition="!( !89 )" VirtualRowCol="1,2" tabIndex=1 />
                     </div>
                     <div Row="2">
                         <DdsConstant Col="2" Text="Line Number:" />
@@ -50,7 +50,7 @@
                 </div>
                 <div Row="3">
                     <DdsConstant Col="2" Text="Customer:" />
-                    <DdsCharField Col="12+2" For="SFLC.SCRCUST" VirtualRowCol="3,12" Comment="CUST NBR, NAME AND CITY" />
+                    <DdsCharField Col="12+2" For="SFLC.SCRCUST" Upper=true VirtualRowCol="3,12" Comment="CUST NBR, NAME AND CITY" />
                 </div>
                 <div Row="4">
                     <DdsConstant Col="2" Text="Order...:" />
@@ -60,12 +60,12 @@
                 </div>
                 <div Row="5">
                     <DdsConstant Col="51+2" Text="Total value.:" />
-                    <DdsCharField Col="65+2" For="SFLC.SORDAMOUNT" VirtualRowCol="5,65" />
+                    <DdsCharField Col="65+2" For="SFLC.SORDAMOUNT" Upper=true VirtualRowCol="5,65" />
                 </div>
                 <div Row="6">
                     <DdsConstant Col="2" Text="Options:  2=Update  4=Delete" Color="Blue" />
                     <DdsConstant Col="51+2" Text="Total weight:" />
-                    <DdsCharField Col="65+2" For="SFLC.SORDWEIGHT" VirtualRowCol="6,65" />
+                    <DdsCharField Col="65+2" For="SFLC.SORDWEIGHT" Upper=true VirtualRowCol="6,65" />
                 </div>
                 <div Row="8">
                     <DdsConstant Col="2" Text="Opt Lne   Item Nbr and Description        Unit Price    Order Qty  Extnd Price" Color="DarkBlue" Underline="*True" />
