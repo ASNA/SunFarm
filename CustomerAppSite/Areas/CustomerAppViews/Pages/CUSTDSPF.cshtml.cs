@@ -47,7 +47,7 @@ namespace SunFarm.Customers.CustomerAppViews
         {
             public List<SFL1_Model> SFL1 { get; set; } = new List<SFL1_Model>();
 
-            [Char(10, InputOnly=true)]
+            [Char(10, OutputData=false)]
             public string SETNAME { get; set; }
 
             public class SFL1_Model : SubfileRecordModel
