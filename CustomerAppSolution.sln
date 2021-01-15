@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASNA.DataGate.Client", "C:\Source\AsnaRnD\ASNA.DataGate.Client\src\ASNA.DataGate.Client.csproj", "{C886C545-4D92-4926-AF3C-4986C23630B1}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Runtime", "C:\Source\AsnaRnD\QSys\src\Runtime\Runtime.csproj", "{FF9B3FE7-80E6-4A8C-B869-66590C873739}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpoModel", "C:\Source\AsnaRnD\QSys\src\Expo\ExpoModel\src\ExpoModel.csproj", "{9D9D7A76-9182-4418-8D5E-759BDA69A509}"
@@ -17,16 +15,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerAppLogic", "Custome
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerAppSite", "CustomerAppSite\CustomerAppSite.csproj", "{75643D34-D599-4A5D-8379-720E7C01B7D5}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASNA.QSys.DataGate.Client", "..\..\Source\AsnaRnD\ASNA.DataGate.Client\src\ASNA.QSys.DataGate.Client.csproj", "{5182484C-AE3E-42E1-9DB3-0F2DC019190E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C886C545-4D92-4926-AF3C-4986C23630B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C886C545-4D92-4926-AF3C-4986C23630B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C886C545-4D92-4926-AF3C-4986C23630B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C886C545-4D92-4926-AF3C-4986C23630B1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FF9B3FE7-80E6-4A8C-B869-66590C873739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FF9B3FE7-80E6-4A8C-B869-66590C873739}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF9B3FE7-80E6-4A8C-B869-66590C873739}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{75643D34-D599-4A5D-8379-720E7C01B7D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75643D34-D599-4A5D-8379-720E7C01B7D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75643D34-D599-4A5D-8379-720E7C01B7D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5182484C-AE3E-42E1-9DB3-0F2DC019190E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5182484C-AE3E-42E1-9DB3-0F2DC019190E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5182484C-AE3E-42E1-9DB3-0F2DC019190E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5182484C-AE3E-42E1-9DB3-0F2DC019190E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
