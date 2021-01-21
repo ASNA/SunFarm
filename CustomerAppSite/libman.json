@@ -4,7 +4,7 @@
   "libraries": [
     {
       "provider": "filesystem",
-      "library": "C:\\Source\\asnarnd\\QSys\\src\\Expo\\ExpoTags\\src\\WebsiteResources\\css/",
+      "library": "C:\\Source\\AsnaRnD\\ASNA.QSys.Expo\\src\\ASNA.QSys.Expo.Tags\\src\\WebsiteResources\\css/",
       "files": [
         "expo.css",
         "5250.css"
@@ -13,7 +13,7 @@
     },
     {
       "provider": "filesystem",
-      "library": "C:\\Source\\asnarnd\\QSys\\src\\Expo\\ExpoTags\\src\\WebsiteResources\\js/",
+      "library": "C:\\Source\\AsnaRnD\\ASNA.QSys.Expo\\src\\ASNA.QSys.Expo.Tags\\src\\WebsiteResources\\js/",
       "files": [
         "ajax/ajax-fetch.js",
         "calendar/calendar.css",
@@ -78,7 +78,7 @@
     },
     {
       "provider": "filesystem",
-      "library": "C:\\Source\\asnarnd\\QSys\\src\\Expo\\ExpoTags\\src\\WebsiteResources\\js\\bterm/",
+      "library": "C:\\Source\\AsnaRnD\\ASNA.QSys.Expo\\src\\ASNA.QSys.Expo.Tags\\src\\WebsiteResources\\js\\bterm/",
       "files": [
         "audio/beep.mp3",
         "audio/beep.ogg"

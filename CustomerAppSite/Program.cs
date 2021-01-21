@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-[assembly: ASNA.QSys.ExpoModel.ExpoModelAssembly()] // Mark this assembly as containing Display Page Models.
+[assembly:ASNA.QSys.Expo.Model.ExpoModelAssembly()] // Mark this assembly as containing Display Page Models.
 
 namespace CustomerAppSite
 {

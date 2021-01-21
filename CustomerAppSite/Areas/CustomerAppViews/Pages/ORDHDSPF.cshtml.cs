@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using ASNA.QSys.ExpoModel;
+using ASNA.QSys.Expo.Model;
 
 // Migrated on 11/4/2020 at 12:31 PM by ASNA Monarch(R) version 10.0.24.0
 // Legacy location: library RPNUBO, file QDDSSRC, member ORDHDSPF

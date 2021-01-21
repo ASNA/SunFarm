@@ -1,6 +1,6 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
-using ASNA.QSys.ExpoModel;
+using ASNA.QSys.Expo.Model;
 
 namespace ASNA.Pages.TerminalPage
 {

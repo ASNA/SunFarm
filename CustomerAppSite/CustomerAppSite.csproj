@@ -20,8 +20,8 @@
     <Folder Include="MessageFiles\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\AsnaRnD\QSys\src\Expo\ExpoModel\src\ExpoModel.csproj" />
-    <ProjectReference Include="..\..\..\Source\AsnaRnD\QSys\src\Expo\ExpoTags\src\ExpoTags.csproj" />
-    <ProjectReference Include="..\..\..\Source\AsnaRnD\QSys\src\MonaServer\MonaServer.csproj" />
+    <ProjectReference Include="..\..\..\Source\AsnaRnD\ASNA.QSys.Expo\src\ASNA.QSys.Expo.Model\src\ASNA.QSys.Expo.Model.csproj" />
+    <ProjectReference Include="..\..\..\Source\AsnaRnD\ASNA.QSys.Expo\src\ASNA.QSys.Expo.Tags\src\ASNA.QSys.Expo.Tags.csproj" />
+    <ProjectReference Include="..\..\..\Source\AsnaRnD\ASNA.QSys.MonaServer\src\ASNA.QSys.MonaServer\ASNA.QSys.MonaServer.csproj" />
   </ItemGroup>
 </Project>

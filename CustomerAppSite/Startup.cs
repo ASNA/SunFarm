@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ASNA.QSys.ExpoModel;
+using ASNA.QSys.Expo.Model;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 
 namespace CustomerAppSite
