@@ -1,4 +1,7 @@
-# SunFarm Monarch for Core
+---
+title:  "SunFarm Monarch for Core (Nomad)"
+---
+
 Reference Sources for **Enhancing Expo Displayfile Guide** covering topics:
 
 
