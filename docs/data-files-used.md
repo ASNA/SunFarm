@@ -15,8 +15,8 @@ As you can verify by looking at the [MyJob.cs](https://github.com/ASNA/SunFarm/b
  public Database MyDatabase = new Database("NancySql");
 ~~~
 
-## Asumption
-This Guide asumes that your have a Microsoft SQL Instalation and have migrated (or obtained a copy of the migrated data) from the Legacy Sample Customer Application
+## Assumption
+This Guide assumes that your have a Microsoft SQL Installation and have migrated (or obtained a copy of the migrated data) from the Legacy Sample Customer Application
 
 <br>
 <br>

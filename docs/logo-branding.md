@@ -20,7 +20,7 @@ The image we use is names "sun-farm", it is a *raster* **png** format image, des
 
 # First step: Add the image to the website assets
 
-The *Website assets* are static content that may be resuested by Pages, such as images, styles and scripting.
+The *Website assets* are static content that may be requested by Pages, such as images, styles and scripting.
 
 The folder that contains *Website Assets* is called in ASP.NET **wwwroot**
 
