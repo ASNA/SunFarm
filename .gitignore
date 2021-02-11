@@ -338,3 +338,12 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+### Jekyll ###
+_site
+.jekyll-metadata
+*-cache/
+
+### NPM ###
+/node_modules/
+
