@@ -47,7 +47,7 @@ CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtm
 
 *(Lines 51, 52 and 53)*
 
-```html
+~~~
 <div Row="8" RowSpan="@SFLC_SubfilePage * @SFLC_SubfileRowsPerRecord">
     @for (int rrn=0, row = 8; rrn < Model.SFLC.SFL1.Count; rrn++, row += @SFLC_SubfileRowsPerRecord)
     {
@@ -62,10 +62,11 @@ CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtm
         </DdsSubfileRecord>
     }
 </div>
-```
+~~~
+
 Simplifies the markup and produces a nicer effect:
 
-```html
+~~~
 <div Row="8" RowSpan="@SFLC_SubfilePage * @SFLC_SubfileRowsPerRecord">
     @for (int rrn=0, row = 8; rrn < Model.SFLC.SFL1.Count; rrn++, row += @SFLC_SubfileRowsPerRecord)
     {
@@ -80,7 +81,7 @@ Simplifies the markup and produces a nicer effect:
         </DdsSubfileRecord>
     }
 </div>
-```
+~~~
 
 ![No Reverse-Image](/images/no-reverse-image.png)
 
