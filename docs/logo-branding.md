@@ -105,7 +105,7 @@ The top header for all pages will contain a *division* designated for the Logo B
 <br>
 <br>
 
-[Continue ...](/navigation-menu/)
+[Continue ...]({{ site.url }}{{ site.baseurl}}/navigation-menu)
 
 
 [^1]: Commit: "Logo resources"

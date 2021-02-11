@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Data Files Used
+permalink: /data-files-used/
 ---
 
 The Sample Customer Application uses existing files created on IBMi.
@@ -21,4 +22,4 @@ This Guide asumes that your have a Microsoft SQL Instalation and have migrated (
 <br>
 <br>
 
-[Continue ...](/logo-branding/)
+[Continue ...]({{ site.url }}{{ site.baseurl}}/logo-branding)

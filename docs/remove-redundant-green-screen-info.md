@@ -19,4 +19,4 @@ These items of informatin are readily available as part of the *Operating System
 <br>
 <br>
 <br>
-[Continue ...](/more-natural-font/)
+[Continue ...]({{ site.url }}{{ site.baseurl}}/more-natural-font)

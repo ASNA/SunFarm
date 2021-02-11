@@ -20,4 +20,4 @@ In addition, the Site has been branded to show the fictitious company **SunFarm*
 <br>
 <br>
 
-[Continue ...](/about/)
+[Continue ...]({{ site.url }}{{ site.baseurl}}/about)

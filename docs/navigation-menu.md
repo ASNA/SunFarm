@@ -120,7 +120,7 @@ Verify the Navigation Menu changes:
 <br>
 <br>
 
-[Continue ...](/remove-redundant-green-screen-info/)
+[Continue ...]({{ site.url }}{{ site.baseurl}}/remove-redundant-green-screen-info)
 
 
 [^1]: Commit "Navigation Menu Customization"
