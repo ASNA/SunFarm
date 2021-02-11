@@ -21,4 +21,8 @@ Thanks for reading!
 <br>
 <br>
 
+<<<<<<< HEAD
 [Continue ...]({{ site.url }}{{ site.baseurl}}/overview)
+=======
+[Continue ...]({{ site.url }}/overview)
+>>>>>>> accab162305ce036e3749643c73e0fb6ce0a77f6
