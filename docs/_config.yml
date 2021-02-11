@@ -2,7 +2,7 @@
 title:               SunFarm
 tagline:             'Enhancing ASNA Monarch Nomad Migration Guide'
 description:         'IBMi Modernization Developer Guide'
-url:                 https://asna.github.io/SunFarm/
+url:                 https://asna.github.io/SunFarm
 baseurl:             ''
 paginate:            5
 permalink:           pretty
