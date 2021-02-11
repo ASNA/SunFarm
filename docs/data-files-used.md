@@ -8,7 +8,7 @@ The Sample Customer Application uses existing files created on IBMi.
 
 SunFarm Migration expects those files to have been previously Migrated to Microsoft SQL Database.
 
-As you can verify by looking at the [MyJob.cs](https://github.com/ASNA/SunFarm/blob/master/CustomerAppLogic/MyJob.cs) file, the database used is named **nancySql**
+As you can verify by looking at the [MyJob.cs](https://github.com/ASNA/SunFarm/blob/master/CustomerAppLogic/MyJob.cs) file, the database used is named **NancySql**
 
 
 ~~~   
