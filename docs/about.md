@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /
+permalink: /SunFarm
 ---
 
 This guide shows basic techniques to improve the *Look and Feel* of **ASNA Monarch Nomad&reg;** Migrated applications.
