@@ -77,10 +77,4 @@ Where the style right-aligned-constant is the following simple CSS added to the 
 }
 ```
 
-
-
-
-
-<br>
-<br>
-<br>
+Experiment with this approach and the imperfections of the StretchConstantText effect will disappear.
