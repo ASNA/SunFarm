@@ -21,4 +21,4 @@ This Guide assumes that your have a Microsoft SQL Installation and have migrated
 <br>
 <br>
 <br>
-Continue ...]({{ site.rooturl }}/logo-branding/)
+[Continue ...]({{ site.rooturl }}/logo-branding/)
