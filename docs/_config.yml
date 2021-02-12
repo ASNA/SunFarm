@@ -3,10 +3,12 @@ title:               SunFarm
 tagline:             'Enhancing ASNA Monarch Nomad Migration Guide'
 description:         'IBMi Modernization Developer Guide'
 url:                 https://asna.github.io
-baseurl:             /SunFarm
+baseurl:             /SunFarm      for production into GitHub Pages.
+# baseurl: /             for local development.
+
 paginate:            5
 permalink:           pretty
-markdown: kramdown
+markdown:            kramdown
 
 # About/contact
 author:
@@ -21,3 +23,7 @@ plugins:
 # Custom vars
 version:             2.0.0
 google_analytics_id: #UA-XXXX-Y
+rooturl:             https://asna.github.io/SunFarm      for production into GitHub Pages.
+# rooturl: /                                   for local development.
+
+
