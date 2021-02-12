@@ -26,5 +26,4 @@ Indicates that it is recommended to locate the comment *Navigation menu customiz
 <br>
 <br>
 <br>
-
-[Continue ...]({{ site.url }}{{ site.baseurl}}/guide-objective)
+[Continue ...]({{ site.rooturl }}/guide-objective/)

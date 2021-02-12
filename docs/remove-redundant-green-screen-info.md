@@ -88,4 +88,4 @@ Simplifies the markup and produces a nicer effect:
 <br>
 <br>
 <br>
-[Continue ...]({{ site.url }}{{ site.baseurl}}/more-natural-font)
+[Continue ...]({{ site.rooturl }}/more-natural-font/)
