@@ -31,4 +31,4 @@ The Objective of this Guide is to describe step-by-step how to transform the fol
 <br>
 <br>
 <br>
-Continue ...]({{ site.rooturl }}/data-files-used/)
+[Continue ...]({{ site.rooturl }}/data-files-used/)
