@@ -48,13 +48,13 @@ For example, we want "CUSTREC" to **NOT* Stretch the text in the constants:
 
 # Preferred technique to Align text to the right
 
-ASNA Cocoon for Nomad&reg; will not try to guess *right-alignment* intent. (Unfortunately, DDS does not a place to indicate such intent).
+ASNA Cocoon for Nomad&reg; will not try to guess *right-alignment* intent. (Unfortunately, DDS does not have a place to indicate such intent).
 
 The *Stretching effect* is not perfect. There are differences in the rendering of Font families and rendering engines which vary according to the Browser vendor.
 
 One way to control the alignment of text, is thru the use of CSS.
 
-To align Text to the right, we need to specify the original **cell* width intended on the green-screen character grid layout. Usually this width is the length of the constant text (given that green-screen used a predictable fixed width font).
+To align Text to the right, we need to specify the original **cell** width intended on the green-screen character grid layout. Usually this width is the length of the constant text (given that green-screen used a predictable fixed width font).
 
 Matching the column span is achieved by adding ColSpan attribute with the special value =“-1” indicating that we want exactly the length of the constant text to be used.
 
@@ -69,7 +69,7 @@ Lastly, we add a CSS class attribute to all the DdsConstant tag-helpers in the r
 </div>
 ~~~
 
-Where the style right-aligned-constant is the following simple CSS added to the $\SunFarm\CustomerAppSite\wwwroot\css\site.css file:
+Where the style right-aligned-constant is the following simple CSS added to the CustomerAppSite\wwwroot\css\site.css file:
 
 ```css
 .right-aligned-constant {
