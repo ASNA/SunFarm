@@ -86,6 +86,12 @@ Simplifies the markup and produces a nicer effect:
 ![No Reverse-Image](/images/no-reverse-image.png)
 
 <br>
+
+# Compare to original:
+
+![Original Page One](/images/enhanced-page-one.png)
+
+<br>
 <br>
 <br>
 [Continue ...]({{ site.rooturl }}/more-natural-font/)

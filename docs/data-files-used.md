@@ -16,7 +16,7 @@ As you can verify by looking at the [MyJob.cs](https://github.com/ASNA/SunFarm/b
 ~~~
 
 ## Assumption
-This Guide assumes that your have a Microsoft SQL Installation and have migrated (or obtained a copy of the migrated data) from the Legacy Sample Customer Application
+This Guide assumes that your have a Microsoft SQL Installation and have migrated (or obtained a copy of the migrated data) from the Legacy Sample Customer Application.
 
 <br>
 <br>
