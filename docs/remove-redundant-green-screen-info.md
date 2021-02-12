@@ -83,13 +83,18 @@ Simplifies the markup and produces a nicer effect:
 </div>
 ~~~
 
+## Removing Reverse Image effect:
+<br>
+
 ![No Reverse-Image](/images/no-reverse-image.png)
 
 <br>
 
-# Compare to original:
+## Compare to original:
 
-![Original Page One](/images/enhanced-page-one.png)
+<br>
+
+![Original Page One](/images/out-of-box-page-one.png)
 
 <br>
 <br>
