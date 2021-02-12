@@ -21,4 +21,4 @@ Thanks for reading!
 <br>
 <br>
 
-[Continue ...]({{server.rooturl}}/overview/)
+[Continue ...]({{site.rooturl}}/overview/)
