@@ -275,6 +275,21 @@ Look at the result, and it should look now, like this:
 
 
 <br>
+
+Before we continue, let’s get rid of the vertical gap, between Position to name: (*Row=2*) and the headings of the Subfile (*Row=7*).
+
+<br>
+<br>
+
+We accomplish this by changing *Row=“7”* to *Row=“3”* and *Row=“8”* to *Row=“4”*
+
+Next, we will align the column headings on the Subfile...
+
+But first, read the Topic:
+
+[Avoid constants stretching]({{ site.rooturl }}/avoid-constant-stretching/)
+
+<br>
 <br>
 <br>
 [Continue ...]({{ site.rooturl }}/more-natural-font/)
