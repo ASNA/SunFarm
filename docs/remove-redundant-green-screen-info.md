@@ -287,7 +287,7 @@ Next, we will align the column headings on the Subfile...
 
 But first, read the Topic: [Avoiding constants stretching]({{ site.rooturl }}/avoid-constant-stretching/)
 
-# Third: Align Constants to their proper place
+# Third Step: Align Constants to their proper place
 
 For alignment, we have three challenges:
 
@@ -380,7 +380,7 @@ We can override the *Column Span* calculation by adding the *tagHelper* attribut
 <DdsCharField Col="12+14+1" ColSpan="30" For="SFLC.SFL1[rrn].SFNAME1" VirtualRowCol="@row,14" Color="Green : !61 , DarkBlue : 61" />
 ```
 	 
-This way we can reduce Grid column positions and complete adjusting our elements on the Page to achieve the look as depicted by the following image[^3]:
+This way we can reduce Grid column positions and complete adjusting our elements on the Page to achieve the look as depicted by the following image [^3]:
 
 ![Grid Column Span](/images/narrower-name-column.png)
 
@@ -390,5 +390,7 @@ This way we can reduce Grid column positions and complete adjusting our elements
 [Continue ...]({{ site.rooturl }}/more-natural-font/)
 
 [^1]: Commit “Subfile selection options as pull-down options”
-[~2]: Commit "Replacing Page Title".
-[^3]: Commit: “Fourteen records subfile”.
+
+[^2]: Commit "Replacing Page Title".
+
+[^3]: Commit “Fourteen records subfile”.
