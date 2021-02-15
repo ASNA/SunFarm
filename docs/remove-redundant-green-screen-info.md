@@ -285,9 +285,63 @@ We accomplish this by changing *Row=“7”* to *Row=“3”* and *Row=“8”* 
 
 Next, we will align the column headings on the Subfile...
 
-But first, read the Topic:
+But first, read the Topic: [Avoiding constants stretching]({{ site.rooturl }}/avoid-constant-stretching/)
 
-[Avoid constants stretching]({{ site.rooturl }}/avoid-constant-stretching/)
+Third: Align Constants to their proper place
+
+For alignment, we have three challenges:
+
+1. Show the Page Title with modern style.
+2. Subfile Column headings should align to their corresponding fields.
+3. Search input field usability should be improved.
+
+
+### Show the Page Title with Modern style
+The Legacy Application used Centering as a way to make the constant stand out as a Page Title. We could do the same, but we have more resources when working on Browser pages, such as *Larger* font with text effects such as **bold**.
+
+Let's forget that the Title is a DdsConstant with a specific column position, and think of it as a Text block within an HTML division of a particular style.
+
+Add the following CSS style to file:
+
+~~~
+CustomerAppSite\wwwroot\css\site.css
+~~~
+
+```css
+#page-title {
+    font-size: large;
+    padding-left: 4.0em;
+    padding-top: 1em;
+    font-weight: bold;
+}
+```
+
+The definition of the style is self-explanatory: large font size, with a certain padding to the left and top, using the **bold** text effect. We use that style only once on the page, in the item with id = "page-title".
+
+In the markup, we remove the old DdsConstant specification with the same purpose (formerly on row one):
+
+Remove:
+
+```html
+<div Row="1">
+  <DdsConstant Col="31+1" Text="M5 Customer Inquiry" Color="DarkBlue" />
+</div>
+
+```
+
+Add in its place [^2]:
+
+```html
+<div id="page-title">Customer Inquiry</div>
+```
+
+Once you have CSS styles defined, you can take advantage of Modern Browsers *Developer Tools* to experiment with different styles, even with **text-align: center** if you width to preserve the original developer design.
+
+<sub>Note: If you wish to experiment with Browser's **Developer Tools** you can find excellent learning resources online.</sub>
+
+## A Taste of Browser's Developer Tools:
+<br>
+![Browser's Developer Tools](/images/developer-tools-element-style.png)
 
 <br>
 <br>
@@ -295,3 +349,4 @@ But first, read the Topic:
 [Continue ...]({{ site.rooturl }}/more-natural-font/)
 
 [^1]: Commit “Subfile selection options as pull-down options”
+[~2]: Commit "Replacing Page Title".
