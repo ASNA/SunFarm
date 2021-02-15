@@ -287,13 +287,13 @@ Next, we will align the column headings on the Subfile...
 
 But first, read the Topic: [Avoiding constants stretching]({{ site.rooturl }}/avoid-constant-stretching/)
 
-Third: Align Constants to their proper place
+# Third: Align Constants to their proper place
 
 For alignment, we have three challenges:
 
 1. Show the Page Title with modern style.
 2. Subfile Column headings should align to their corresponding fields.
-3. Search input field usability should be improved.
+3. Improve usability for Search input field artifact.
 
 
 ### Show the Page Title with Modern style
@@ -339,9 +339,14 @@ Once you have CSS styles defined, you can take advantage of Modern Browsers *Dev
 
 <sub>Note: If you wish to experiment with Browser's **Developer Tools** you can find excellent learning resources online.</sub>
 
-## A Taste of Browser's Developer Tools:
+### A Taste of Browser's Developer Tools:
 <br>
 ![Browser's Developer Tools](/images/developer-tools-element-style.png)
+
+<br>
+<br>
+
+## Subfile Column headings should align to their corresponding fields.
 
 <br>
 <br>
