@@ -380,14 +380,37 @@ We can override the *Column Span* calculation by adding the *tagHelper* attribut
 <DdsCharField Col="12+14+1" ColSpan="30" For="SFLC.SFL1[rrn].SFNAME1" VirtualRowCol="@row,14" Color="Green : !61 , DarkBlue : 61" />
 ```
 	 
-This way we can reduce Grid column positions and complete adjusting our elements on the Page to achieve the look as depicted by the following image [^3]:
+This way we can reduce the Grid column position on the last subfile field. Using the method that we have applied before, position the constants that make the subfile column headings as well as the position for the "Position to name:" constant, according to the image below. (You can also compare against the changes in the public GitHub Repository [^3])
 
-![Grid Column Span](/images/narrower-name-column.png)
+![Narrower Customer Name Column](/images/narrower-name-column.png)
+
+## Position to name input field
+
+You may have noticed in the image above, that we grew the width of the input box (DdsCharField TagHelper) for field, beyond the field's length:
+
+```html
+<DdsCharField Col="63+1" For="SFLC.SETNAME" ColSpan="20" VirtualRowCol="2,70" />
+```
+We chose to give it a rather wide *twenty* **ColSpan** value. Compare it to the length definition (in the Model):
+
+```cs
+[Char(10, OutputData=false)]
+public string SETNAME { get; set; }
+```
+We made the text box *twice* as wide (compared to the length). The reason we changed it that way, was because we claim it is *aesthetically* more pleasing. For no other reason.
+
+>The width of input fields in  HTML is independent of the *text* length allowed.
+
+This is **very** important and valuable feature to improve the *Look* of Pages. If the width of an input is too small (compared to the *maximum-length* allowed) the text may scroll horizontally within the box. If the width of the text box if wider than the *maximum-length* allowed, typing text will stop at the limit, but we can leave a visual gap to the right.
+
+Our visual improvements should be very noticeable so far. There is, however plenty of room at the bottom of the Page to show more records in the subfile.
+
+The Legacy DDS had the Subfile Page set at 14 records. Modern computer devices that run Browsers today, are capable of high definition displays, with Fonts that show clearly at rather small sizes, which leaves plenty of room on the page for many more subfile records than the equivalent green-screen application.
 
 <br>
 <br>
 <br>
-[Continue ...]({{ site.rooturl }}/more-natural-font/)
+[Continue ...]({{ site.rooturl }}/enhancements-affecting-logic/)
 
 [^1]: Commit “Subfile selection options as pull-down options”
 
