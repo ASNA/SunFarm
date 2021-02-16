@@ -14,13 +14,17 @@ Since we have been able to compress the screen while aligning elements and elimi
 
 The Business Logic is writing fourteen records at a time. But now we can fit much more, at least *twenty* (a nice whole number).
 
-Let’s assume we want to increase the Page size, from fourteen to twenty records per-page.
+Let’s assume we want to increase the Page size, from *fourteen* to *twenty* records per-page.
 
 ## Two changes are needed:
-1. Write twenty records to the subfile in the Business Rules.
-2. Expand the record count to show, in the Razor Page’s Subfile Controller.
+1. In the Business Logic, increase the number of records written to the subfile, from *fourteen* to *twenty*.
+2. In the Website Layout (the Razor Page's markup), where the Subfile Controller is defined, increase the Page Size to match the *twenty* records.
 
-We will use blue color for the code that needs to be added. Red strikeout for code that needs to be removed.
+
+## In the Business Logic
+There are two places in **CUSTINQ** where the hard-coded value *14* (representing the records to write to the subfile) is used.
+
+We define a constant symbol, and use it in two places so we can adjust that number to twenty *(and make it easy to adjust it in a single place to any other value we may want)*.
 
 To change the Business Logic, we need to change the following class (program):
 
@@ -52,9 +56,9 @@ public partial class Custinq : ASNA.QSys.HostServices.Program
 .
 .
 .
-//*********************************************************************
+//
 //  Read Backwards for a PageDown
-//*********************************************************************
+//
         void ReadBack() // Line 558
         {
             _IN[76] = '0';
@@ -77,12 +81,6 @@ public partial class Custinq : ASNA.QSys.HostServices.Program
         }
 ```
 >Note: the value *14* was replaced by *SFLC_SubfilePage* symbol.
-
-
-## In the Business Logic
-There are two places in **CUSTINQ** where the hard-coded value *14* (representing the records to write to the subfile) is used.
-
-We define a constant symbol, and use it in two places so we can adjust that number to twenty *(and make it easy to adjust it in a single place to any other value we may want)*.
 
 ## In the Website Layout
 To expand the number of records that need to be displayed in the Subfile controller, we need to affect two files:
