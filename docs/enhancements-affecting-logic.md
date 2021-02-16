@@ -91,4 +91,49 @@ To expand the number of records that need to be displayed in the Subfile control
 2. **Markup File**: ...\CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml
 
 
+In the Model file, we need to update the Subfile Controller’s Size attribute:
+
+```cs
+[
+    SubfileControl(ClearRecords : "90",
+        FunctionKeys = "PageUp 51:!76;PageDown 50:!77",
+        DisplayFields = "!90",
+        DisplayRecords = "!90",
+        Size = 20, // Was 14 originally.
+        IsExpandable = false,
+        EraseFormats = "CUSTREC SALESREC"
+    )
+]
+public class SFLC_Model : SubfileControlModel
+```
+
+In the Markup file, we just need to change the value of the variable that controls the page size:
+
+```html
+@{
+      int SFLC_SubfilePage = 20; // Was 14 originally.
+      int SFLC_SubfileRowsPerRecord = 1;
+  }
+  <DdsSubfileControl For="SFLC" StretchConstantText=false KeyNames
+```
+* Build the Business Logic Project (*CustomerAppLogic*) …
+* Build the Website (*CustomerAppSite*) …
+
+If all goes well, twenty records per page should show in the Subfile [^1]:
+
+![Twenty records per Page](/images/enhanced-page-one.png)
+
+<br>
+<br>
+<br>
+[Continue ...]({{ site.rooturl }}/customer-maintenance-enhancement/)
+
+[^1]: Commit “Customer Inquiry Twenty records per page”
+
+
+
+
+
+
+
 
