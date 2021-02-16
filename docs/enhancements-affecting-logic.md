@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Remove Redundant Green-screen Info
+title: Enhancements affecting Business Logic
 permalink: /enhancements-affecting-logic/
 ---
 
