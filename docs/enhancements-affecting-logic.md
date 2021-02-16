@@ -47,7 +47,7 @@ public partial class Custinq : ASNA.QSys.HostServices.Program
         sflrrn = 0;
         _IN[77] = CUSTOMERL2.ReadNext(true) ? '0' : '1';
         //----------------------------------------------------------
-        while (!(bool)_IN[77] && (sflrrn < 14 SFLC_SubfilePage))
+        while (!(bool)_IN[77] && (sflrrn < SFLC_SubfilePage))
         {
 .
 .
@@ -65,7 +65,7 @@ public partial class Custinq : ASNA.QSys.HostServices.Program
             CMCUSTNO = (decimal)SFCUSTNO;
             CUSTOMERL2.Chain(true, CMNAME, CMCUSTNO);
             _IN[76] = CUSTOMERL2.ReadPrevious(true) ? '0' : '1';
-            while (!(bool)_IN[76] && (X < 14 SFLC_SubfilePage))
+            while (!(bool)_IN[76] && (X < SFLC_SubfilePage))
             {
                 /* EOF or full s/f. */
                 X += 1;
@@ -76,6 +76,8 @@ public partial class Custinq : ASNA.QSys.HostServices.Program
                 CUSTOMERL2.Seek(SeekMode.SetLL, new string(char.MinValue, 40));
         }
 ```
+>Note: the value *14* was replaced by *SFLC_SubfilePage* symbol.
+
 
 ## In the Business Logic
 There are two places in **CUSTINQ** where the hard-coded value *14* (representing the records to write to the subfile) is used.
