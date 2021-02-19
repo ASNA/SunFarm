@@ -11,12 +11,13 @@ You may **Visualize** this *Anatomy* with the help of the Browser Developer tool
 
 ![Developer Tool's Row View](/images/developer-tools-element-view.png)
 
-Furthermore, using Browser Developer tools to inspect **Display Page Fields** provides Visualization as to how *Starting* and *Ending* **Grid** positions are translated to **Standard CSS STyles**.
+Furthermore, using Browser Developer tools to inspect **Display Page Fields** provides Visualization as to how *Starting* and *Ending* **Grid** positions are translated to **Standard CSS Styles**.
 
 Observe in the following image, how the field **CUSTREC.SFNAME** is defined by the Browser in *Standard* HTML:
 
 ![Developer Tool's Row View](/images/developer-tools-element-style.png)
 
+<br>
 ## The Vertical Positions may Flow freely
 
 Migrated **DDS** Displayfiles - *now in the form of ASNA Display Pages* - preserve the *Legacy* (row, column) specification in the form of **Row** "div" attribute and **Col** or **ColSpan** attributes on fields inside the "div".
@@ -25,7 +26,7 @@ When inspecting directly the rendered **HTML** using Browser's Developer Tools, 
 
 1. *Annotate* in the rendered HTML the intended row in the markup.
 
-2. *Open* Vertical space for when there are row gaps *(skipping the continuously ascending numbering in the markup)*. After the Page loads completely, JavaScript code will run to insert rows with the CSS style **dds-grid-empty-row** which basically defines vertical spacing to fill the gap.
+2. *Open up* **Vertical Space** for when there are row gaps *(skipping the continuously ascending numbering in the markup)*. After the Page loads completely, JavaScript code will run to insert rows with the CSS style **dds-grid-empty-row** which basically defines vertical spacing to fill the gap.
 
 Once you have understood the basic technique, you can then realize that:
 
@@ -64,3 +65,25 @@ We need to complete the position and dimensions of the image by adding the follo
 
 ![Customer Icon Shows](/images/page-two-04_a.png)
 
+If we prefer not *to push* the rest of rows down, we can change the position style from: “relative” to: “absolute”[^1].
+
+```css
+#customer-icon {
+    position: absolute;
+    width: 109px;
+    border-color: gray;
+    border-width: thin;
+    border-style: solid;
+    background-color: white;
+}
+```
+
+![Customer Icon Intended Placement](/images/page-two-04_b.png)
+
+<br>
+<br>
+<br>
+[Continue ...]({{ site.rooturl }}/merging-two-screens/)
+
+
+[^1]: Commit: “Adding an Image to the Page”
