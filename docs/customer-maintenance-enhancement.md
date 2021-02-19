@@ -105,7 +105,7 @@ What used to be Rows **13, 14, 15, 16, 17** and **18** is now Rows *8*, *9* and 
 ![Fields around Photo Area](/images/page-two-03.png/)
 
 
-<sub>Note that Y/N fields are old fashion. We will replace later for a checkbox.</sub>
+**Note:** The use of **Y/N** fields as User-Interface Artifacts is **discouraged** in Modern Applications. It may be confusing to users never exposed to *Legacy* Applications. There are better paradigms we can apply, such as *Checkboxes*. We will replace **Y/N** fields later in this Guide.
 
 
 
