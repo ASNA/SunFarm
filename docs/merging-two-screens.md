@@ -129,16 +129,44 @@ namespace SunFarm.Customers
 ```
 As we have been discussing above, declaring CSMASTERL1 is not enough, we need to:
 
-1. Define fields as defined by the record schema of database file added.
+1. Declare fields as defined by the record schema of database file added.
 
 2. Initialize the new DatabaseFile @ _instanceInit() - where we connect with methods to populate fields in-out (*of dataset*).
 
 3. Implement populate field's in-out (*of dataset*) methods in the IO partial class.
 
-4. Set its Job’s overrider class.
+4. Set new file Job’s overrider class.
 
 5. Open and Close the new database file.
 
+## Declare fields (as defined by the record schema)  
+The easiest, and less error-prone method to declare fields as defined in the record schema, is to use a Tool. It can be done manually, but it may be too cumbersome and error-prone.
+
+Notice how each Program listed under the CustomerAppLogic in the Visual Studio Solution shows an icon that can be used to expand the Program node in the tree, to show lated source files (in this case partial class sources).
+
+For example, expanding node CUSTINQ.cs on the Project tree, will show the following sources:
+
+~~~
+CUSTINQ.cs
+   CUSTINQ.Io.cs      
+   CUSTINQ.Io.xfu
+~~~
+
+The **IO** (*Input* / *Output*) sources are the implementation of the *partial classes* that complete the Program with the RPG database facilities mentioned above.
+
+These files are *generated* files and should be re-generated using [Serengeti Tools](https://)
+
+## Initialize the new Database File  
+><sub>TO-DO: Describe step.</sub>
+
+## Implement populate field's in-out (*of dataset*) methods  
+><sub>TO-DO: Describe step.</sub>
+
+## Set new file Job’s overrider class  
+><sub>TO-DO: Describe step.</sub>
+
+## Open and Close the new database file.  
+><sub>TO-DO: Describe step.</sub>
 
 <br>
 <br>
