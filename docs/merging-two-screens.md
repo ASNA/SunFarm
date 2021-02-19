@@ -97,7 +97,7 @@ There is reference to the **CSMASTER** file - thru its Logical file **CSMASTERL1
 
 We can copy code from **CUSTCALC.cs** to **CUSTINQ.cs**
 
-## Declaring DatabaseFiles on C# does not make fields available to Program
+## Declaring DatabaseFiles in C# does not make fields available to Program
 
 >&#128161; We don't get the benefits of RPG -- *we are not in Kansas anymore* ;) -- 
 
@@ -105,7 +105,8 @@ RPG developers were accustomed to database language facilities that do not exist
 
 In particular, declaring files in RPG would make available *global* fields that provided access to active records defined in these files (Database or Workstation).
 
-ASNA Monarch Runtime uses [Partial classes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) to *complete* the equivalent database facilities built-into RPG Language.   
+ASNA Monarch Runtime uses [Partial classes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) to *complete* the equivalent database facilities built-into RPG Language.
+>Note: When adding new database file references to a C# Program, the implementation of the *partial* IO classes needs to be re-generated. We will show later in this chapter how that is done.   
 
 ### Declaring Sales and Returns Database file
 
