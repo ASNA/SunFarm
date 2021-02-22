@@ -182,7 +182,7 @@ void _instanceInit()
 
 <br>
 ## Set new file Job’s overrider class  
-Every **DatabaseFile** field instance as a property to set the *Overrider* Job instance. This property is used by the `QSys` runtime support to implement [Overriding](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rzasc/redfio.htm). You don't need to be concerned if your don't understand right now what *Overriding* means, just know that this reference is required.
+Every **DatabaseFile** field instance has a property to set the *Overrider* Job instance. This property is used by the `QSys` runtime support to implement [Overriding](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rzasc/redfio.htm). You don't need to be concerned if your don't understand right now what *Overriding* means, just know that this reference is required.
 
 **Source file:** `CustomerAppLogic/CUSTINQ.cs`
 ~~~
@@ -265,7 +265,7 @@ These files are *generated* files and should be re-generated using [Serengeti To
 
 For a detailed explanation of the Serengeti **IO**, please [Read ASNA Serengeti IO Runtime Support](https://asna.githubio.Serengeti) 
 
-All we need is access to the **Serengeti Tools**, which can be done by executing the *Context Menu* options provided by Serengeti, available via right-mouse click when positioned in the Visual Studio File Explorer, on top of a program, such as `CUSTCALC`.
+All we need is access to the **Serengeti Tools**, which can be done by executing the *Context Menu* options provided by Serengeti, available via *right-mouse* click when positioned in the Visual Studio File Explorer, on top of a program, such as `CUSTCALC`.
 
 ![Serengeti Context Menu Options](/images/serengeti-context-menus.jpg)
 
@@ -274,7 +274,7 @@ Serengeti Context Menu Tools:
 2. Run Custom Tool
 
 ## Refresh XFU
-If you look at the contents of `CUSTINQ.Io.xfu` you will find a stand-alone [XML](https://en.wikipedia.org/wiki/XML) document which contains external description of all database files used by the program `CUSTINQ.cs`. Since we have added one more Database file to `CUSTINQ` we need to *regenerate* of *refresh* the contents of the XML file.
+If you look at the contents of `CUSTINQ.Io.xfu` you will find a stand-alone [XML](https://en.wikipedia.org/wiki/XML) document which contains external description of all database files used by the program `CUSTINQ.cs`. Since we have added one more Database file to `CUSTINQ` we need to *regenerate* or *refresh* the contents of the XML file.
 
 Run **Refresh XFU**
 
@@ -284,9 +284,10 @@ Once we have the `CUSTINQ.Io.xfu` up-to-date (after running **Refresh XFU**), we
 What **Run Custom Tool** does is *re-generate*:
 
 a. Field declarations of files according to the latest definition in `CUSTINQ.Io.xfu` 
+
 b. Implementation of methods *PopulateBuffer* and *PopulateFields* in source file `CUSTINQ.Io.cs` for every single file referred to by `CUSTINQ.cs` 
 
->Once we run the Serengeti Tools, our *CustomerAppLogic* Project should compile. We need to move to to the *Interactive* section of the program, that is work on the Website Pages.
+>Once we run the Serengeti Tools, our *CustomerAppLogic* Project should compile. We need to move to to the *Interactive* section of the program, that is, work on the Website Pages.
 
 # Displaying new data on Customer Maintenance Page
 
