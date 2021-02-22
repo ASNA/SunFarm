@@ -238,16 +238,18 @@ override public void Dispose(bool disposing)
 }
 ~~~
 
-To make available fields to the Program as specified by the record's databse schema, we need to do the following:
+To make available fields to the Program as specified by the record's database schema, we need to do the following:
 
-1. Declare fields as defined by the record schema of database file added.
+1. Declare fields (as defined by the record schema).
 2. Implement populate field's in-out (*of dataset*) methods in the IO partial class.
 
 
 ## Declare fields (as defined by the record schema)  
-The easiest, and less error-prone method to declare fields as defined in the record schema, is to use a Tool. It can be done manually, but it may be too cumbersome and error-prone.
+Once we have copied the declaration of database file `CSMASTERL1` from CUSTCALC.cs to CUSTINQ.cs, and updated its Instantiation and Open/Close code, we proceed to complete its setup by declaring fields (as defined by the record schema).
 
-Notice how each Program listed under the CustomerAppLogic in the Visual Studio Solution shows an icon that can be used to expand the Program node in the tree, to show lated source files (in this case partial class sources).
+The easiest, and less error-prone method to declare fields (as defined in the record schema), is to use a Tool. It can be done manually, but it may be too cumbersome and error-prone.
+
+Notice how each Program listed under the CustomerAppLogic in the Visual Studio Solution shows an icon that can be used to expand the Program node in the tree to show related source files (in this case partial class sources).
 
 For example, expanding node CUSTINQ.cs on the Project tree, will show the following sources:
 
@@ -259,12 +261,36 @@ CUSTINQ.cs
 
 The **IO** (*Input* / *Output*) sources are the implementation of the *partial classes* that complete the Program with the RPG database facilities mentioned above.
 
-These files are *generated* files and should be re-generated using [Serengeti Tools](https://)
+These files are *generated* files and should be re-generated using [Serengeti Tools](https://asna.githubio.SerengetiTools)
 
+For a detailed explanation of the Serengeti **IO**, please [Read ASNA Serengeti IO Runtime Support](https://asna.githubio.Serengeti) 
 
-## Implement populate field's in-out (*of dataset*) methods  
-><sub>TO-DO: Describe step.</sub>
+All we need is access to the **Serengeti Tools**, which can be done by executing the *Context Menu* options provided by Serengeti, available via right-mouse click when positioned in the Visual Studio File Explorer, on top of a program, such as `CUSTCALC`.
 
+![Serengeti Context Menu Options](/images/serengeti-context-menus.jpg)
+
+Serengeti Context Menu Tools:
+1. Refresh XFU
+2. Run Custom Tool
+
+## Refresh XFU
+If you look at the contents of `CUSTINQ.Io.xfu` you will find a stand-alone [XML](https://en.wikipedia.org/wiki/XML) document which contains external description of all database files used by the program `CUSTINQ.cs`. Since we have added one more Database file to `CUSTINQ` we need to *regenerate* of *refresh* the contents of the XML file.
+
+Run **Refresh XFU**
+
+## Run Custom Tool
+Once we have the `CUSTINQ.Io.xfu` up-to-date (after running **Refresh XFU**), we need to execute the second Serengeti Tool: **Run Custom Tool**
+
+What **Run Custom Tool** does is *re-generate*:
+
+a. Field declarations of files according to the latest definition in `CUSTINQ.Io.xfu` 
+b. Implementation of methods *PopulateBuffer* and *PopulateFields* in source file `CUSTINQ.Io.cs` for every single file referred to by `CUSTINQ.cs` 
+
+>Once we run the Serengeti Tools, our *CustomerAppLogic* Project should compile. We need to move to to the *Interactive* section of the program, that is work on the Website Pages.
+
+# Displaying new data on Customer Maintenance Page
+
+>>*Work in in progress*
 
 <br>
 <br>
