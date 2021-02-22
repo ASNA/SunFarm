@@ -291,7 +291,180 @@ b. Implementation of methods *PopulateBuffer* and *PopulateFields* in source fil
 
 # Displaying new data on Customer Maintenance Page
 
->>*Work in in progress*
+We added the ability to Program `CUSTINQ` to deal with *Sales and Returns* information for a customer (previously only in `CUSTCALC`).
+
+Let’s now focus in the Front-End. 
+
+Open the `CustomerAppSite/Areas/CustomerAppViews/Pages/CUSTDSPF.cshtml` markup file and locate `DdsRecord For=“CUSTREC”` tagHelper.
+
+So far, we have used *Rows* 2 thru 10. We have room in *Rows* 12 thru 20.
+
+The following image shows what we are about to add to the Page:
+
+![New Data for Customer Maintenance Page](/images/new-data-page-two_01.png/)
+
+We have several new constants, and around thirty new fields. Let’s concentrate on the new fields we want to display. Fields are referred to by the tag-helpers using the attribute For=
+
+First let’s start by displaying Sales information. Rows 12 thru 15:
+
+```html
+<div Row="12">
+    <DdsConstant Col="8" Text="Last registered sales" />
+</div>
+<div Row="13">
+    <DdsConstant Col="12" Text="Jan" />
+    <DdsDecField Col="15" For="CUSTREC.CSSALES01" EditCode=One />
+    <DdsConstant Col="30" Text="Feb" />
+    <DdsDecField Col="35" For="CUSTREC.CSSALES02" EditCode=One />
+    <DdsConstant Col="48" Text="Mar" />
+    <DdsDecField Col="51" For="CUSTREC.CSSALES03" EditCode=One />
+    <DdsConstant Col="66" Text="Apr" />
+    <DdsDecField Col="69" For="CUSTREC.CSSALES04" EditCode=One />
+</div>
+<div Row="14">
+    <DdsConstant Col="12" Text="May" />
+    <DdsDecField Col="15" For="CUSTREC.CSSALES05" EditCode=One />
+    <DdsConstant Col="30" Text="Jun" />
+    <DdsDecField Col="35" For="CUSTREC.CSSALES06" EditCode=One />
+    <DdsConstant Col="48" Text="Jul" />
+    <DdsDecField Col="51" For="CUSTREC.CSSALES07" EditCode=One />
+    <DdsConstant Col="66" Text="Aug" />
+    <DdsDecField Col="69" For="CUSTREC.CSSALES08" EditCode=One />
+</div>
+<div Row="15">
+    <DdsConstant Col="12" Text="Sep" />
+    <DdsDecField Col="15" For="CUSTREC.CSSALES09" EditCode=One />
+    <DdsConstant Col="30" Text="Oct" />
+    <DdsDecField Col="35" For="CUSTREC.CSSALES10" EditCode=One />
+    <DdsConstant Col="48" Text="Nov" />
+    <DdsDecField Col="51" For="CUSTREC.CSSALES11" EditCode=One />
+    <DdsConstant Col="66" Text="Dec" />
+    <DdsDecField Col="69" For="CUSTREC.CSSALES12" EditCode=One />
+</div>
+```
+
+If we ignore for a moment the display attributes and concentrate on the new data-fields we have twelve new fields:
+
+```html
+    For="CUSTREC.CSSALES01"
+    For="CUSTREC.CSSALES02"
+    For="CUSTREC.CSSALES03"
+    For="CUSTREC.CSSALES04"
+    For="CUSTREC.CSSALES05"
+    For="CUSTREC.CSSALES06"
+    For="CUSTREC.CSSALES07"
+    For="CUSTREC.CSSALES08"
+    For="CUSTREC.CSSALES09"
+    For="CUSTREC.CSSALES10"
+    For="CUSTREC.CSSALES11"
+    For="CUSTREC.CSSALES12"
+```
+You may have noticed that Visual Studio Razor Page smart editor is highlighting names with the reference to known CUSTREC Model property as `undefined`.
+
+Let's proceed to define the *twelve* sales fields.
+
+All fields used in the **Markup** should be defined in the *Model* class for the record format in question.
+
+In this particular case, we need to add fields to `CUSTREC` record in the Model.
+
+Open the Model C# source file:
+
+~~~
+CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml.cs
+~~~
+
+Locate the `CUSTREC_Model` class.
+
+>&#128161; All *Display Record Format*'s Model class names end with `_Model`
+
+```cs
+[
+    Record(FunctionKeys = "F4 04;F6 06:!30;F11 11:!30;F12 12",
+        EraseFormats = "SFLC KEYS SALESREC"
+    )
+]
+public class CUSTREC_Model : RecordModel
+{
+        .
+        .
+        .
+    [Char(10)]
+    public string SCPGM { get; private set; }
+
+    [Dec(6, 0)]
+    public decimal SFCUSTNO { get; private set; } // CUSTOMER NUMBER
+
+    [Char(40)]
+    public string SFOLDNAME { get; private set; }
+        .
+        .
+        .
+    [Char(1)]
+    [Values(typeof(string), "Y", "N")]
+    public string SFYN01 { get; set; }
+}
+```
+
+Each field is declared as a property of the class with particular access. 
+
+[Bracket C# notation](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/) is used to *decorate* additional *RPG-like* attributes to describe in detail the *type* and *valid* values expected by *DataSet* use to communicate with the *Business Rules Logic* (the Programs).
+
+The last field defined in class in the class `CUSTREC_Model` is `SFYN01`.
+
+The following field definitions are added, right after `SFYN01`.
+
+```cs
+[Dec(11, 2)]
+public decimal CSSALES01 { get; private set; }
+
+[Dec(11, 2)]
+public decimal CSSALES02 { get; private set; }
+
+[Dec(11, 2)]
+public decimal CSSALES03 { get; private set; }
+
+[Dec(11, 2)]
+public decimal CSSALES04 { get; private set; }
+
+[Dec(11, 2)]
+public decimal CSSALES05 { get; private set; }
+
+[Dec(11, 2)]
+public decimal CSSALES06 { get; private set; }
+
+[Dec(11, 2)]
+public decimal CSSALES07 { get; private set; }
+
+[Dec(11, 2)]
+public decimal CSSALES08 { get; private set; }
+
+[Dec(11, 2)]
+public decimal CSSALES09 { get; private set; }
+
+[Dec(11, 2)]
+public decimal CSSALES10 { get; private set; }
+
+[Dec(11, 2)]
+public decimal CSSALES11 { get; private set; }
+
+[Dec(11, 2)]
+public decimal CSSALES12 { get; private set; }
+```
+>Note: We used Dec(11,2) because we know the schema definition for the *Sales and Returns* physical file: `CSMASTER`. 
+
+## Refreshing XFU after adding fields to Markup 
+
+We have addedd fields to the class `CUSTREC_Model` because we want use them in the *Markup* to be displayed when the Page renders by the Browser.
+
+The value of fields needs to come from Program `CUSTINQ` before the Page is rendered.
+
+The new value (*for input-capable fields*) entered by end-users, when *valid* needs to be transferred to the Program `CUSTINQ` for processing.
+
+A middle-tier data layer called the *DataSet* is used to move values from `CUSTINQ` Program fields to the `CUSTREC_Model` fields, and back from `CUSTREC_Model` fields to `CUSTINQ` Program fields.
+
+The following graph shows a simplified representation of the *DataSet* communication buffer:
+
+![Data Set model](/images/data-set-model.png/)
 
 <br>
 <br>
