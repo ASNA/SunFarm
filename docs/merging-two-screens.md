@@ -940,15 +940,35 @@ The field `For=“CUSTREC.TOTAL_SALES"` in the Markup already has a class=“lar
 </div>
 ```
 
-Re-run the Website Application, the heading is now complete:
+Re-run the Website Application, the heading is now complete[^4]:
 
 ![Totals and Trend Aligned](/images/page-two-08_b.png/)
 
+We can repeat the steps to add a proper header to the “Last registered returns table”. We will show only the new markup, you can use the GitHub project history to look at the rest of the code.
+
+The Markup for Row 17 is:
+
+```html
+<div Row="17">
+    <DdsConstant Col="8" class="large-bold-text" Text="Last registered returns" />
+    <DdsCharField Col="27" class="large-bold-text" For="CUSTREC.YEAR_RETURNS" />
+    <DdsDecField Col="63" class="large-bold-text left-aligned-field" 
+      For="CUSTREC.TOTAL_RETURNS" EditCode=One Color="red" />
+    <DdsCharField Col="75" class="large-bold-text" For="CUSTREC.PERCENT_CHANGE_RETURNS" Color="red" />
+</div>
+```
+
+The two headings should now show like the following image[^5]:
+
+![Proper heading CSS Style](/images/page-two-09.png/)
+
 <br>
 <br>
 <br>
-[Continue ...]({{ site.rooturl }}/merging-two-screens/)
+[Continue ...]({{ site.rooturl }}/adding-chart-to-page/)
 
 [^1]: Commit: “Declaration of Sales Returns file in CUSTINQ.cs”
 [^2]: Commit: “First Sales information added to Page”
 [^3]: Commit: “Adding Returns to the CUSTREC_Model DataSet”
+[^4]: Commit: “Last Registered Sales Heading”
+[^5]: Commit: “Last registered returns heading complete”
