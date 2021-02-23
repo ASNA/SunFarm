@@ -922,6 +922,28 @@ Compile `CustomerAppLogic` and Run the Website Application. Navigate to any Cust
 
 ![Totals and Trend](/images/page-two-08_a.png/)
 
+The `Sales heading` is now more useful, but the `Total Sales` for the year are not aligned how we would want it. 
+
+Recall that `CUSTREC.TOTAL_SALES` is a Decimal Field. Decimal fields are aligned to the *right* by default.
+
+Let’s change its *CSS style* to correct the problem. We have solved this problem before. We already have a *CSS Style* called left-aligned-field.
+
+The field `For=“CUSTREC.TOTAL_SALES"` in the Markup already has a class=“large-bold-text”. Standard *CSS* is by definition a *cascading* technology, meaning that several styles may be applied. The syntax is simple, we can just add one *more* style separated with a space:
+
+```html
+<div Row="12">
+    <DdsConstant Col="8" class="large-bold-text" Text="Last registered sales" />
+    <DdsCharField Col="27" class="large-bold-text" For="CUSTREC.YEAR_SALES" />
+    <DdsDecField Col="63" class="large-bold-text left-aligned-field" 
+      For="CUSTREC.TOTAL_SALES" EditCode=One />
+    <DdsCharField Col="75" class="large-bold-text" For="CUSTREC.PERCENT_CHANGE_SALES" Color="green" />
+</div>
+```
+
+Re-run the Website Application, the heading is now complete:
+
+![Totals and Trend Aligned](/images/page-two-08_b.png/)
+
 <br>
 <br>
 <br>
