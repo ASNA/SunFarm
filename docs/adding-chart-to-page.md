@@ -183,6 +183,76 @@ Such element shows like the image below[^3].
 
 ![Chart Placeholder element](/images/page-two-chart-03.png/)
 
+We will be using [AMCHARTS Version 4](https://www.amcharts.com/) - commercial third party - JavaScript Library.
+
+>Note: The *free-trial* usage of [AMCHARTS Version 4](https://www.amcharts.com/) shows a [watermark](https://en.wikipedia.org/wiki/Watermark) icon. If you like this library, and plan to use it in production, you can eliminate the [watermark](https://en.wikipedia.org/wiki/Watermark) icon buying a license.
+
+We will not delve in all the details on how to use [AMCHARTS Library](https://www.amcharts.com/), this is outside the *Scope* for this **Guide**, but we will provide sufficient explanation to demonstrate how *third-party* JavaScript Libraries may be used on ASNA Nomad&reg; Migrated Applications.
+
+The Chart we want is an `XY line chart` that will plot *one value* for *every* one of the **twelve months** in a given year connecting these points with straight `lines`. 
+
+The effect is to *visually* see the Sales *Trend*. Are **Sales** *Growing*? or are they *Declining* - month by month - also visualizing the *Shape* throughout the year.
+
+## Basic Chart Terminology:
+1. Chart type: `XYChart`
+2. A `Series` is a collection of data points.
+3. `Category X` data is: **months**.
+4. `Category Y` values is: **Sales**.
+5. `Value Title` is: **“Sales”**
+  
+The [AMCHARTS](https://www.amcharts.com/) *engine* is fed by a JavaScript *entry-point*, which we will add at the end of our `CUSTDSPF.chtml` markup file.
+
+The *entry-point* **Script** algorithm is:
+1. Find the `HTML div` placeholder element by `ID`.
+2. If the element exists, we can fairly assume that the `CUSTREC` record is *Active* on the Display, therefore we will create the `Chart`.
+3. Establish data-fields `Category` items as **“month”**
+4. Establish `Value axis` as **“sales”**
+5. Establish `Value series` as collection of fields with monthly *Sales* (point) data.
+6. Provide the `Chart Data` in [JSON](https://www.json.org/json-en.html) data format.
+
+Append the following script(s) at the end of the Markup file:
+
+~~~
+CustomerAppSite/Areas/CustomerAppViews/Pages/CUSTDSPF.cshtml
+~~~
+
+```html
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script>
+    const CHART_ID = 'custrec-chart';
+    const chartEl = document.getElementById(CHART_ID);
+
+    if (chartEl !== null) {
+        let salesJsonData = chartEl.innerHTML;
+        let chart = am4core.create(CHART_ID, am4charts.XYChart);
+        let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "month";
+
+        let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.title.text = "Sales";
+
+        let series = chart.series.push(new am4charts.LineSeries());
+        series.name = "Sales";
+        series.stroke = am4core.color("#CDA2AB");
+        series.strokeWidth = 3;
+        series.dataFields.valueY = "sales";
+        series.dataFields.categoryX = “month";
+
+        const chartData = JSON.parse(salesJsonData);
+        chart.data = chartData.data;
+    }
+</script>
+```
+
+The two-first `<script>` lines, refer to the [cdn address](https://en.wikipedia.org/wiki/Content_delivery_network) for the [AMCHARTS production JavaScript Library](https://www.amcharts.com/). 
+
+The third `<script>` JavaScript *block* is the implementation of the *Custom* Algorithm described above.
+
+If you run the **Website Application** now, you will get something like the following image:
+
+![Empty AMCHARTS](/images/page-two-chart-04.png/)
+
 <br>
 <br>
 <br>
