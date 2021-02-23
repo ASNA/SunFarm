@@ -237,7 +237,7 @@ CustomerAppSite/Areas/CustomerAppViews/Pages/CUSTDSPF.cshtml
         series.stroke = am4core.color("#CDA2AB");
         series.strokeWidth = 3;
         series.dataFields.valueY = "sales";
-        series.dataFields.categoryX = “month";
+        series.dataFields.categoryX = "month";
 
         const chartData = JSON.parse(salesJsonData);
         chart.data = chartData.data;
@@ -249,9 +249,135 @@ The two-first `<script>` lines, refer to the [cdn address](https://en.wikipedia.
 
 The third `<script>` JavaScript *block* is the implementation of the *Custom* Algorithm described above.
 
-If you run the **Website Application** now, you will get something like the following image:
+If you run the **Website Application** now, you will get something like the following image[^4]:
 
 ![Empty AMCHARTS](/images/page-two-chart-04.png/)
+
+>Note: the Chart is empty (we have not provided valid [JSON](https://www.json.org/json-en.html) data points). Also note that we got our **free** penalty, the AMCHARTS watermark icon.
+
+
+The *plumbing* of the Chart is now in place, all we need to do is: set the *data-points* as the text inside the `DIV` html element. The *data-points* are expected to be placed as text, following the [JSON](https://www.json.org/json-en.html) syntax.
+
+## Producing the Chart data in JSON format
+
+Change the Markup for `Row=“3”`, such that the contents of our chart placeholder has a reference to a new property on our server-side `Model`:
+
+```html
+<div Row="3">
+    <img id="customer-icon" ExpoCol="8" src="~/customer-icon.svg" />
+    <div id="custrec-chart" ExpoCol="67">@Model.CUSTREC.SALES_CHART_DATA</div>
+</div>
+```
+
+The `<script>` we provided to drive the [AMCHARTS JavaScript Library](https://www.amcharts.com/) has the following code:
+
+```cs
+        let salesJsonData = chartEl.innerHTML;
+            .
+            .
+            .
+        const chartData = JSON.parse(salesJsonData);
+        chart.data = chartData.data;
+```
+
+You can read this as:
+
+1. Extract the `HTML` string content from our chart `HTML div` element (our placeholder).
+2. Using the `DOM JSON` object, parse the string text and produce a JavaScript object, keeping a reference in the constant `chartData`.
+3. `chartData` has a property called **“data”** with the *data-points* expected by [AMCHARTS JavaScript Library](https://www.amcharts.com/) such that the rendering can execute.
+
+## Implementing SALES_CHART_DATA getter property
+
+Let’s add the following *read-only* property on our `CUSTREC` Model. Add the following *read-only* property to the Model, right after `PERCENT_CHANGE_RETURNS`:
+
+```cs
+[Char(20)]
+public string PERCENT_CHANGE_RETURNS { get; private set; }
+    .
+    .
+    .
+public string SALES_CHART_DATA { get { return FormatChartData(); } }
+```
+>Note that the type is *C# string* type.
+
+The **getter** method calls `FormatChartData` method. 
+
+We can safely assume that **when** `SALES_CHART_DATA` getter is executed, the *Sales* properties (`CSSALES01` thru `CSSALES12`) have been *populated* with current values (for the Selected Customer). 
+
+Add the following implementation for `FormatChartData` new method:
+
+```cs
+private string FormatChartData()
+{
+    SalesChartData chart = new SalesChartData();
+    chart.data = new SalesSeriesPoint[12];
+
+    chart.data[0] = new SalesSeriesPoint("Jan", CSSALES01);
+    chart.data[1] = new SalesSeriesPoint("Feb", CSSALES02);
+    chart.data[2] = new SalesSeriesPoint("Mar", CSSALES03);
+    chart.data[3] = new SalesSeriesPoint("Apr", CSSALES04);
+    chart.data[4] = new SalesSeriesPoint("May", CSSALES05);
+    chart.data[5] = new SalesSeriesPoint("Jun", CSSALES06);
+    chart.data[6] = new SalesSeriesPoint("Jul", CSSALES07);
+    chart.data[7] = new SalesSeriesPoint("Aug", CSSALES08);
+    chart.data[8] = new SalesSeriesPoint("Sep", CSSALES09);
+    chart.data[9] = new SalesSeriesPoint("Oct", CSSALES10);
+    chart.data[10] = new SalesSeriesPoint("Nov", CSSALES11);
+    chart.data[11] = new SalesSeriesPoint("Dec", CSSALES12);
+
+    JsonSerializerOptions serializerOptions = new JsonSerializerOptions();
+    return JsonSerializer.Serialize<SalesChartData>(chart, serializerOptions);
+}
+```
+
+## Before adding the rest of implementation, let’s stop here to explain.
+
+`FormatChartData` starts by creating an *instance* of `SalesChartData` class (code will follow later).
+
+The *object chart* just created, has an *uninitialized* property called **“data”**. 
+
+This is a *collection* of `SalesSeriesPoint` *objects* (code will follow later). We allocate 12 members for this new collection.
+
+*Next*, for *every* element in the collection, we create an *object* that represents the `Sales` series point, that is, the `Category` name and its *value*. The *value* comes from the `CSSALESnn` property collection (which comes from the Workstation, table CUSTREC in the *DataSet*).
+
+Once the twelve month’s data have been loaded, we use **.Net** `System.Text.Json` class to *serialize* our C# objects into a JSON object in string *form*. This is what the JavaScript expects to find as the `HTML` *content* in our `Chart` placeholder.
+
+Since we are using `Text.Json`, let’s add at the top of our C# source file the following [.NET assembly](https://docs.microsoft.com/en-us/dotnet/standard/assembly/) reference.
+
+```cs
+using System;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using ASNA.QSys.ExpoModel;
+using System.Text.Json;       // New reference added
+```
+
+*Lastly*, here is the implementation for the small Utility classes:
+
+```cs
+class SalesSeriesPoint
+{
+    public SalesSeriesPoint(string month, decimal sales) 
+      { this.month = month; this.sales = sales; }
+
+    public string month { get; set; }
+    public decimal sales { get; set; }
+}
+
+class SalesChartData
+{
+    public SalesSeriesPoint[] data { get; set; }
+}
+```
+
+Run the Website Application with the latest changes, the following final Page should show (see image below)
+
+![Chart with Data points](/images/enhanced-page-two.png)
+
+With the Chart you can quickly see that the Customer 46000 increased sales in 1997, and had a very good month in the middle of the year (June).
+
+>&#128161; What a difference!
 
 <br>
 <br>
@@ -261,4 +387,5 @@ If you run the **Website Application** now, you will get something like the foll
 [^1]: Commit: “Descriptive Customer Status field”
 [^2]: Commit “Chart heading showing the Status Description Centered”
 [^3]: Commit: “Chart Placeholder”
+[^4]: Commit “Empty Chart”
 
