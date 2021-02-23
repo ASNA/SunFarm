@@ -6,7 +6,7 @@ permalink: /replacing-yesno-with-checkboxes/
 
 **Green-screen** Displayfiles typically used *boolean* fields with a *one-char* field that expects the value `‘Y’` or `’N’`. 
 
-The Markup for Page [Customer Maintenance]({{ site.rooturl }}/enhancements-affecting-logic/), has a field named: `CUSTREC.SFYN01`
+The Markup for Page [Customer Maintenance]({{ site.rooturl }}/merging-two-screens//), has a field named: `CUSTREC.SFYN01`
 
 It is rendered as:
 
@@ -30,9 +30,9 @@ When the “tick” is checked, the application logic wants the field with a cha
 The Markup can be simplified *too*, from three lines:
 
 ```html
-  <DdsConstant Col="47" Text="Send Confirmation" />
-  <DdsCharField Col="58" ColSpan="2" For="CUSTREC.SFYN01" VirtualRowCol="18,27" />
-  <DdsConstant Col="61" Text="(Y/N)" />
+<DdsConstant Col="47" Text="Send Confirmation" />
+<DdsCharField Col="58" ColSpan="2" For="CUSTREC.SFYN01" VirtualRowCol="18,27" />
+<DdsConstant Col="61" Text="(Y/N)" />
 ```
 
 Down to one line:
@@ -43,17 +43,64 @@ Down to one line:
 
 On the `Model` source file, we *decorate* the field, providing information for the value we want to mean **checked** (or true), and which for **unchecked** (or false). 
 
-The `Values` attribute for `DdsCheckboxField` expects the first value to be the **checked** and the second the **unchecked**.
+The `Values` attribute for `DdsCheckboxField` expects the first value to be the **checked** and the second the **unchecked**[^1].
 
 ```cs
-    [Char(1)]
-    [Values(typeof(string), “Y”, “N”)]
-    public string SFYN01 { get; set; }
+[Char(1)]
+[Values(typeof(string), "Y", "N")]
+public string SFYN01 { get; set; }
 ```
 
 >Note: `DdsCheckboxField` can be used on `Decimal` workstation fields *too*.
+
+## Using Checkbox with decimal fields
+
+Let’s artificially modify our application to show how `DdsCheckboxField` tagHelper could be used to bind a `Decimal` field in our `Model` (which could be extended to a database field defined as decimal too).
+
+To avoid changing too much our Application, let’s add a new field to the `Model` defined as follows:
+
+~~~
+CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml.cs:
+~~~
+
+```cs
+[Dec(1, 0)]
+[Values(typeof(decimal), 1, 0)]
+public decimal DECSNDCONF { get; set; }
+```
+
+The new field reads: *“Decimal Send Conformation” and uses 1 digit, where 1 means Yes and 0 (zero) means No*.
+
+For convenience we will declare it right after `PERCENT_CHANGE_RETURNS` (around line 250 - see commit file differences).
+
+In the markup, replace: `CUSTREC.SFYN01` with `CUSTREC.DECSNDCONF`:
+
+~~~
+CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml
+~~~
+
+Before:
+
+```html
+<DdsCheckboxField Col="47" Text="Send Confirmation" For="CUSTREC.SFYN01" VirtualRowCol="18,27" />
+```
+
+After:
+
+```html
+<DdsCheckboxField Col="47" Text="Send Confirmation" For="CUSTREC.DECSNDCONF" VirtualRowCol=“18,27" />
+```
+
+If we had `DECSNDCONF` in the database declared as decimal (1,0) that would be **all** we need to do, but we will **not** go to the trouble of changing the database schema in this Guide.
+
+*Instead*, we will trick the Logic code such that `Y/N` in field `SFYN01` will update `DECSNDCONF` when going *out* to the screen, and then posted new value for `DECSNDCONF` with value `1` or `0` will update `SFYN01` on the way *in*. This should be simple to do.
+
+Let’s  first run the [Serengeti Tools]() to update the Display Page *DataSet* and make `DECSNDCONF` available to the Program `CUSTINQ`.
 
 <br>
 <br>
 <br>
 [Continue ...]({{ site.rooturl }}/replacing-yesno-radio-button-group/)
+
+
+[^1]: Commit “Replaced Y/N field with Checkbox”
