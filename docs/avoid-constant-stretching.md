@@ -41,9 +41,9 @@ The Default value (if the attribute is not given) is *true*.
 
 For example, we want "CUSTREC" to **NOT* Stretch the text in the constants:
 
-~~~
+```html
 <DdsRecord For="CUSTREC" StretchConstantText=false KeyNames="ENTER ‘Submit'; …
-~~~
+```
 
 
 # Preferred technique to Align text to the right
@@ -60,14 +60,14 @@ Matching the column span is achieved by adding ColSpan attribute with the specia
 
 Lastly, we add a CSS class attribute to all the DdsConstant tag-helpers in the record set to “right-aligned-constant”:
 
-~~~
+```html
 <div Row="7">
     <DdsConstant Col="20" ColSpan="-1" class="right-aligned-constant" Text="Name:" />
     .
     .
     .
 </div>
-~~~
+```
 
 Where the style right-aligned-constant is the following simple CSS added to the CustomerAppSite\wwwroot\css\site.css file:
 

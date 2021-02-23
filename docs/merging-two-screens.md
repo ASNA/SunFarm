@@ -141,7 +141,7 @@ The code we need to *instance* the CSMASTERL1 field we just added to the program
 If we follow the `Custcalc()` constructor we can see how it calls private method `_instanceInit()` and then performs two more method calls related to this new file (including opening it).
 
 **Source file:** `CustomerAppLogic/CUSTCALC.cs`
-~~~
+```cs
 void _instanceInit()
 {
         . 
@@ -154,12 +154,12 @@ void _instanceInit()
         .
         .
 }
-~~~
+```
 
 We copy that line into CUSTINQ.cs `_instanceInit()` *( right after instancing **CUSTOMERL1** )*:
 
 **Source file:** `CustomerAppLogic/CUSTINQ.cs`
-~~~
+```cs
 void _instanceInit()
 {
         .
@@ -177,7 +177,7 @@ void _instanceInit()
         .
         .
 }
-~~~
+```
 >Note: `PopulateFieldsCSMASTERL1` and `CSMASTERL1FormatIDs` are not defined yet. We'll add them later.
 
 <br>
@@ -185,7 +185,7 @@ void _instanceInit()
 Every **DatabaseFile** field instance has a property to set the *Overrider* Job instance. This property is used by the `QSys` runtime support to implement [Overriding](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rzasc/redfio.htm). You don't need to be concerned if your don't understand right now what *Overriding* means, just know that this reference is required.
 
 **Source file:** `CustomerAppLogic/CUSTINQ.cs`
-~~~
+```cs
 public Custinq()
 {
         ,
@@ -199,7 +199,7 @@ public Custinq()
 
     CSMASTERL1.Overrider = Job; // Line copied from CUSTCALC's constructor
 }
-~~~
+```
 
 ## Open and Close the new database file.  
 Opening the `CSMASTERL1` database file and closing it, is done - *as expected* - during *construction* and *disposal* of the Program instance.
@@ -207,7 +207,7 @@ Opening the `CSMASTERL1` database file and closing it, is done - *as expected* -
 Copy lines related to Open and Close from `CUSTCALC.cs` to `CUSTINQ.cs`, the complete **CUSTINQ** *Constructor* and *Disposal* methods should look like the following code [^1]:
 
 **Source file:** `CustomerAppLogic/CUSTINQ.cs`
-~~~
+```cs
 public Custinq()
 {
     _IN = new IndicatorArray<Len<_1, _0, _0>>((char[])null);
@@ -236,7 +236,7 @@ override public void Dispose(bool disposing)
     }
     base.Dispose(disposing);
 }
-~~~
+```
 
 To make available fields to the Program as specified by the record's database schema, we need to do the following:
 
@@ -644,7 +644,7 @@ You should figure out by now, that we are missing some code in the program logic
 
 Get back to Program `CUSTINQ` and *add* the code to `LoadLastSalesAndReturns` private method, to match the following listing:
 
-~~~
+```cs
 private void LoadLastSalesAndReturns()
 {
     CSSALES01 = CSSALES02 = CSSALES03 = CSSALES04 = CSSALES05 = CSSALES06 = 0;
@@ -710,7 +710,7 @@ private void LoadLastSalesAndReturns()
         CSRETURN12 = returnsForCustomer[lastYearReturns].month[11];
     }
 }    
-~~~
+```
 
 ## Algorithm to Calculate Last Year's Sales and Returns
 1. Start `lastYearSales` and `lastYearReturns` with the *minimum* value.
