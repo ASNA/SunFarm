@@ -70,7 +70,7 @@ Let’s make **CUSTREC.SFNAME**, **CUSTREC.SFADDR1** and **CUSTREC.SFADDR2** col
 
 The new Markup is:
 
-~~~
+```html
 <div Row="4">
    <DdsConstant Col="20" Text="Name" />
    <DdsCharField Col="27" ColSpan="25" For="CUSTREC.SFNAME" Lower="true" … PositionCursor="40"/>
@@ -92,7 +92,7 @@ The new Markup is:
     <DdsCharField Col="37" For="CUSTREC.SFSTATE" … PositionCursor="43" tabIndex=6 />
     <DdsCharField Col="42" For="CUSTREC.SFPOSTCODE" VirtualRowCol="11,37" tabIndex=7 />
 </div>
-~~~
+```
 
 Notice also that we have given **CUSTREC.SFCITY** field a ColSpan of 10 *- while the definition of the field is Char(30) -*. We confidently reduced it, because most US cities will fit in the width provided. It is safe to reduce field's width when all (or most) of the possible values are small. In the extreme case, where a larger should appear, the field scroll horizontally *by default*, allowing for the 30 positions max field length.
 
