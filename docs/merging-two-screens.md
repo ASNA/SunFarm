@@ -595,53 +595,189 @@ Locate `For="CUSTREC"` and **Add* the following *Rows* (17 thru 20) to the Displ
 Next, **Add** to the `CUSTREC_Model` the definitions for the *Returns* fields - just as we did before to the `CSSALESnn` fields (above) -.
 
 ```cs
-        [Dec(11, 2)]
-        public decimal CSRETURN01 { get; private set; }
+[Dec(11, 2)]
+public decimal CSRETURN01 { get; private set; }
 
-        [Dec(11, 2)]
-        public decimal CSRETURN02 { get; private set; }
+[Dec(11, 2)]
+public decimal CSRETURN02 { get; private set; }
 
-        [Dec(11, 2)]
-        public decimal CSRETURN03 { get; private set; }
+[Dec(11, 2)]
+public decimal CSRETURN03 { get; private set; }
 
-        [Dec(11, 2)]
-        public decimal CSRETURN04 { get; private set; }
+[Dec(11, 2)]
+public decimal CSRETURN04 { get; private set; }
 
-        [Dec(11, 2)]
-        public decimal CSRETURN05 { get; private set; }
+[Dec(11, 2)]
+public decimal CSRETURN05 { get; private set; }
 
-        [Dec(11, 2)]
-        public decimal CSRETURN06 { get; private set; }
+[Dec(11, 2)]
+public decimal CSRETURN06 { get; private set; }
 
-        [Dec(11, 2)]
-        public decimal CSRETURN07 { get; private set; }
+[Dec(11, 2)]
+public decimal CSRETURN07 { get; private set; }
 
-        [Dec(11, 2)]
-        public decimal CSRETURN08 { get; private set; }
+[Dec(11, 2)]
+public decimal CSRETURN08 { get; private set; }
 
-        [Dec(11, 2)]
-        public decimal CSRETURN09 { get; private set; }
+[Dec(11, 2)]
+public decimal CSRETURN09 { get; private set; }
 
-        [Dec(11, 2)]
-        public decimal CSRETURN10 { get; private set; }
+[Dec(11, 2)]
+public decimal CSRETURN10 { get; private set; }
 
-        [Dec(11, 2)]
-        public decimal CSRETURN11 { get; private set; }
+[Dec(11, 2)]
+public decimal CSRETURN11 { get; private set; }
 
-        [Dec(11, 2)]
-        public decimal CSRETURN12 { get; private set; }
+[Dec(11, 2)]
+public decimal CSRETURN12 { get; private set; }
 ```
-Re-run [Serengeti Tools](https://asna.githubio.SerengetiTools) on the `CUSTINQ` Program, in the `CustomerAppLogic` Project.
+
+Re-run [Serengeti Tools](https://asna.githubio.SerengetiTools) on the `CUSTINQ` Program, in the `CustomerAppLogic` Project.[^3]
 
 Re-run the Website and navigate to a Customer “Update” Page:
 
 ![Returns Initial Rendering](/images/page-two-06.png/)
 
+We got values for all Sales *Returns* for one year, but all values are *zero*.
 
+You should figure out by now, that we are missing some code in the program logic.
+
+Get back to Program `CUSTINQ` and *add* the code to `LoadLastSalesAndReturns` private method, to match the following listing:
+
+~~~
+private void LoadLastSalesAndReturns()
+{
+    CSSALES01 = CSSALES02 = CSSALES03 = CSSALES04 = CSSALES05 = CSSALES06 = 0;
+    CSSALES07 = CSSALES08 = CSSALES09 = CSSALES10 = CSSALES11 = CSSALES12 = 0;
+
+    CSRETURN01 = CSRETURN02 = CSRETURN03 = CSRETURN04 = CSRETURN05 = CSRETURN06 = 0;
+    CSRETURN07 = CSRETURN08 = CSRETURN09 = CSRETURN10 = CSRETURN11 = CSRETURN12 = 0;
+
+    FixedDecimal< _9, _0> CustomerNumber = new FixedDecimal<_9, _0>();
+
+    CustomerNumber = CMCUSTNO.MoveRight(CustomerNumber);
+    if (!CSMASTERL1.Seek(SeekMode.SetLL, CustomerNumber))
+        return;
+
+    Dictionary<decimal, YearData> salesForCustomer = new Dictionary<decimal, YearData>();
+    Dictionary<decimal, YearData> returnsForCustomer = new Dictionary<decimal, YearData>();
+    decimal lastYearSales = decimal.MinValue;
+    decimal lastYearReturns = decimal.MinValue;
+
+    while (CSMASTERL1.ReadNextEqual(false, CustomerNumber))
+    {
+        if (CSTYPE == 1)
+        {
+            lastYearSales = CSYEAR;
+            salesForCustomer.Add(lastYearSales, new YearData(CSSALES01, CSSALES02, CSSALES03, CSSALES04, CSSALES05, CSSALES06, CSSALES07, CSSALES08, CSSALES09, CSSALES10, CSSALES11, CSSALES12));
+        }
+        else
+        {
+            lastYearReturns = CSYEAR;
+            returnsForCustomer.Add(lastYearReturns, new YearData(CSSALES01, CSSALES02, CSSALES03, CSSALES04, CSSALES05, CSSALES06, CSSALES07, CSSALES08, CSSALES09, CSSALES10, CSSALES11, CSSALES12));
+        }
+    }
+
+    if (lastYearSales > decimal.MinValue)
+    {
+        CSSALES01 = salesForCustomer[lastYearSales].month[0];
+        CSSALES02 = salesForCustomer[lastYearSales].month[1];
+        CSSALES03 = salesForCustomer[lastYearSales].month[2];
+        CSSALES04 = salesForCustomer[lastYearSales].month[3];
+        CSSALES05 = salesForCustomer[lastYearSales].month[4];
+        CSSALES06 = salesForCustomer[lastYearSales].month[5];
+        CSSALES07 = salesForCustomer[lastYearSales].month[6];
+        CSSALES08 = salesForCustomer[lastYearSales].month[7];
+        CSSALES09 = salesForCustomer[lastYearSales].month[8];
+        CSSALES10 = salesForCustomer[lastYearSales].month[9];
+        CSSALES11 = salesForCustomer[lastYearSales].month[10];
+        CSSALES12 = salesForCustomer[lastYearSales].month[11];
+    }
+
+    if (lastYearReturns > decimal.MinValue)
+    {
+        CSRETURN01 = returnsForCustomer[lastYearReturns].month[0];
+        CSRETURN02 = returnsForCustomer[lastYearReturns].month[1];
+        CSRETURN03 = returnsForCustomer[lastYearReturns].month[2];
+        CSRETURN04 = returnsForCustomer[lastYearReturns].month[3];
+        CSRETURN05 = returnsForCustomer[lastYearReturns].month[4];
+        CSRETURN06 = returnsForCustomer[lastYearReturns].month[5];
+        CSRETURN07 = returnsForCustomer[lastYearReturns].month[6];
+        CSRETURN08 = returnsForCustomer[lastYearReturns].month[7];
+        CSRETURN09 = returnsForCustomer[lastYearReturns].month[8];
+        CSRETURN10 = returnsForCustomer[lastYearReturns].month[9];
+        CSRETURN11 = returnsForCustomer[lastYearReturns].month[10];
+        CSRETURN12 = returnsForCustomer[lastYearReturns].month[11];
+    }
+}    
+~~~
+
+## Algorithm to Calculate Last Year's Sales and Returns
+1. Start `lastYearSales` and `lastYearReturns` with the *minimum* value.
+2. Loop reading records for the *Customer* of interest until the **Customer Number** is different from what we are processing.
+3. In the Loop in (2), depending on the *Record Type*, we collect *Sales* or *Returns* in a dictionary collection that uses **Year** as key. We also keep the lastYearSales and lastYearReturns updated. (We know that the records are sorted by year within a Customer).
+4. After Loop in (2) is complete, we can **Update** the `CSSALESnn` field group and/or `CSRETURNnn` field group, by extracting from the Dictionary the lastYear’s data.
+  
+> Note: `CSTYPE` database field defines the *Record Type*. If the `CSTYPE` has the value `1`, then the record has *Sales* information, otherwise (i.e. `CSTYPE` has the value `2`), the record has *Returns* information.
+
+If you try to compile the `CustomerAppLogic` you may have noticed that we are missing the implementation of *YearData* class.
+
+## Adding standard C# Helper classes to Business Logic
+
+Even when the code we are working on, came from a machine *Migration* and follows certain conventions to assist with the *Legacy* RPG developer's mental model, there is nothing that prevents us from using *modern* C# code with access to the full **.NET** framework.
+
+Our algorithm above, uses a [.NET memory collection](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=net-5.0) to hold an instance of a class that holds a year full of data values. The *Dictionary* collection is keyed by any *type* we want, in this case, we conveniently use a *Year* value.
+
+All we are missing now is the implementation of such *YearData* class.
+
+Add the following class implementation at the end of the source file `CUSTINQ`.
+
+```cs
+internal class YearData
+{
+    const int MONTHS_IN_YEAR = 12;
+    public decimal[] month;
+
+    public YearData()
+    {
+        month = new decimal[MONTHS_IN_YEAR];
+    }
+
+    public YearData(decimal jan, decimal feb, decimal mar, decimal apr, decimal may, decimal jun, decimal jul, decimal aug, decimal sep, decimal oct, decimal nov, decimal dec) : this()
+    {
+        month[0] = jan;
+        month[1] = feb;
+        month[2] = mar;
+        month[3] = apr;
+        month[4] = may;
+        month[5] = jun;
+        month[6] = jul;
+        month[7] = aug;
+        month[8] = sep;
+        month[9] = oct;
+        month[10] = nov;
+        month[11] = dec;
+    }
+
+    public decimal Sum()
+    {
+        decimal result = 0;
+        foreach (var amt in month)
+            result += amt;
+
+        return result;
+    }
+}
+```
+Compile CustomerAppLogic and run Website. Navigate to any customer to *Update* its records. You should get a Page similar to the following:
+
+
+![Last Registered Returns](/images/page-two-07.png/)
 <br>
 <br>
 <br>
 [Continue ...]({{ site.rooturl }}/merging-two-screens/)
 
 [^1]: Commit: “Declaration of Sales Returns file in CUSTINQ.cs”
-[^2]: “First Sales information added to Page”
+[^2]: Commit: “First Sales information added to Page”
+[^3]: Commit: “Adding Returns to the CUSTREC_Model DataSet”
