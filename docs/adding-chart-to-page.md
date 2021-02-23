@@ -72,9 +72,90 @@ You may recognize that CSS Style box-highlight-center-field, has not been define
 
 Nothing fancy, a white on black box with the text centered.
 
+## What is `@Model.CUSTREC.SF_STATUS_NAME`?
+
+We have been using `For=“”` notation to reference fields in attributes for Expo *tagHelpers*, but when we use standard HTML elements - *where we want to refer to the content of an HTML element* - we need to let Razor know our intent. 
+
+Using `@` symbol will let use switch to C# code, were we can refer to *content* on symbols defined on the Model. `@Model.CUSTREC` will get us to the instance of the CUSTREC DdsRecord, but field SF_STATUS_NAME does not *yet* exists.
+
+We can fix that, by defining it this way:
+
+~~~
+CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml.cs
+~~~
+
+```cs
+[Char(1)]
+public string SFSTATUS { get; set; }
+
+public string SF_STATUS_NAME { get { return statusCodeToName(); } }
+
+private string statusCodeToName()
+{
+    switch (SFSTATUS)
+    {
+        case "A":
+            return "Active";
+        case "C":
+            return "Closed";
+        case "O":
+            return "Over Limit";
+        case "R":
+            return "Refer";
+        case "S":
+            return "Suspended";
+    }
+
+    return "(Undefined Status)";
+}
+```
+
+Notice how we don’t qualify the new properties with [Char(nn)] because we are referring to C# *standard* string properties — additionally, we don’t want to add it to the Workstation *DataSet*— This is just **presentation** logic.
+
+Run the Website Application (and make sure the **CSS** cache is refreshed), and you should see the following output (image below)[^1].
+
+![Descriptive Status](/images/page-two-chart-02_c.png/)
+
+We can trick the user by overlapping the original Status code field on top of the descriptive new presentation field, and make it invisible.
+
+Let’s declare a new CSS Style:
+
+~~~
+CustomerAppSite\wwwroot\css\site.css
+~~~
+
+```css
+.present-no-visible-field {
+    opacity:0.1;
+}
+```
+Change our `Row=“2”` such that both the original *Status code* and the new *Status Descriptions* are written to the page, but where the *Status code* is not **visible**:
+
+~~~
+CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml
+~~~
+
+```html
+<div Row="2">
+    <DdsConstant Col="8" Text="Account number" />
+    <DdsDecField class="left-aligned-field" Col="20" For="CUSTREC.SFCUSTNO" 
+      VirtualRowCol="5,27" Color="DarkBlue" EditCode="Z" Comment="CUSTOMER NUMBER" />
+    <span class="box-highlight-center-field" ExpoGridCol="72/90">@Model.CUSTREC.SF_STATUS_NAME</span>
+    <DdsCharField class="present-no-visible-field" Col="72" ColSpan="18" For="CUSTREC.SFSTATUS" VirtualRowCol="15,27" PositionCursor="44" />
+</div>
+```
+
+>>Note: The *rendering* order is important. 
+
+When overlapping elements and one is *input capable*, the later must be on top of the former. The Browser renders elements in the order in which they are described in 'HTML', in this case we want '“CUSTREC.SFSTATUS"' rendered on top of '@Model.CUSTREC.SF_STATUS_NAME'
+
+Run the Website Application again, and you can verify that the *Status Description* may still be *clickable* and prompting to change its value still works.[^2]
 
 <br>
 <br>
 <br>
 [Continue ...]({{ site.rooturl }}/adding-chart-to-page/)
+
+[^1]: Commit: “Descriptive Customer Status field”
+[^2]: Commit “Chart heading showing the Status Description Centered”
 
