@@ -487,7 +487,57 @@ The following image shows progress:
 
 Similar to how we added *Sales data* to the Page, we will add *Returns data*.
 
+We start by adding the *Returns* fields to the Markup:
 
+Open Markup file:  
+
+~~~
+CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml`
+~~~
+
+Locate `For="CUSTREC"` add he following *Rows* (17 thru 20) to the Display Record:
+
+```html
+<div Row="17">
+    <DdsConstant Col="8" Text="Last registered returns" />
+</div>
+
+<div Row="18">
+    <DdsConstant Col="12" Text="Jan" />
+    <DdsDecField Col="15" For="CUSTREC.CSRETURN01" EditCode=One Color="red" />
+    <DdsConstant Col="30" Text="Feb" />
+    <DdsDecField Col="35" For="CUSTREC.CSRETURN02" EditCode=One Color="red" />
+    <DdsConstant Col="48" Text="Mar" />
+    <DdsDecField Col="51" For="CUSTREC.CSRETURN03" EditCode=One Color="red" />
+    <DdsConstant Col="66" Text="Apr" />
+    <DdsDecField Col="69" For="CUSTREC.CSRETURN04" EditCode=One Color="red" />
+</div>
+<div Row="19">
+    <DdsConstant Col="12" Text="May" />
+    <DdsDecField Col="15" For="CUSTREC.CSRETURN05" EditCode=One Color="red" />
+    <DdsConstant Col="30" Text="Jun" />
+    <DdsDecField Col="35" For="CUSTREC.CSRETURN06" EditCode=One Color="red" />
+    <DdsConstant Col="48" Text="Jul" />
+    <DdsDecField Col="51" For="CUSTREC.CSRETURN07" EditCode=One Color="red" />
+    <DdsConstant Col="66" Text="Aug" />
+    <DdsDecField Col="69" For="CUSTREC.CSRETURN08" EditCode=One Color="red" />
+</div>
+<div Row="20">
+    <DdsConstant Col="12" Text="Sep" />
+    <DdsDecField Col="15" For="CUSTREC.CSRETURN09" EditCode=One Color="red" />
+    <DdsConstant Col="30" Text="Oct" />
+    <DdsDecField Col="35" For="CUSTREC.CSRETURN10" EditCode=One Color="red" />
+    <DdsConstant Col="48" Text="Nov" />
+    <DdsDecField Col="51" For="CUSTREC.CSRETURN11" EditCode=One Color="red" />
+    <DdsConstant Col="66" Text="Dec" />
+    <DdsDecField Col="69" For="CUSTREC.CSRETURN12" EditCode=One Color="red" />
+</div>
+```
+>Note: we are setting the Color to “red” instead of showing *negative* sign for the *Returns* values. In the Business Logic, we will convert *negative* values to *absolute* values.
+
+Re-run the Website and navigate to a Customer “Update” Page:
+
+![Returns Initial Rendering](/images/page-two-06.png/)
 <br>
 <br>
 <br>
