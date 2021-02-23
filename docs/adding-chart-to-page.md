@@ -371,7 +371,7 @@ class SalesChartData
 }
 ```
 
-Run the Website Application with the latest changes, the following final Page should show (see image below)
+Run the Website Application with the latest changes, the following final Page should show (see image below)[^5]
 
 ![Chart with Data points](/images/enhanced-page-two.png)
 
@@ -379,13 +379,17 @@ With the Chart you can quickly see that the Customer 46000 increased sales in 19
 
 >&#128161; What a difference!
 
+*For the sake of completeness*, you may want to break-up the property `SALES_CHART_DATA`, such that you can add a breakpoint (before *getter* returns*) and visualize the data points formatted using `JSON syntax` (you can look at the string representation as well as how the Visual Studio built-in `JSON visualizer` presents the data).
+
+![JSON Visualizer Debugger](/images/page-two-chart-JSON-visualizer.png/)
+
 <br>
 <br>
 <br>
-[Continue ...]({{ site.rooturl }}/adding-chart-to-page/)
+[Continue ...]({{ site.rooturl }}/replacing-yesno-with-checkboxes/)
 
 [^1]: Commit: “Descriptive Customer Status field”
 [^2]: Commit “Chart heading showing the Status Description Centered”
 [^3]: Commit: “Chart Placeholder”
 [^4]: Commit “Empty Chart”
-
+[^5]: Commit “Chart showing Sales data”
