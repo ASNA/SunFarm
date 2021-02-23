@@ -773,6 +773,155 @@ Compile CustomerAppLogic and run Website. Navigate to any customer to *Update* i
 
 
 ![Last Registered Returns](/images/page-two-07.png/)
+
+
+## Additional Table heading data: Year, Total and Trend
+
+Let’s define one more CSS Style - to make Sales and Returns label stronger -.
+
+Add following style at the end of file: `CustomerAppSite\wwwroot\css\site.css`
+
+```css
+.large-bold-text {
+    font-size: large !important;
+    font-weight: bold;
+}
+```
+
+On the row for the Table Heading “Last registered sales” we will add:
+1. `Year` for which the sales data was found in the database.
+2. `Total Sales`.
+3. `Sales change` in percent for December compared to January for that Year.
+
+The new Model properties are:
+
+```cs
+[Char(20)]
+public string YEAR_SALES { get; private set; }
+
+[Dec(13, 2)]
+public decimal TOTAL_SALES { get; private set; }
+
+[Char(20)]
+public string PERCENT_CHANGE_SALES { get; private set; }
+```
+>Note how we define the properties as *output-only* (public get, private set). We define `TOTAL_SALES` as decimal (so we can take advantage of EditCode formatter). But since we want an uncommon formatting for the `Year` and `Sales` change in percent for December, we will use business logic with nice `.Net` framework formatting classes to format this data as a string and use it as such.
+  
+As we did before, navigate to the `CUSTINQ` Program in the CustomerAppLogic Project using *Visual Studio Solution Explorer* and run the [Serengeti Tools](https://asna.githubio.SerengetiTools). With the updated *DataSet*, we should have the fields `YEAR_SALES`, `TOTAL_SALES` and `PERCENT_CHANGE_SALES` available for us to use (and populate) from within the `CUSTINQ` Program logic.
+
+Add the code that deals with `YEAR_SALES`, `TOTAL_SALES` and `PERCENT_CHANGE_SALES` calculations, by updating the method `LoadLastSalesAndReturns()`, matching this listing:
+
+```cs
+private void LoadLastSalesAndReturns()
+{
+    CSSALES01 = CSSALES02 = CSSALES03 = CSSALES04 = CSSALES05 = CSSALES06 = 0;
+    CSSALES07 = CSSALES08 = CSSALES09 = CSSALES10 = CSSALES11 = CSSALES12 = 0;
+
+    CSRETURN01 = CSRETURN02 = CSRETURN03 = CSRETURN04 = CSRETURN05 = CSRETURN06 = 0;
+    CSRETURN07 = CSRETURN08 = CSRETURN09 = CSRETURN10 = CSRETURN11 = CSRETURN12 = 0;
+
+    YEAR_SALES = string.Empty;
+    TOTAL_SALES = 0;
+    PERCENT_CHANGE_SALES = string.Empty;
+
+    YEAR_RETURNS = string.Empty;
+    TOTAL_RETURNS = 0;
+    PERCENT_CHANGE_RETURNS = string.Empty;
+
+    FixedDecimal< _9, _0> CustomerNumber = new FixedDecimal<_9, _0>();
+
+    CustomerNumber = CMCUSTNO.MoveRight(CustomerNumber);
+    if (!CSMASTERL1.Seek(SeekMode.SetLL, CustomerNumber))
+        return;
+
+    Dictionary<decimal, YearData> salesForCustomer = new Dictionary<decimal, YearData>();
+    Dictionary<decimal, YearData> returnsForCustomer = new Dictionary<decimal, YearData>();
+    decimal lastYearSales = decimal.MinValue;
+    decimal lastYearReturns = decimal.MinValue;
+
+    while (CSMASTERL1.ReadNextEqual(false, CustomerNumber))
+    {
+        if (CSTYPE == 1)
+        {
+            lastYearSales = CSYEAR;
+            salesForCustomer.Add(lastYearSales, new YearData(CSSALES01, CSSALES02, CSSALES03, CSSALES04, CSSALES05, CSSALES06, CSSALES07, CSSALES08, CSSALES09, CSSALES10, CSSALES11, CSSALES12));
+        }
+        else
+        {
+            lastYearReturns = CSYEAR;
+            returnsForCustomer.Add(lastYearReturns, new YearData(CSSALES01, CSSALES02, CSSALES03, CSSALES04, CSSALES05, CSSALES06, CSSALES07, CSSALES08, CSSALES09, CSSALES10, CSSALES11, CSSALES12));
+        }
+    }
+
+    if (lastYearSales > decimal.MinValue)
+    {
+        CSSALES01 = salesForCustomer[lastYearSales].month[0];
+        CSSALES02 = salesForCustomer[lastYearSales].month[1];
+        CSSALES03 = salesForCustomer[lastYearSales].month[2];
+        CSSALES04 = salesForCustomer[lastYearSales].month[3];
+        CSSALES05 = salesForCustomer[lastYearSales].month[4];
+        CSSALES06 = salesForCustomer[lastYearSales].month[5];
+        CSSALES07 = salesForCustomer[lastYearSales].month[6];
+        CSSALES08 = salesForCustomer[lastYearSales].month[7];
+        CSSALES09 = salesForCustomer[lastYearSales].month[8];
+        CSSALES10 = salesForCustomer[lastYearSales].month[9];
+        CSSALES11 = salesForCustomer[lastYearSales].month[10];
+        CSSALES12 = salesForCustomer[lastYearSales].month[11];
+
+        YEAR_SALES = $"(Year {lastYearSales})";
+        TOTAL_SALES = salesForCustomer[lastYearSales].Sum();
+
+        if (CSSALES12 > CSSALES01 && CSSALES12 > 0)
+        {
+            decimal calc = (CSSALES01 * 100) / CSSALES12;
+            PERCENT_CHANGE_SALES = $"↑ +{Math.Round(calc, 1)}%";
+        }
+        else if (CSSALES12 < CSSALES01 && CSSALES01 > 0)
+        {
+            decimal calc = (CSSALES12 * 100) / CSSALES01;
+            PERCENT_CHANGE_SALES = $"↓ +{Math.Round(calc, 1)}%";
+        }
+    }
+
+    if (lastYearReturns > decimal.MinValue)
+    {
+        CSRETURN01 = returnsForCustomer[lastYearReturns].month[0];
+        CSRETURN02 = returnsForCustomer[lastYearReturns].month[1];
+        CSRETURN03 = returnsForCustomer[lastYearReturns].month[2];
+        CSRETURN04 = returnsForCustomer[lastYearReturns].month[3];
+        CSRETURN05 = returnsForCustomer[lastYearReturns].month[4];
+        CSRETURN06 = returnsForCustomer[lastYearReturns].month[5];
+        CSRETURN07 = returnsForCustomer[lastYearReturns].month[6];
+        CSRETURN08 = returnsForCustomer[lastYearReturns].month[7];
+        CSRETURN09 = returnsForCustomer[lastYearReturns].month[8];
+        CSRETURN10 = returnsForCustomer[lastYearReturns].month[9];
+        CSRETURN11 = returnsForCustomer[lastYearReturns].month[10];
+        CSRETURN12 = returnsForCustomer[lastYearReturns].month[11];
+
+        YEAR_RETURNS = $"(Year {lastYearReturns})";
+        TOTAL_RETURNS = returnsForCustomer[lastYearReturns].Sum();
+
+        decimal janReturns = Math.Abs(CSRETURN01);
+        decimal decReturns = Math.Abs(CSRETURN12);
+
+        if (decReturns > janReturns && decReturns > 0)
+        {
+            decimal calc = (janReturns * 100) / decReturns;
+            PERCENT_CHANGE_RETURNS = $"↑ +{Math.Round(calc, 1)}%";
+        }
+        else if (decReturns < janReturns && CSRETURN01 > 0)
+        {
+            decimal calc = (decReturns * 100) / janReturns;
+            PERCENT_CHANGE_RETURNS = $"↓ +{Math.Round(calc, 1)}%";
+        }
+    }
+}
+```
+
+Compile `CustomerAppLogic` and Run the Website Application. Navigate to any Customer to **Update** its record information and you should get a Page similar to the following:
+
+![Totals and Trend](/images/page-two-08_a.png/)
+
 <br>
 <br>
 <br>
