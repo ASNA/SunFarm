@@ -145,11 +145,43 @@ CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml
 </div>
 ```
 
->>Note: The *rendering* order is important. 
+>Note: The *rendering* order is important. 
 
 When overlapping elements and one is *input capable*, the later must be on top of the former. The Browser renders elements in the order in which they are described in 'HTML', in this case we want '“CUSTREC.SFSTATUS"' rendered on top of '@Model.CUSTREC.SF_STATUS_NAME'
 
 Run the Website Application again, and you can verify that the *Status Description* may still be *clickable* and prompting to change its value still works.[^2]
+
+## Chart Placeholder
+
+They Chart will be placed vertically at the same level as `Row=“3”` on a box with `width= 300` pixels and `height= 200` pixels. The box will have a light colored gray border.
+
+We can start with standard `DIV HTML` element. We will position it like we have been positioning other elements before, under a particular `Row` with a horizontal displacement indicated by a `Column` attribute.
+
+The starting Markup is:
+
+```html
+<div Row="3">
+    <img id="customer-icon" ExpoCol="8" src="~/customer-icon.svg" />
+    <div id="custrec-chart" ExpoCol="67">My Chart</div>
+</div>
+```
+With the custrec-chart style defined in *CSS*:
+
+```css
+#custrec-chart {
+    position: absolute;
+    background-color: whitesmoke;
+    width: 300px;
+    height: 200px;
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: medium;
+}
+```
+
+Such element shows like the image below[^3].
+
+![Chart Placeholder element](/images/page-two-chart-03.png/)
 
 <br>
 <br>
@@ -158,4 +190,5 @@ Run the Website Application again, and you can verify that the *Status Descripti
 
 [^1]: Commit: “Descriptive Customer Status field”
 [^2]: Commit “Chart heading showing the Status Description Centered”
+[^3]: Commit: “Chart Placeholder”
 
