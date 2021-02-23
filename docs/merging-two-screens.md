@@ -549,10 +549,10 @@ We start by adding the *Returns* fields to the Markup:
 Open Markup file:  
 
 ~~~
-CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml`
+CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml
 ~~~
 
-Locate `For="CUSTREC"` add he following *Rows* (17 thru 20) to the Display Record:
+Locate `For="CUSTREC"` and **Add* the following *Rows* (17 thru 20) to the Display Record:
 
 ```html
 <div Row="17">
@@ -592,9 +592,52 @@ Locate `For="CUSTREC"` add he following *Rows* (17 thru 20) to the Display Recor
 ```
 >Note: we are setting the Color to “red” instead of showing *negative* sign for the *Returns* values. In the Business Logic, we will convert *negative* values to *absolute* values.
 
+Next, **Add** to the `CUSTREC_Model` the definitions for the *Returns* fields - just as we did before to the `CSSALESnn` fields (above) -.
+
+```cs
+        [Dec(11, 2)]
+        public decimal CSRETURN01 { get; private set; }
+
+        [Dec(11, 2)]
+        public decimal CSRETURN02 { get; private set; }
+
+        [Dec(11, 2)]
+        public decimal CSRETURN03 { get; private set; }
+
+        [Dec(11, 2)]
+        public decimal CSRETURN04 { get; private set; }
+
+        [Dec(11, 2)]
+        public decimal CSRETURN05 { get; private set; }
+
+        [Dec(11, 2)]
+        public decimal CSRETURN06 { get; private set; }
+
+        [Dec(11, 2)]
+        public decimal CSRETURN07 { get; private set; }
+
+        [Dec(11, 2)]
+        public decimal CSRETURN08 { get; private set; }
+
+        [Dec(11, 2)]
+        public decimal CSRETURN09 { get; private set; }
+
+        [Dec(11, 2)]
+        public decimal CSRETURN10 { get; private set; }
+
+        [Dec(11, 2)]
+        public decimal CSRETURN11 { get; private set; }
+
+        [Dec(11, 2)]
+        public decimal CSRETURN12 { get; private set; }
+```
+Re-run [Serengeti Tools](https://asna.githubio.SerengetiTools) on the `CUSTINQ` Program, in the `CustomerAppLogic` Project.
+
 Re-run the Website and navigate to a Customer “Update” Page:
 
 ![Returns Initial Rendering](/images/page-two-06.png/)
+
+
 <br>
 <br>
 <br>
