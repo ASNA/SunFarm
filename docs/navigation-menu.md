@@ -96,7 +96,7 @@ For the menu items for the *DdsFile* in **DSPF** Page, are:
 3. ◀ Page
 4. Next ▶
 
-All we need to do is change the KeyNames attribute for the **"SFLC"** record, from:
+All we need to do is change the KeyNames attribute for the `SFLC` record, from:
 
 ```html
 <DdsSubfileControl For="SFLC" KeyNames="ENTER 'Enter'; PageUp; PageDown;"

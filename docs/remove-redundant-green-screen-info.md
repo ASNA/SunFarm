@@ -163,7 +163,7 @@ So far the *markup* for the identified rows is reduced to:
                     Note: KEYS record has no visible rows.
 ```
 
-Completing (3) regarding the constant "2=Update 3=Display sales ... etc" deserves further explanation.
+Completing (3) regarding the constant `"2=Update 3=Display sales` ... etc deserves further explanation.
 
 ### We have two pieces of information:
 
@@ -173,13 +173,12 @@ Completing (3) regarding the constant "2=Update 3=Display sales ... etc" deserve
 </ol>
 
 
-Each ASP.NET Razor Page is defined by two files: the Markup file (extension .cshtml) and the corresponding Model file (*extension* .cshtml.cs).
+Each ASP.NET Razor Page is defined by two files: the Markup file (extension `.cshtml`) and the corresponding Model file (*extension* `.cshtml.cs`).
 
 ><sub>Note: For convenience, Visual Studio Solution Explorer, shows the Model file under the Markup file in the Website file structure.</sub>
 
-<br>
 
-Visual Studio intellisense,  allows to jump back and forth, between symbols defined in the Markup and the Model. For example, positioning the cursor in the markup on top of DdsDecField *For=“SFLC.SFL1[rrn].SFSEL"* and pressing **F12** (*Go To Definition*), will take you to the Model’s definition for the *SFLC* (Subfile record Controller)’s field *SFLSEL*.
+Visual Studio intellisense,  allows to jump back and forth, between symbols defined in the Markup and the Model. For example, positioning the cursor in the markup on top of DdsDecField `For=“SFLC.SFL1[rrn].SFSEL"` and pressing `F12` (*Go To Definition*), will take you to the Model’s definition for the `SFLC` (Subfile record Controller)’s field *SFLSEL*.
 
 ### Model's Code
 
