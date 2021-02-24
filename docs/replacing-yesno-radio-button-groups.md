@@ -48,6 +48,53 @@ Focusing on the new `DdsRadioButtonGroupField`, let's describe the attributes us
 | *Text* | The Label for the Group of Radio Buttons
 | *ValuesText* | A comma separated list of labels for each of the Radio Buttons
 
+Please note that:
+1. The order of items in the `ValuesText` attribute is **important**.
+2. There should be a one-to-one correspondence between the `Values` attribute in the `Model` field's definition to each text in the `ValuesText` attribute in the Markup.
+3. Individual labels in the `ValuesText` attribute are separated by *comma* and quoted using *single* quotes.
+
+Run the Website again, and the **Customer Maintenance Page** should now look like the following image:
+
+![YES/NO Field presented as a Radio Group](/images/page-two-radio-grp-01.png/)
+
+Notice that as you click on a radio button, for example on **“No”** choice, the dark circle on the **“Yes”** choice disappears - making the selection *mutually* exclusive -. 
+
+## Keyboard operation
+
+When *keyboard focus* is one of the choices in the *Radio Group*, for example in **“Yes”** radio button:
+
+1. The *Right arrow* moves to the **next** choice.
+2. The *Left arrow* moves to the **previous** choice.
+3. Continue to move *right* or *left*, past the last or first choice, *rolls around* the choice group.
+
+>The Radio Group interface is normally used when the possible choices are more than two, but for the sake of keeping this Guide *simple*, we use the same `SFYN01` field as we did before for the [Checkboxes in this Guide before]({{ site.rooturl }}/replacing-yesno-with-checkboxes/).
+  
+
+## Using Radio button Group fields with decimal fields
+
+`DdsRadioButtonGroupField` tagHelper is not limited `Char` fields. Just as we did for [Checkboxes in this Guide before]({{ site.rooturl }}/replacing-yesno-with-checkboxes/), if the field we want to present as a *group of radio buttons* is defined as a `Decimal`, we can still use it to *bind* to this tagHelper.
+
+More specifically, a field definition in the `Model`, such as:
+
+```cs
+[Dec(1, 0)]
+[Values(typeof(decimal), 1, 0)]
+public decimal DECSNDCONF { get; set; }
+```
+
+May be *bound* to the following (*unmodified*) Markup:
+
+```html
+<DdsRadioButtonGroupField Col="47" Text="Send Confirmation:" ValuesText="'Yes','No'" For="CUSTREC.DECSNDCONF" VirtualRowCol="18,27" />
+```
+
+>*At runtime*:
+
+1. Going out to the Browser, `DECSNDCONF` with a value of `1` will check the *Radio button* with label `‘Yes’` — and if the value were `0` (*zero*), the radio button with `‘No’` would be checked instead —.
+2. A change on the state of the *Radio buttons* for field `DECSNDCONF` requested from the Browser would be translated to `1` or `0` (*zero*) Decimal value, depending on which *radio button* was left **checked**.
+
+>No changes to the Model nor the Application logic are needed.
+
 <br>
 <br>
 <br>
