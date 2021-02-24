@@ -12,7 +12,7 @@ When *more* that *two* values of a discreet collection is expected, a *Radio But
 
 An important distinction, when comparing *Checkbox Groups* with *Radio Button Groups* is that, in addition to listing the available choices, *selecting* one choice automatically *de-selects* the others. In other words, choices are *mutually* exclusive.
 
-ASNA Monarch Nomad&reg; provides a tagHelper to simplify the production of *Radio Button Groups* named `DdsRadioGroupField`.
+ASNA Monarch Nomad&reg; provides a TagHelper to simplify the production of *Radio Button Groups* named `DdsRadioGroupField`.
 
 To explore the use of `DdsRadioGroupField` we will replace the `DdsCheckboxField`  [described in this Guide before]({{ site.rooturl }}/replacing-yesno-with-checkboxes/).
 
@@ -72,7 +72,7 @@ When *keyboard focus* is one of the choices in the *Radio Group*, for example in
 
 ## Using Radio button Group fields with decimal fields
 
-`DdsRadioButtonGroupField` tagHelper is not limited `Char` fields. Just as we did for [Checkboxes in this Guide before]({{ site.rooturl }}/replacing-yesno-with-checkboxes/), if the field we want to present as a *group of radio buttons* is defined as a `Decimal`, we can still use it to *bind* to this tagHelper.
+`DdsRadioButtonGroupField` TagHelper is not limited `Char` fields. Just as we did for [Checkboxes in this Guide before]({{ site.rooturl }}/replacing-yesno-with-checkboxes/), if the field we want to present as a *group of radio buttons* is defined as a `Decimal`, we can still use it to *bind* to this TagHelper.
 
 More specifically, a field definition in the `Model`, such as:
 
@@ -98,6 +98,6 @@ May be *bound* to the following (*unmodified*) Markup:
 <br>
 <br>
 <br>
-[Continue ...]({{ site.rooturl }}/replacing-yesno-radio-button-groups/)
+[Continue ...]({{ site.rooturl }}/replacing-prompt-with-icon/)
 
 [^1]: Commit “Replacing YES/NO field with a Radio Button Group”

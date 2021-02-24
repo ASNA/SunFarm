@@ -17,7 +17,7 @@ It is rendered as:
 1. Fields need a constant to the right to show the possible *expected* values, in this example `(Y/N)`. Not only does it waste valuable screen real-estate , but also requires the constant to be properly aligned.
 2. Having a character input field that allows more than two possible values, makes the interface *error prone* and therefore more validation will be required.
 
-Checkboxes on Web pages are usually presented with the **“tick”** button to the left of the label, with a specific *spacing* between the button and the label. It should make sense then to include a constant label, such as `“Send Confirmation”` as part of the tagHelper.
+Checkboxes on Web pages are usually presented with the **“tick”** button to the left of the label, with a specific *spacing* between the button and the label. It should make sense then to include a constant label, such as `“Send Confirmation”` as part of the TagHelper.
 
 What we want to produce is the following (see image below)
 
@@ -55,7 +55,7 @@ public string SFYN01 { get; set; }
 
 ## Using Checkbox with decimal fields
 
-Let’s artificially modify our application to show how `DdsCheckboxField` tagHelper could be used to bind a `Decimal` field in our `Model` (which could be extended to a database field defined as decimal too).
+Let’s artificially modify our application to show how `DdsCheckboxField` TagHelper could be used to bind a `Decimal` field in our `Model` (which could be extended to a database field defined as decimal too).
 
 To avoid changing too much our Application, let’s add a new field to the `Model` defined as follows:
 

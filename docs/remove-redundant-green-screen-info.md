@@ -377,7 +377,7 @@ Use the *Developer Tools* to inspect the column width allocated to the Customer 
 
 Notice how the Legacy Application was allocating *forty* characters for Customer Names (its field length), but when using *variable-pitch* fonts this *span* results wasteful, showing an un-used -*yet valuable*- area on the page.
 
-We can override the *Column Span* calculation by adding the *tagHelper* attribute **ColSpan** as follows:
+We can override the *Column Span* calculation by adding the *TagHelper* attribute **ColSpan** as follows:
 
 ```html
 <DdsCharField Col="12+14+1" ColSpan="30" For="SFLC.SFL1[rrn].SFNAME1" VirtualRowCol="@row,14" Color="Green : !61 , DarkBlue : 61" />

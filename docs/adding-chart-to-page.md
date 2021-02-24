@@ -74,7 +74,7 @@ Nothing fancy, a white on black box with the text centered.
 
 ## What is `@Model.CUSTREC.SF_STATUS_NAME`?
 
-We have been using `For=“”` notation to reference fields in attributes for Expo *tagHelpers*, but when we use standard HTML elements - *where we want to refer to the content of an HTML element* - we need to let Razor know our intent. 
+We have been using `For=“”` notation to reference fields in attributes for Expo *TagHelpers*, but when we use standard HTML elements - *where we want to refer to the content of an HTML element* - we need to let Razor know our intent. 
 
 Using `@` symbol will let use switch to C# code, were we can refer to *content* on symbols defined on the Model. `@Model.CUSTREC` will get us to the instance of the CUSTREC DdsRecord, but field SF_STATUS_NAME does not *yet* exists.
 

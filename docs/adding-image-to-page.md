@@ -32,7 +32,7 @@ Once you have understood the basic technique, you can then realize that:
 
 &#128161; Adding other *Standard HTML* elements outside the **div Row** containers, is not only perfectly valid, but *encouraged*.
 
-The same is true for *Standard HTML* elements added *inside* **div Row** containers. Doing so, will make sure elements are positioned at “Row” vertical boundaries and starting at the top-left position specified by a another attribute called **ExpoCol** (similar to the **Col** attribute on DdsCharField, DdsConstant and DdsDecField tagHelpers you have been using all along).  
+The same is true for *Standard HTML* elements added *inside* **div Row** containers. Doing so, will make sure elements are positioned at “Row” vertical boundaries and starting at the top-left position specified by a another attribute called **ExpoCol** (similar to the **Col** attribute on DdsCharField, DdsConstant and DdsDecField *TagHelpers* you have been using all along).  
 
 Let’s add a Customer Photo placeholder on this page.
 

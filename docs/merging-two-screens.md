@@ -295,7 +295,7 @@ We added the ability to Program `CUSTINQ` to deal with *Sales and Returns* infor
 
 Let’s now focus in the Front-End. 
 
-Open the `CustomerAppSite/Areas/CustomerAppViews/Pages/CUSTDSPF.cshtml` markup file and locate `DdsRecord For=“CUSTREC”` tagHelper.
+Open the `CustomerAppSite/Areas/CustomerAppViews/Pages/CUSTDSPF.cshtml` markup file and locate `DdsRecord For=“CUSTREC”` TagHelper.
 
 So far, we have used *Rows* 2 thru 10. We have room in *Rows* 12 thru 20.
 
