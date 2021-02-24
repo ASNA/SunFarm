@@ -93,14 +93,36 @@ After:
 
 If we had `DECSNDCONF` in the database declared as decimal (1,0) that would be **all** we need to do, but we will **not** go to the trouble of changing the database schema in this Guide.
 
-*Instead*, we will trick the Logic code such that `Y/N` in field `SFYN01` will update `DECSNDCONF` when going *out* to the screen, and then posted new value for `DECSNDCONF` with value `1` or `0` will update `SFYN01` on the way *in*. This should be simple to do.
+*Instead*, we will trick the Logic code such that `Y/N` in field `SFYN01` will update `DECSNDCONF` when going *out* to the screen, and then posted new value for `DECSNDCONF` with value `1` or `0` will update `SFYN01` on the way *in*. 
 
-Let’s  first run the [Serengeti Tools]() to update the Display Page *DataSet* and make `DECSNDCONF` available to the Program `CUSTINQ`.
+This should be simple to do.
+
+Let’s  first run the [Serengeti Tools](https://asna.githubio.SerengetiTools) to update the Display Page *DataSet* and make `DECSNDCONF` available to the Program `CUSTINQ`.
+
+Locate the sourcefile `CustomerAppLogic/CUSTINQ.cs` using *Visual Studio Solution Explorer* and invoke the *context-menu* options and execute: `Refresh XFU` and `Run Custom Tools` Serengeti commands.
+
+To keep in *Sync* the Decimal field `DECSNDCONF` with the database field `SFYN01` all we need to do in the Business Logic - Program `CUSTINQ` - is:
+
+*Before* going *out* to the screen, that is, before: `CUSTDSPF.ExFmt("CUSTREC", _IN.Array);` update `DECSNDCONF` with the value in `SFYN01`, with the following code:
+
+```cs
+DECSNDCONF = (SFYN01 == "Y") ? 1 : 0;
+```
+
+*After* coming back from the screen to the Business Logic, that us, after: `CUSTDSPF.ExFmt("CUSTREC", _IN.Array);`, update `SFYN01` value.
+
+```cs
+SFYN01 = DECSNDCONF == 1 ? "Y" : "N";
+```
+Build CustomerAppLogic Project and run the Website[^2].
+
+Updating Customer records by changing the state of the “Send Confirmation” checkbox will work *the same way* as before, but you can debug to see how the `DECSNDCONF` decimal field values changes from `0` to `1` values.
 
 <br>
 <br>
 <br>
-[Continue ...]({{ site.rooturl }}/replacing-yesno-radio-button-group/)
+[Continue ...]({{ site.rooturl }}/replacing-yesno-with-radio-button-groups/)
 
 
 [^1]: Commit “Replaced Y/N field with Checkbox”
+[^2]: Commit “Using Decimal Fields with Checkboxes”
