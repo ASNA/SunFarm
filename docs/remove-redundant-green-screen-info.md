@@ -122,7 +122,7 @@ Identify the Division for *Row=1* on record "SFLC":
 
 Remove the constants with Text "*USER", "*DATE" and "*TIME".
 
-Identify the Division for *Row=4* and *Row=5* on record "SFLC":
+Identify the Division for `Row=4` and `Row=5` on record "SFLC":
 
 ```html
 <div Row="4">
@@ -135,7 +135,7 @@ Identify the Division for *Row=4* and *Row=5* on record "SFLC":
 
 Remove both Rows.
 
-Identify the Division for *Row=23* on record "KEYS":
+Identify the Division for `Row=23` on record "KEYS":
 
 ```html
 <DdsRecord For="KEYS" KeyNames="ENTER 'Enter'; ">
@@ -145,7 +145,7 @@ Identify the Division for *Row=23* on record "KEYS":
 </DdsRecord>
 ```
 
-Remove Row=23
+Remove `Row=23`
 
 So far the *markup* for the identified rows is reduced to:
 
@@ -216,7 +216,7 @@ Focus your attention on the **SFSEL** definition:
 public decimal SFSEL { get; set; }
 ```
 
-Note that, in addition to the C# decimal definition for the type, the field *SFLSEL* is decorated with **Dec** and **Values** attributes.
+Note that, in addition to the C# decimal definition for the type, the field `SFLSEL` is decorated with **Dec** and **Values** attributes.
 
 **Dec** attribute further defines the decimal as one with *fixed precision* and *decimal positions*.
 The **Values** attribute defines the *valid* values for the field. The positions on the list of valid values is **important**, since it will be matched with the ValuesText *TagHelper* attribute in the markup.
@@ -248,9 +248,9 @@ Now we need to push the rest of the fields to the *right*, to make it look nicer
 
 There are several ways to accomplish this. What we will use, is the *trial-and-error* technique.
 
-To avoid having to recalculate the column positions for the fields in the subfile, we can add a constant numeric value to each of the fields to the right: “SFLC.SFL1[rrn].SFCUSTNO”, “SFLC.SFL1[rrn].SFNAME1" and “SFLC.SFL1[rrn].SFCSZ”. 
+To avoid having to recalculate the column positions for the fields in the subfile, we can add a constant numeric value to each of the fields to the right: `SFLC.SFL1[rrn].SFCUSTNO`, `SFLC.SFL1[rrn].SFNAME1` and `SFLC.SFL1[rrn].SFCSZ`. 
 
-Let’s add *10+* … no, *15+* … no *12+*
+Let’s add *`10+`* … no, *`15+`* … no *`12+`*
 
 The markup would look like this (for clarity I eliminated part of each line, replaced by …):
 
@@ -284,7 +284,7 @@ Before we continue, let’s get rid of the vertical gap, between Position to nam
 <br>
 <br>
 
-We accomplish this by changing *Row=“7”* to *Row=“3”* and *Row=“8”* to *Row=“4”*
+We accomplish this by changing `Row=“7”` to `Row=“3` and `Row=“8”` to `Row=“4”`
 
 Next, we will align the column headings on the Subfile...
 
@@ -304,7 +304,7 @@ The Legacy Application used Centering as a way to make the constant stand out as
 
 Let's forget that the Title is a DdsConstant with a specific column position, and think of it as a Text block within an HTML division of a particular style.
 
-Add the following CSS style to file:
+Add the following `CSS` style to file:
 
 ~~~
 CustomerAppSite\wwwroot\css\site.css
@@ -319,7 +319,7 @@ CustomerAppSite\wwwroot\css\site.css
 }
 ```
 
-The definition of the style is self-explanatory: large font size, with a certain padding to the left and top, using the **bold** text effect. We use that style only once on the page, in the item with id = "page-title".
+The definition of the style is self-explanatory: large font size, with a certain padding to the left and top, using the **bold** text effect. We use that style only once on the page, in the item with `id="page-title"`.
 
 In the markup, we remove the old DdsConstant specification with the same purpose (formerly on row one):
 
