@@ -76,46 +76,47 @@ The *Icon Shapes* are simple and clean, monochrome (color can be changed to any 
 | copy | ![](/images/IconIDs/copy.png/)  
 | credit-card | ![](/images/IconIDs/credit-card.png/)  
 | cut | ![](/images/IconIDs/cut.png/)  
+| dashboard | ![](/images/IconIDs/dashboard.png/)   
+| desktop | ![](/images/IconIDs/desktop.png/)   
+| double-angle-down | ![](/images/IconIDs/double-angle-down.png/)   
+| double-angle-left | ![](/images/IconIDs/double-angle-left.png/)   
+| double-angle-right | ![](/images/IconIDs/double-angle-right.png/)   
+| double-angle-up | ![](/images/IconIDs/double-angle-up.png/)   
+| download-alt | ![](/images/IconIDs/download-alt.png/)   
+| download | ![](/images/IconIDs/download.png/)   
+| edit | ![](/images/IconIDs/edit.png/)   
+| eject | ![](/images/IconIDs/eject.png/)   
+| envelope-alt | ![](/images/IconIDs/envelope-alt.png/)    
+| envelope | ![](/images/IconIDs/envelope.png/)    
+| equals | ![](/images/IconIDs/equals.png/)    
+| exchange| ![](/images/IconIDs/ exchange.png/)    
+| exclamation-sign | ![](/images/IconIDs/exclamation-sign.png/)    
+| external-link | ![](/images/IconIDs/external-link.png/)    
+| eye-close | ![](/images/IconIDs/eye-close.png/)    
+| eye-open | ![](/images/IconIDs/eye-open.png/)    
+| facebook-sign | ![](/images/IconIDs/facebook-sign.png/)    
+| facebook | ![](/images/IconIDs/facebook.png/)    
+| facetime-video | ![](/images/IconIDs/facetime-video.png/)   
+| fast-backward | ![](/images/IconIDs/fast-backward.png/)    
+| fast-forward | ![](/images/IconIDs/fast-forward.png/)    
+| fighter-jet | ![](/images/IconIDs/fighter-jet.png/)    
+| file-alt | ![](/images/IconIDs/file-alt.png/)    
+| file | ![](/images/IconIDs/file.png/)    
+| film | ![](/images/IconIDs/film.png/)    
+| filter | ![](/images/IconIDs/filter.png/)   
+| fire | ![](/images/IconIDs/fire.png/)   
+| flag | ![](/images/IconIDs/flag.png/)   
+| folder-close-alt | ![](/images/IconIDs/folder-close-alt.png/)   
+| folder-close | ![](/images/IconIDs/folder-close.png/)    
+| folder-open-alt | ![](/images/IconIDs/folder-open-alt.png/)   
+| folder-open | ![](/images/IconIDs/folder-open.png/)   
+| font | ![](/images/IconIDs/font.png/)    
+| food | ![](/images/IconIDs/food.png/)    
+| forward | ![](/images/IconIDs/forward.png/)    
+| fullscreen | ![](/images/IconIDs/fullscreen.png/)    
 
-dashboard dashboard | ![](/images/IconIDs/
-desktop desktop
-double-angle-down double-angle-down
-double-angle-left double-angle-left
-double-angle-right double-angle-right
-double-angle-up double-angle-up
-download-alt download-alt
-download download
-edit
-eject
-envelope-alt
-envelope
-equals
-exchange
-exclamation-sign
-external-link
-eye-close
-eye-open
-facebook-sign
-facebook
-facetime-video
-fast-backward
-fast-forward
-fighter-jet
-file-alt
-file
-film
-filter
-fire
-flag
-folder-close-alt
-folder-close
-folder-open-alt
-folder-open
-font
-food
-forward
-fullscreen
-gift
+
+gift        | ![](/images/IconIDs/
 github-alt
 github-sign
 github
