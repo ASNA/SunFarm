@@ -188,78 +188,78 @@ The *Icon Shapes* are simple and clean, monochrome (color can be changed to any 
 | question-sign | ![](/images/IconIDs/question-sign.png/)   
 | quote-left | ![](/images/IconIDs/quote-left.png/)   
 | quote-right | ![](/images/IconIDs/quote-right.png/)    
+| random | ![](/images/IconIDs/random.png/) 
+| refresh | ![](/images/IconIDs/refresh.png/) 
+| remove-circle | ![](/images/IconIDs/remove-circle.png/) 
+| remove-sign | ![](/images/IconIDs/remove-sign.png/) 
+| remove | ![](/images/IconIDs/remove.png/) 
+| reorder | ![](/images/IconIDs/reorder.png/) 
+| repeat | ![](/images/IconIDs/repeat.png/) 
+| reply | ![](/images/IconIDs/reply.png/) 
+| resize-full | ![](/images/IconIDs/resize-full.png/) 
+| resize-horizontal | ![](/images/IconIDs/resize-horizontal.png/) 
+| resize-small | ![](/images/IconIDs/resize-small.png/) 
+| resize-vertical | ![](/images/IconIDs/resize-vertical.png/) 
+| retweet | ![](/images/IconIDs/retweet.png/) 
+| road | ![](/images/IconIDs/road.png/) 
+| rss | ![](/images/IconIDs/rss.png/) 
+| save | ![](/images/IconIDs/save.png/) 
+| screenshot | ![](/images/IconIDs/screenshot.png/) 
+| search | ![](/images/IconIDs/search.png/) 
+| share-alt | ![](/images/IconIDs/share-alt.png/) 
+| share | ![](/images/IconIDs/share.png/) 
+| shopping-cart | ![](/images/IconIDs/shopping-cart.png/) 
+| sign-blank | ![](/images/IconIDs/sign-blank.png/) 
+| signal | ![](/images/IconIDs/signal.png/) 
+| signin | ![](/images/IconIDs/signin.png/) 
+| signout | ![](/images/IconIDs/signout.png/) 
+| sitemap | ![](/images/IconIDs/sitemap.png/) 
+| sort-down | ![](/images/IconIDs/sort-down.png/) 
+| sort-up | ![](/images/IconIDs/sort-up.png/) 
+| sort | ![](/images/IconIDs/sort.png/) 
+| spinner | ![](/images/IconIDs/spinner.png/) 
+| star-empty | ![](/images/IconIDs/star-empty.png/) 
+| star-half | ![](/images/IconIDs/star-half.png/) 
+| star | ![](/images/IconIDs/star.png/) 
+| step-backward | ![](/images/IconIDs/step-backward.png/) 
+| step-forward | ![](/images/IconIDs/step-forward.png/) 
+| stethoscope | ![](/images/IconIDs/stethoscope.png/) 
+| stop | ![](/images/IconIDs/stop.png/) 
+| strikethrough | ![](/images/IconIDs/strikethrough.png/) 
+| suitcase | ![](/images/IconIDs/suitcase.png/) 
+| table | ![](/images/IconIDs/table.png/) 
+| tablet | ![](/images/IconIDs/tablet.png/) 
+| tag | ![](/images/IconIDs/tag.png/) 
+| tags | ![](/images/IconIDs/tags.png/) 
+| tasks | ![](/images/IconIDs/tasks.png/) 
+| text-height | ![](/images/IconIDs/text-height.png/) 
+| text-width | ![](/images/IconIDs/text-width.png/) 
+| th-large | ![](/images/IconIDs/th-large.png/) 
+| th-list | ![](/images/IconIDs/th-list.png/) 
+| th | ![](/images/IconIDs/th.png/) 
+| thumbs-down | ![](/images/IconIDs/thumbs-down.png/) 
+| thumbs-up | ![](/images/IconIDs/thumbs-up.png/) 
+| time | ![](/images/IconIDs/time.png/) 
+| tint | ![](/images/IconIDs/tint.png/) 
+| trash | ![](/images/IconIDs/trash.png/) 
+| trophy | ![](/images/IconIDs/trophy.png/) 
+| truck | ![](/images/IconIDs/truck.png/) 
+| twitter-sign | ![](/images/IconIDs/twitter-sign.png/) 
+| twitter | ![](/images/IconIDs/twitter.png/) 
+| umbrella | ![](/images/IconIDs/umbrella.png/) 
+| underline | ![](/images/IconIDs/underline.png/) 
+| undo | ![](/images/IconIDs/undo.png/) 
+| unlock | ![](/images/IconIDs/unlock.png/) 
+| upload-alt | ![](/images/IconIDs/upload-alt.png/) 
+| upload | ![](/images/IconIDs/upload.png/) 
+| user-md | ![](/images/IconIDs/user-md.png/) 
+| user | ![](/images/IconIDs/user.png/) 
+| volume-down | ![](/images/IconIDs/volume-down.png/) 
+| volume-off | ![](/images/IconIDs/volume-off.png/) 
+| volume-up | ![](/images/IconIDs/volume-up.png/) 
+| warning-sign | ![](/images/IconIDs/warning-sign.png/) 
+| wrench | ![](/images/IconIDs/wrench.png/) 
+| zoom-in | ![](/images/IconIDs/zoom-in.png/) 
+| zoom-out | ![](/images/IconIDs/zoom-out.png/)
 
 
-random | ![](/images/IconIDs/
-refresh
-remove-circle
-remove-sign
-remove
-reorder
-repeat
-reply
-resize-full
-resize-horizontal
-resize-small
-resize-vertical
-retweet
-road
-rss
-save
-screenshot
-search
-share-alt
-share
-shopping-cart
-sign-blank
-signal
-signin
-signout
-sitemap
-sort-down
-sort-up
-sort
-spinner
-star-empty
-star-half
-star
-step-backward
-step-forward
-stethoscope
-stop
-strikethrough
-suitcase
-table
-tablet
-tag
-tags
-tasks
-text-height
-text-width
-th-large
-th-list
-th
-thumbs-down
-thumbs-up
-time
-tint
-trash
-trophy
-truck
-twitter-sign
-twitter
-umbrella
-underline
-undo
-unlock
-upload-alt
-upload
-user-md
-user
-volume-down
-volume-off
-volume-up
-warning-sign
-wrench
-zoom-in
-zoom-out
