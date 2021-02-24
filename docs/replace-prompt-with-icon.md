@@ -49,7 +49,7 @@ CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml
 </div>
 ```
 
-Focus on the new tagHelper added, `DdsButton`[^1].
+Focus on the new *TagHelper* added, `DdsButton`[^1].
 
 That simple markup line would do the trick nicely, **WITHOUT** having to change *a single line* in the `Model`’s code or `Application Logic`.
 
@@ -66,10 +66,91 @@ When the mouse pointer is moved *close* to the **magnifying glass** icon — als
 
 ## DdsButton TagHelper
 
+Let’s look *deeper* into how the Markup that produced the clickable icon for prompting is defined.
+
+```html
+<DdsButton Col="40" ButtonStyle="Icon" IconId="search" AidKey="F4" FocusField="CUSTREC.SFSTATE"/>
+```
+
+The attribute `Col` should already be familiar. It specifies the horizontal position within the row (*seven* in this case) where the button should be rendered.
+
+`ButtonStyle` is an attribute that defines the different styles supported for clickable buttons:
+
+1. `Button` - A push button with a text label centered (Default)
+2. `Image` - An image that is identified by a user file as a web resource.
+3. `Link` - A hyperlink (text label that executes an action)  
+4. `Icon` - A named stock image (more on this below)
+
+If the `ButtonStyle` attribute is set to `Icon` (which is what we use in this Guide), the attribute `IconId` must be provided to the name of an existing *Icon Shape*.
+
+*Icon Shapes* are rendered with square dimensions (*width* equals to *height*) and are scaled to fit in a **cell** of the height of the font and the `fore-color` of the `CSS` text, (think of a character with a *graphic shape*).
+
+`AidKey` is an attribute that takes the name of an IBMi *Aid* key (`F1` ...  `F24`, `Clear`, `Help`, `PageUp`, `PageDown`, `Print`, `Home`, `Enter`, `Attn` and `Reset` ).
+
+`FocusField` is an attribute that is set to the *field-name* of the record written to the page where we want to simulate user navigation *right before* the Display Page is *auto-submitted*.
+
+## Icon Payload efficiency
+
+*ASNA Monarch Nomad&reg;* rendering engine is optimized to include in the Page payload only **ONE** copy of a particular *Icon Shape*. If you plan to add `DdsButton` TahHelpers in records of a subfile, you can be assured that the Page’s *payload* will **NOTE** grow. When more than one instance of a particular shape is rendered on a Page, there is a single copy in memory of the shape and multiple *references* to it.
+
+## `IconId` available Names
+
+*ASNA Monarch Nomad&reg;* provides a collection of *Icon Shapes* in the form of [SVG Images](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) with commonly used shapes that are inspired by the [Font Awesome free library](https://fontawesome.com/plans).
+
+The *Icon Shapes* are simple and clean, monochrome (color can be selected), scaled without loss and respect the background (use *transparent* background).
+
+*ASNA Monarch Nomad&reg;* Icon library contains 250 named shapes, which should be sufficient for most of the DdsButtons you application may need.
+
+[Browse the Icon library]({{ site.rooturl }}/asna-icon-library-reference/)
+
+## Button Icon for Status prompt
+
+Adding a clickable icon for the second prompt can be accomplished the same way. We want to show the icon at the right of the Chart’s title where we are displaying the Customer Status (Active for the customer we have been using as a sample).
+
+The last field was positioned at column 72 with a span of 18, that is: the last position is 72+18 = 90. Let’s add the icon at column position 91. The field we want to emulate pressing is `SFSTATUS` on the record `CUSTREC`.
+
+The following is the markup we need:
+
+```html
+<div Row="2">
+    <DdsConstant Col="8" Text="Account number" />
+    <DdsDecField class="left-aligned-field" Col="20" For="CUSTREC.SFCUSTNO" 
+       VirtualRowCol="5,27" Color="DarkBlue" EditCode="Z" Comment="CUSTOMER NUMBER" />
+    <span class="box-highlight-center-field" 
+       ExpoGridCol="72/90">@Model.CUSTREC.SF_STATUS_NAME</span>
+    <DdsCharField class="present-no-visible-field" Col="72" ColSpan="18" 
+       For="CUSTREC.SFSTATUS" VirtualRowCol="15,27" PositionCursor="44" />
+    <DdsButton Col="91" IconId="search" ButtonStyle="Icon" AidKey="F4" FocusField="CUSTREC.SFSTATUS"/>
+</div>
+```
+
+## Button Title as a Visual Hint for the User
+
+Not all icon shapes are universal and when the same shape appears in more than one place on the Page, it may not be immediately apparent as to its purpose.
+
+We can add a small text hint that shows on Desktop Browsers when the mouse pointer hovers on top of the Icon.
+
+Let’s add the following two text hints to our prompts:
+1. “Prompt for State Codes”
+2. “Prompt for Status Codes”
+
+
+Simple addition of these attributes to our TagHelpers:
+
+`IconTitle="Prompt for State Codes"`
+
+`IconTitle="Prompt for Status Codes"`
+
+The prompts with their corresponding titles should now look like the following image:
+
+![State Prompt Title](/images/page-two-state-prompt-icon-title.png/)
+
 <br>
 <br>
 <br>
-[Continue ...]({{ site.rooturl }}/replacing-prompt-with-icon/)
+## *Last Page of this Guide*
+<br>
+<br>
 
 [^1]: Commit “Adding icon to simulate F4 prompt”
 
