@@ -89,7 +89,7 @@ The *Icon Shapes* are simple and clean, monochrome (color can be changed to any 
 | envelope-alt | ![](/images/IconIDs/envelope-alt.png/)    
 | envelope | ![](/images/IconIDs/envelope.png/)    
 | equals | ![](/images/IconIDs/equals.png/)    
-| exchange| ![](/images/IconIDs/ exchange.png/)    
+| exchange| ![](/images/IconIDs/exchange.png/)    
 | exclamation-sign | ![](/images/IconIDs/exclamation-sign.png/)    
 | external-link | ![](/images/IconIDs/external-link.png/)    
 | eye-close | ![](/images/IconIDs/eye-close.png/)    
@@ -114,48 +114,49 @@ The *Icon Shapes* are simple and clean, monochrome (color can be changed to any 
 | food | ![](/images/IconIDs/food.png/)    
 | forward | ![](/images/IconIDs/forward.png/)    
 | fullscreen | ![](/images/IconIDs/fullscreen.png/)    
+| gift | ![](/images/IconIDs/gift.png/) 
+| github-alt | ![](/images/IconIDs/github-alt.png/) 
+| github-sign | ![](/images/IconIDs/github-sign.png/) 
+| github | ![](/images/IconIDs/github.png/) 
+| glass | ![](/images/IconIDs/glass.png/) 
+| globe | ![](/images/IconIDs/globe.png/) 
+| google-plus-sign | ![](/images/IconIDs/google-plus-sign.png/) 
+| google-plus | ![](/images/IconIDs/google-plus.png/) 
+| group | ![](/images/IconIDs/group.png/) 
+| h-sign | ![](/images/IconIDs/h-sign.png/) 
+| hand-down | ![](/images/IconIDs/hand-down.png/) 
+| hand-left | ![](/images/IconIDs/hand-left.png/) 
+| hand-right | ![](/images/IconIDs/hand-right.png/) 
+| hand-up | ![](/images/IconIDs/hand-up.png/) 
+| hdd | ![](/images/IconIDs/hdd.png/) 
+| headphones | ![](/images/IconIDs/headphones.png/) 
+| heart-empty | ![](/images/IconIDs/heart-empty.png/) 
+| heart | ![](/images/IconIDs/heart.png/) 
+| home | ![](/images/IconIDs/home.png/) 
+| hospital | ![](/images/IconIDs/hospital.png/) 
+| inbox | ![](/images/IconIDs/inbox.png/) 
+| indent-left | ![](/images/IconIDs/indent-left.png/) 
+| indent-right | ![](/images/IconIDs/indent-right.png/) 
+| info-sign | ![](/images/IconIDs/info-sign.png/) 
+| italic | ![](/images/IconIDs/italic.png/) 
+| key | ![](/images/IconIDs/key.png/) 
+| laptop | ![](/images/IconIDs/laptop.png/) 
+| leaf | ![](/images/IconIDs/leaf.png/) 
+| legal | ![](/images/IconIDs/legal.png/) 
+| lemon | ![](/images/IconIDs/lemon.png/) 
+| lightbulb | ![](/images/IconIDs/lightbulb.png/) 
+| link | ![](/images/IconIDs/link.png/) 
+| linkedin-sign | ![](/images/IconIDs/linkedin-sign.png/) 
+| linkedin | ![](/images/IconIDs/linkedin.png/) 
+| list-alt | ![](/images/IconIDs/list-alt.png/) 
+| list-ol | ![](/images/IconIDs/list-ol.png/) 
+| list-ul | ![](/images/IconIDs/list-ul.png/) 
+| list | ![](/images/IconIDs/list.png/) 
+| lock | ![](/images/IconIDs/lock.png/) 
 
 
-gift        | ![](/images/IconIDs/
-github-alt
-github-sign
-github
-glass
-globe
-google-plus-sign
-google-plus
-group
-h-sign
-hand-down
-hand-left
-hand-right
-hand-up
-hdd
-headphones
-heart-empty
-heart
-home
-hospital
-inbox
-indent-left
-indent-right
-info-sign
-italic
-key
-laptop
-leaf
-legal
-lemon
-lightbulb
-link
-linkedin-sign
-linkedin
-list-alt
-list-ol
-list-ul
-list
-lock
-magic
+
+magic | ![](/images/IconIDs/
 magnet
 map-marker
 medkit
