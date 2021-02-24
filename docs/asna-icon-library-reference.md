@@ -153,45 +153,44 @@ The *Icon Shapes* are simple and clean, monochrome (color can be changed to any 
 | list-ul | ![](/images/IconIDs/list-ul.png/) 
 | list | ![](/images/IconIDs/list.png/) 
 | lock | ![](/images/IconIDs/lock.png/) 
+| magic | ![](/images/IconIDs/magic.png/)  
+| magnet | ![](/images/IconIDs/magnet.png/)   
+| map-marker | ![](/images/IconIDs/map-marker.png/)   
+| medkit | ![](/images/IconIDs/medkit.png/)   
+| minus-sign | ![](/images/IconIDs/minus-sign.png/)   
+| minus | ![](/images/IconIDs/minus.png/)   
+| mobile-phone | ![](/images/IconIDs/mobile-phone.png/)   
+| money | ![](/images/IconIDs/money.png/)   
+| move | ![](/images/IconIDs/move.png/)   
+| music | ![](/images/IconIDs/music.png/)   
+| off | ![](/images/IconIDs/off.png/)   
+| ok-circle | ![](/images/IconIDs/ok-circle.png/)   
+| ok-sign | ![](/images/IconIDs/ok-sign.png/)   
+| ok | ![](/images/IconIDs/ok.png/)   
+| paper-clip | ![](/images/IconIDs/paper-clip.png/)   
+| paste | ![](/images/IconIDs/paste.png/)  
+| pause | ![](/images/IconIDs/pause.png/)   
+| pencil | ![](/images/IconIDs/pencil.png/)   
+| phone-sign | ![](/images/IconIDs/phone-sign.png/)   
+| phone | ![](/images/IconIDs/phone.png/)   
+| picture | ![](/images/IconIDs/picture.png/)   
+| pinterest-sign | ![](/images/IconIDs/pinterest-sign.png/)   
+| pinterest | ![](/images/IconIDs/pinterest.png/)   
+| plane | ![](/images/IconIDs/plane.png/)   
+| play-circle | ![](/images/IconIDs/play-circle.png/)   
+| play | ![](/images/IconIDs/play.png/)   
+| plus-sign-alt | ![](/images/IconIDs/plus-sign-alt.png/)   
+| plus-sign | ![](/images/IconIDs/plus-sign.png/)   
+| plus | ![](/images/IconIDs/plus.png/)   
+| print | ![](/images/IconIDs/print.png/)   
+| pushpin | ![](/images/IconIDs/pushpin.png/)   
+| qrcode | ![](/images/IconIDs/qrcode.png/)   
+| question-sign | ![](/images/IconIDs/question-sign.png/)   
+| quote-left | ![](/images/IconIDs/quote-left.png/)   
+| quote-right | ![](/images/IconIDs/quote-right.png/)    
 
 
-
-magic | ![](/images/IconIDs/
-magnet
-map-marker
-medkit
-minus-sign
-minus
-mobile-phone
-money
-move
-music
-off
-ok-circle
-ok-sign
-ok
-paper-clip
-paste
-pause
-pencil
-phone-sign
-phone
-picture
-pinterest-sign
-pinterest
-plane
-play-circle
-play
-plus-sign-alt
-plus-sign
-plus
-print
-pushpin
-qrcode
-question-sign
-quote-left
-quote-right
-random
+random | ![](/images/IconIDs/
 refresh
 remove-circle
 remove-sign
