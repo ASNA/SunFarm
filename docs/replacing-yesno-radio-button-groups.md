@@ -57,11 +57,11 @@ Run the Website again, and the **Customer Maintenance Page** should now look lik
 
 ![YES/NO Field presented as a Radio Group](/images/page-two-radio-grp-01.png/)
 
-Notice that as you click on a radio button, for example on **“No”** choice, the dark circle on the **“Yes”** choice disappears - making the selection *mutually* exclusive -. 
+Notice that as you click on a radio button, for example on **"No"** choice, the dark circle on the **"Yes"** choice disappears - making the selection *mutually* exclusive -. 
 
 ## Keyboard operation
 
-When *keyboard focus* is one of the choices in the *Radio Group*, for example in **“Yes”** radio button:
+When *keyboard focus* is one of the choices in the *Radio Group*, for example in **"Yes"** radio button:
 
 1. The *Right arrow* moves to the **next** choice.
 2. The *Left arrow* moves to the **previous** choice.
@@ -100,4 +100,4 @@ May be *bound* to the following (*unmodified*) Markup:
 <br>
 [Continue ...]({{ site.rooturl }}/replacing-prompt-with-icon/)
 
-[^1]: Commit “Replacing YES/NO field with a Radio Button Group”
+[^1]: Commit "Replacing YES/NO field with a Radio Button Group”

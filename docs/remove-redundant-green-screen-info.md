@@ -33,13 +33,13 @@ DSPATR(RI)
 gets translated to:
 
 ```html
-InvertFontColors=“*True"
+InvertFontColors="*True"
 ```
 TagHelper attribute.
 
 Removing such attribute produces a much more pleasant output.
 
-Removing InvertFontColors=“*True" from the subfile **SFL1** in file:
+Removing InvertFontColors="*True" from the subfile **SFL1** in file:
 
 ~~~
 CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtm
@@ -100,7 +100,7 @@ Simplifies the markup and produces a nicer effect:
 
 1. Remove User, Date and Time fields.
 2. Remove F3=Exit constant.
-3. Move the constant “2=Update  3=Display sales …” to the “SFLC.SFL1[rrn].SFSEL" field as Value-Text (or pull down selection option labels)
+3. Move the constant "2=Update  3=Display sales …" to the `SFLC.SFL1[rrn].SFSEL` field as Value-Text (or pull down selection option labels)
 
 Removing is always easy.
 Open file:
@@ -169,7 +169,7 @@ Completing (3) regarding the constant `"2=Update 3=Display sales` ... etc deserv
 
 <ol type="a">
     <li>The option code (char value), that is: &lt;nothing&gt;, 2, 5, 7, 9, 10 and 11.</li>
-    <li>The corresponding labels, such as: “Update”, “Display sales”, “Delivery Addresses” etc..</li>
+    <li>The corresponding labels, such as: "Update", "Display sales", "Delivery Addresses" etc..</li>
 </ol>
 
 
@@ -178,7 +178,7 @@ Each ASP.NET Razor Page is defined by two files: the Markup file (extension `.cs
 ><sub>Note: For convenience, Visual Studio Solution Explorer, shows the Model file under the Markup file in the Website file structure.</sub>
 
 
-Visual Studio intellisense,  allows to jump back and forth, between symbols defined in the Markup and the Model. For example, positioning the cursor in the markup on top of DdsDecField `For=“SFLC.SFL1[rrn].SFSEL"` and pressing `F12` (*Go To Definition*), will take you to the Model’s definition for the `SFLC` (Subfile record Controller)’s field *SFLSEL*.
+Visual Studio intellisense,  allows to jump back and forth, between symbols defined in the Markup and the Model. For example, positioning the cursor in the markup on top of DdsDecField `For="SFLC.SFL1[rrn].SFSEL"` and pressing `F12` (*Go To Definition*), will take you to the Model’s definition for the `SFLC` (Subfile record Controller)’s field `SFLSEL`.
 
 ### Model's Code
 
@@ -283,7 +283,7 @@ Before we continue, let’s get rid of the vertical gap, between Position to nam
 <br>
 <br>
 
-We accomplish this by changing `Row=“7”` to `Row=“3` and `Row=“8”` to `Row=“4”`
+We accomplish this by changing `Row="7"` to `Row="3"` and `Row="8"` to `Row="4"`
 
 Next, we will align the column headings on the Subfile...
 
@@ -352,11 +352,11 @@ Once you have CSS styles defined, you can take advantage of Modern Browsers *Dev
 
 Field’s starting positions are very accurately identified on the page based on the original DDS row and col positions. But identifying ending column positions is harder.
 
-The default Font for *Monarch Nomad* Displayfiles is of the type *variable-pitch*, meaning that the physical width of characters varies according to the Font’s designer’s stroke used. When using **variable-pitch** fonts, letter occupy different width, notably **thinner** letters, such as *“i”* use a lot less character width than wider letters, such as upper-case “M”.
+The default Font for *Monarch Nomad* Displayfiles is of the type *variable-pitch*, meaning that the physical width of characters varies according to the Font’s designer’s stroke used. When using **variable-pitch** fonts, letter occupy different width, notably **thinner** letters, such as `i` use a lot less character width than wider letters, such as upper-case `M`.
 
 Green-screen page designers used a Font that is of the type *fixed-pitch*, meaning that the width of ALL characters is **the same**.
 
-A green-screen label starting at column 5 with the constant **“THIS CONSTANT”** (thirteen characters) is guaranteed to end at column position 17. That is, the end-column position can be precisely computed by the formula:
+A green-screen label starting at column 5 with the constant **"THIS CONSTANT"** (thirteen characters) is guaranteed to end at column position 17. That is, the end-column position can be precisely computed by the formula:
 
 ~~~
 (starting-position + (field-length-1))
@@ -414,8 +414,6 @@ The Legacy DDS had the Subfile Page set at 14 records. Modern computer devices t
 <br>
 [Continue ...]({{ site.rooturl }}/enhancements-affecting-logic/)
 
-[^1]: Commit “Subfile selection options as pull-down options”
-
+[^1]: Commit "Subfile selection options as pull-down options".
 [^2]: Commit "Replacing Page Title".
-
-[^3]: Commit “Fourteen records subfile”.
+[^3]: Commit "Fourteen records subfile".

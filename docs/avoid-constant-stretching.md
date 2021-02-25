@@ -5,7 +5,7 @@ permalink: /avoid-constant-stretching/
 ---
 If you had not noticed, the text on the constants is rendered with more white space between characters (*than normal*).
 
-Particularly noticeable is the subfile column heading “City / State / Zip”.
+Particularly noticeable is the subfile column heading "City / State / Zip".
 
 ![Subfile Column Headings with extra spacing](/images/out-of-box-page-one.png)
 
@@ -56,9 +56,9 @@ One way to control the alignment of text, is thru the use of CSS.
 
 To align Text to the right, we need to specify the original **cell** width intended on the green-screen character grid layout. Usually this width is the length of the constant text (given that green-screen used a predictable fixed width font).
 
-Matching the column span is achieved by adding ColSpan attribute with the special value =“-1” indicating that we want exactly the length of the constant text to be used.
+Matching the column span is achieved by adding ColSpan attribute with the special value ="-1” indicating that we want exactly the length of the constant text to be used.
 
-Lastly, we add a CSS class attribute to all the DdsConstant tag-helpers in the record set to “right-aligned-constant”:
+Lastly, we add a CSS class attribute to all the DdsConstant tag-helpers in the record set to "right-aligned-constant":
 
 ```html
 <div Row="7">

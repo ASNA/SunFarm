@@ -9,7 +9,7 @@ You may have noticed that when reorganizing the data on the [Customer Maintenanc
 ![Space for Chart](/images/page-two-chart-01.png/)
 
 We want to display two pieces of data:
-1. The *Customer Status* (“Active”, “Closed”, “Over limit”, “Refer” and “Suspended”) at the top of that box, *and*
+1. The *Customer Status* ("Active", "Closed", "Over limit", "Refer" and "Suspended") at the top of that box, *and*
 2. A *Sales Chart* that makes it easier to understand the Sales performance trend.
 
 ## Green-screen cryptic codes may now be displayed descriptively
@@ -28,14 +28,14 @@ While changing the presentation of the `status` we do not want to loose the *Pro
 
 First, put back the `CUSTREC.SFSTATUS` field back on the Page. For convenience, show it at column position `1`.
 
-Markup for Row “2”:
+Markup for `Row="2"`:
 
 ```html
 <div Row="2">
     <DdsConstant Col="8" Text="Account number" />
     <DdsDecField class="left-aligned-field" Col="20" For="CUSTREC.SFCUSTNO" 
        VirtualRowCol="5,27" Color="DarkBlue" EditCode="Z" Comment="CUSTOMER NUMBER" />
-    <DdsCharField Col="1" For="CUSTREC.SFSTATUS" VirtualRowCol=“15,27" PositionCursor="44"/>
+    <DdsCharField Col="1" For="CUSTREC.SFSTATUS" VirtualRowCol="15,27" PositionCursor="44"/>
 </div>
 ```
 
@@ -74,7 +74,7 @@ Nothing fancy, a white on black box with the text centered.
 
 ## What is `@Model.CUSTREC.SF_STATUS_NAME`?
 
-We have been using `For=“”` notation to reference fields in attributes for Expo *TagHelpers*, but when we use standard HTML elements - *where we want to refer to the content of an HTML element* - we need to let Razor know our intent. 
+We have been using `For=""` notation to reference fields in attributes for Expo *TagHelpers*, but when we use standard HTML elements - *where we want to refer to the content of an HTML element* - we need to let Razor know our intent. 
 
 Using `@` symbol will let use switch to C# code, were we can refer to *content* on symbols defined on the Model. `@Model.CUSTREC` will get us to the instance of the CUSTREC DdsRecord, but field SF_STATUS_NAME does not *yet* exists.
 
@@ -129,7 +129,7 @@ CustomerAppSite\wwwroot\css\site.css
     opacity:0.1;
 }
 ```
-Change our `Row=“2”` such that both the original *Status code* and the new *Status Descriptions* are written to the page, but where the *Status code* is not **visible**:
+Change our `Row="2"` such that both the original *Status code* and the new *Status Descriptions* are written to the page, but where the *Status code* is not **visible**:
 
 ~~~
 CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml
@@ -147,13 +147,13 @@ CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml
 
 >Note: The *rendering* order is important. 
 
-When overlapping elements and one is *input capable*, the later must be on top of the former. The Browser renders elements in the order in which they are described in 'HTML', in this case we want '“CUSTREC.SFSTATUS"' rendered on top of '@Model.CUSTREC.SF_STATUS_NAME'
+When overlapping elements and one is *input capable*, the later must be on top of the former. The Browser renders elements in the order in which they are described in 'HTML', in this case we want '"CUSTREC.SFSTATUS"' rendered on top of '@Model.CUSTREC.SF_STATUS_NAME'
 
 Run the Website Application again, and you can verify that the *Status Description* may still be *clickable* and prompting to change its value still works.[^2]
 
 ## Chart Placeholder
 
-They Chart will be placed vertically at the same level as `Row=“3”` on a box with `width= 300` pixels and `height= 200` pixels. The box will have a light colored gray border.
+They Chart will be placed vertically at the same level as `Row="3"` on a box with `width= 300` pixels and `height= 200` pixels. The box will have a light colored gray border.
 
 We can start with standard `DIV HTML` element. We will position it like we have been positioning other elements before, under a particular `Row` with a horizontal displacement indicated by a `Column` attribute.
 
@@ -198,15 +198,15 @@ The effect is to *visually* see the Sales *Trend*. Are **Sales** *Growing*? or a
 2. A `Series` is a collection of data points.
 3. `Category X` data is: **months**.
 4. `Category Y` values is: **Sales**.
-5. `Value Title` is: **“Sales”**
+5. `Value Title` is: **"Sales"**
   
 The [AMCHARTS](https://www.amcharts.com/) *engine* is fed by a JavaScript *entry-point*, which we will add at the end of our `CUSTDSPF.chtml` markup file.
 
 The *entry-point* **Script** algorithm is:
 1. Find the `HTML div` placeholder element by `ID`.
 2. If the element exists, we can fairly assume that the `CUSTREC` record is *Active* on the Display, therefore we will create the `Chart`.
-3. Establish data-fields `Category` items as **“month”**
-4. Establish `Value axis` as **“sales”**
+3. Establish data-fields `Category` items as **"month"**
+4. Establish `Value axis` as **"sales"**
 5. Establish `Value series` as collection of fields with monthly *Sales* (point) data.
 6. Provide the `Chart Data` in [JSON](https://www.json.org/json-en.html) data format.
 
@@ -260,7 +260,7 @@ The *plumbing* of the Chart is now in place, all we need to do is: set the *data
 
 ## Producing the Chart data in JSON format
 
-Change the Markup for `Row=“3”`, such that the contents of our chart placeholder has a reference to a new property on our server-side `Model`:
+Change the Markup for `Row="3"`, such that the contents of our chart placeholder has a reference to a new property on our server-side `Model`:
 
 ```html
 <div Row="3">
@@ -284,7 +284,7 @@ You can read this as:
 
 1. Extract the `HTML` string content from our chart `HTML div` element (our placeholder).
 2. Using the `DOM JSON` object, parse the string text and produce a JavaScript object, keeping a reference in the constant `chartData`.
-3. `chartData` has a property called **“data”** with the *data-points* expected by [AMCHARTS JavaScript Library](https://www.amcharts.com/) such that the rendering can execute.
+3. `chartData` has a property called **"data"** with the *data-points* expected by [AMCHARTS JavaScript Library](https://www.amcharts.com/) such that the rendering can execute.
 
 ## Implementing SALES_CHART_DATA getter property
 
@@ -334,7 +334,7 @@ private string FormatChartData()
 
 `FormatChartData` starts by creating an *instance* of `SalesChartData` class (code will follow later).
 
-The *object chart* just created, has an *uninitialized* property called **“data”**. 
+The *object chart* just created, has an *uninitialized* property called **"data"**. 
 
 This is a *collection* of `SalesSeriesPoint` *objects* (code will follow later). We allocate 12 members for this new collection.
 
@@ -388,8 +388,8 @@ With the Chart you can quickly see that the Customer 46000 increased sales in 19
 <br>
 [Continue ...]({{ site.rooturl }}/replacing-yesno-with-checkboxes/)
 
-[^1]: Commit: “Descriptive Customer Status field”
-[^2]: Commit “Chart heading showing the Status Description Centered”
-[^3]: Commit: “Chart Placeholder”
-[^4]: Commit “Empty Chart”
-[^5]: Commit “Chart showing Sales data”
+[^1]: Commit "Descriptive Customer Status field"
+[^2]: Commit "Chart heading showing the Status Description Centered"
+[^3]: Commit "Chart Placeholder"
+[^4]: Commit "Empty Chart"
+[^5]: Commit "Chart showing Sales data"

@@ -17,7 +17,7 @@ It is rendered as:
 1. Fields need a constant to the right to show the possible *expected* values, in this example `(Y/N)`. Not only does it waste valuable screen real-estate , but also requires the constant to be properly aligned.
 2. Having a character input field that allows more than two possible values, makes the interface *error prone* and therefore more validation will be required.
 
-Checkboxes on Web pages are usually presented with the **“tick”** button to the left of the label, with a specific *spacing* between the button and the label. It should make sense then to include a constant label, such as `“Send Confirmation”` as part of the TagHelper.
+Checkboxes on Web pages are usually presented with the **"tick"** button to the left of the label, with a specific *spacing* between the button and the label. It should make sense then to include a constant label, such as `"Send Confirmation"` as part of the TagHelper.
 
 What we want to produce is the following (see image below)
 
@@ -25,7 +25,7 @@ What we want to produce is the following (see image below)
 
 >Notice the *Send Confirmation* `checkbox`.
 
-When the “tick” is checked, the application logic wants the field with a character value of `“Y”` and when it does not a `“N”` (or a *blank*)
+When the "tick" is checked, the application logic wants the field with a character value of `"Y"` and when it does not a `"N"` (or a *blank*)
 
 The Markup can be simplified *too*, from three lines:
 
@@ -69,7 +69,7 @@ CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml.cs:
 public decimal DECSNDCONF { get; set; }
 ```
 
-The new field reads: *“Decimal Send Conformation” and uses 1 digit, where 1 means Yes and 0 (zero) means No*.
+The new field reads: *"Decimal Send Conformation" and uses 1 digit, where 1 means Yes and 0 (zero) means No*.
 
 For convenience we will declare it right after `PERCENT_CHANGE_RETURNS` (around line 250 - see commit file differences).
 
@@ -88,7 +88,7 @@ Before:
 After:
 
 ```html
-<DdsCheckboxField Col="47" Text="Send Confirmation" For="CUSTREC.DECSNDCONF" VirtualRowCol=“18,27" />
+<DdsCheckboxField Col="47" Text="Send Confirmation" For="CUSTREC.DECSNDCONF" VirtualRowCol="18,27" />
 ```
 
 If we had `DECSNDCONF` in the database declared as decimal (1,0) that would be **all** we need to do, but we will **not** go to the trouble of changing the database schema in this Guide.
@@ -116,7 +116,7 @@ SFYN01 = DECSNDCONF == 1 ? "Y" : "N";
 ```
 Build CustomerAppLogic Project and run the Website[^2].
 
-Updating Customer records by changing the state of the “Send Confirmation” checkbox will work *the same way* as before, but you can debug to see how the `DECSNDCONF` decimal field values changes from `0` to `1` values.
+Updating Customer records by changing the state of the "Send Confirmation” checkbox will work *the same way* as before, but you can debug to see how the `DECSNDCONF` decimal field values changes from `0` to `1` values.
 
 <br>
 <br>
@@ -124,5 +124,5 @@ Updating Customer records by changing the state of the “Send Confirmation” c
 [Continue ...]({{ site.rooturl }}/replacing-yesno-with-radio-button-groups/)
 
 
-[^1]: Commit “Replaced Y/N field with Checkbox”
-[^2]: Commit “Using Decimal Fields with Checkboxes”
+[^1]: Commit "Replaced Y/N field with Checkbox”
+[^2]: Commit "Using Decimal Fields with Checkboxes”

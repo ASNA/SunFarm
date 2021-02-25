@@ -131,8 +131,8 @@ Not all icon shapes are universal and when the same shape appears in more than o
 We can add a small text hint that shows on Desktop Browsers when the mouse pointer hovers on top of the Icon.
 
 Let’s add the following two text hints to our prompts:
-1. “Prompt for State Codes”
-2. “Prompt for Status Codes”
+1. "Prompt for State Codes"
+2. "Prompt for Status Codes"
 
 
 Simple addition of these attributes to our TagHelpers:
@@ -152,5 +152,5 @@ The prompts with their corresponding titles should now look like the following i
 <br>
 <br>
 
-[^1]: Commit “Adding icon to simulate F4 prompt”
+[^1]: Commit "Adding icon to simulate F4 prompt"
 

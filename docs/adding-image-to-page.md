@@ -32,7 +32,7 @@ Once you have understood the basic technique, you can then realize that:
 
 &#128161; Adding other *Standard HTML* elements outside the **div Row** containers, is not only perfectly valid, but *encouraged*.
 
-The same is true for *Standard HTML* elements added *inside* **div Row** containers. Doing so, will make sure elements are positioned at “Row” vertical boundaries and starting at the top-left position specified by a another attribute called **ExpoCol** (similar to the **Col** attribute on DdsCharField, DdsConstant and DdsDecField *TagHelpers* you have been using all along).  
+The same is true for *Standard HTML* elements added *inside* **div Row** containers. Doing so, will make sure elements are positioned at "Row" vertical boundaries and starting at the top-left position specified by a another attribute called **ExpoCol** (similar to the **Col** attribute on DdsCharField, DdsConstant and DdsDecField *TagHelpers* you have been using all along).  
 
 Let’s add a Customer Photo placeholder on this page.
 
@@ -61,11 +61,11 @@ We need to complete the position and dimensions of the image by adding the follo
 }
 ```
 
->&#128161; Notice how **Row=“3”** became as tall as the height of the image, pushing all the rest of the rows down. This may or not be what we intended.
+>&#128161; Notice how **Row="3"** became as tall as the height of the image, pushing all the rest of the rows down. This may or not be what we intended.
 
 ![Customer Icon Shows](/images/page-two-04_a.png)
 
-If we prefer not *to push* the rest of rows down, we can change the position style from: “relative” to: “absolute”[^1].
+If we prefer not *to push* the rest of rows down, we can change the position style from: "relative" to: "absolute"[^1].
 
 ```css
 #customer-icon {
@@ -86,4 +86,4 @@ If we prefer not *to push* the rest of rows down, we can change the position sty
 [Continue ...]({{ site.rooturl }}/merging-two-screens/)
 
 
-[^1]: Commit: “Adding an Image to the Page”
+[^1]: Commit "Adding an Image to the Page"

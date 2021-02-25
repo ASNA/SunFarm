@@ -126,7 +126,7 @@ If all goes well, twenty records per page should show in the Subfile [^1]:
 <br>
 [Continue ...]({{ site.rooturl }}/customer-maintenance-enhancement/)
 
-[^1]: Commit “Customer Inquiry Twenty records per page”
+[^1]: Commit "Customer Inquiry Twenty records per page"
 
 
 
