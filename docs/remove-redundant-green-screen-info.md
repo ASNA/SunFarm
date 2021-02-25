@@ -4,11 +4,11 @@ title: Remove Redundant Green-screen Info
 permalink: /remove-redundant-green-screen-info/
 ---
 
-The *Canvas* used to render Pages on Modern Browsers is totally different than the fixed-position grid layout used by a Page on the IBMi
+The *Canvas* used to render Pages on Modern Browsers is totally different than the fixed-position grid layout used by a Page on the IBMi.
 
 Not only does the real state is larger and varying in its dimensions but the color schema is almost incomparable.
 
-Typical color effects in IBMi such as *reverse-video* look **horrendous** on a Modern Browser, in additional, we can identify typical information as irrelevant, such as:
+Typical color effects such as reverse-video colors are often quite distracting. In addition, we *may* identify typical information as irrelevant, such as:
 
 * Display Current Date and Time
 * Display Username
@@ -16,36 +16,36 @@ Typical color effects in IBMi such as *reverse-video* look **horrendous** on a M
 
 These items of information are readily available as part of the *Operating System*. Removing these types of redundant items from Legacy Pages, improves significantly their *Modern* look
 
-# First Step: Remove Reverse Image effect
+# First Step: Remove Reverse Video effect
 
 DDS on the IBMi usually renders text on a terminal with dark background. Text screen attributes such as REVERSE-IMAGE produced a subtle lighter green background which some considered pleasant effect to highlight text, such as records on a subfile.
 
-REVERSE-IMAGE effect on a typically white/pale background Browser Page would produce a *very heavy* block of text when rendered. 
+[Reverse-video](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_73/rzakc/rzakcmstdfdspat.htm) effect on a typically white/pale background Browser Page would produce a *very heavy* block of text when rendered. 
 
 As you can see on the out-of-the-box Migration of the First Page, the subfile records are rendered with a color that is displeasing to the eye.
 
-The reverse-image display attribute DDS keyword:
+The reverse-video (*or Reverse Image*) display attribute DDS keyword:
 
-~~~
-DSPATR(RI) 
-~~~
+`DSPATR(RI)` 
+
  
 gets translated to:
 
 ```html
 InvertFontColors="*True"
 ```
-TagHelper attribute.
+
+`TagHelper` attribute.
 
 Removing such attribute produces a much more pleasant output.
 
-Removing InvertFontColors="*True" from the subfile **SFL1** in file:
+Removing `InvertFontColors="*True"` from the subfile `SFL1` in file:
 
 ~~~
 CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtm
 ~~~
 
-*(Lines 51, 52 and 53)*
+*(Lines `51`, `52` and `53`)*
 
 ```html
 <div Row="8" RowSpan="@SFLC_SubfilePage * @SFLC_SubfileRowsPerRecord">
@@ -83,10 +83,10 @@ Simplifies the markup and produces a nicer effect:
 </div>
 ```
 
-## Removing Reverse Image effect:
+## Removing Reverse Video effect:
 <br>
 
-![No Reverse-Image](/images/no-reverse-image.png)
+![No Reverse-Video](/images/no-reverse-image.png)
 
 <br>
 
@@ -231,9 +231,9 @@ File: `…\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml`
 
 Let's change the *ValuesText* to:
 
-~~~
+```html
 ValuesText="' ','Update','Display sales','Delivery Addresses','Create sales record','Printsales (Online)','Print sales (Batch)','Orders'" 
-~~~
+```
 
 Build, run and look at the result [^1]:
 
