@@ -4,7 +4,7 @@ title: Remove Redundant Green-screen Info
 permalink: /remove-redundant-green-screen-info/
 ---
 
-The *Canvas* used to render Pages on Modern Browsers is totally different than the fixed-position grid layout used by a Page on the IBMi.
+The *Canvas* used to render Pages on Modern Browsers is totally different than the fixed-position grid layout used by a Page on the IBM i.
 
 Not only does the real state is larger and varying in its dimensions but the color schema is almost incomparable.
 
@@ -18,7 +18,7 @@ These items of information are readily available as part of the *Operating Syste
 
 # First Step: Remove Reverse Video effect
 
-DDS on the IBMi usually renders text on a terminal with dark background. Text screen attributes such as REVERSE-IMAGE produced a subtle lighter green background which some considered pleasant effect to highlight text, such as records on a subfile.
+DDS on the IBM i usually renders text on a terminal with dark background. Text screen attributes such as REVERSE-IMAGE produced a subtle lighter green background which some considered pleasant effect to highlight text, such as records on a subfile.
 
 [Reverse-video](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_73/rzakc/rzakcmstdfdspat.htm) effect on a typically white/pale background Browser Page would produce a *very heavy* block of text when rendered. 
 

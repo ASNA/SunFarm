@@ -8,7 +8,7 @@ Certain fields are expected to have a **value** which is *one* of *many* discree
 
 When *more* that *two* values of a discreet collection is expected, a *Radio Button Group* may be the best User Interface.
 
->&#128161; IBMi Legacy `DDS` referred to this User Interface as [MLTCHCFLD or multiple-choice selection field](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rzakc/rzakcmstmltchcf.htm).
+>&#128161; IBM i Legacy `DDS` referred to this User Interface as [MLTCHCFLD or multiple-choice selection field](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rzakc/rzakcmstmltchcf.htm).
 
 An important distinction, when comparing *Checkbox Groups* with *Radio Button Groups* is that, in addition to listing the available choices, *selecting* one choice automatically *de-selects* the others. In other words, choices are *mutually* exclusive.
 

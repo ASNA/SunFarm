@@ -4,9 +4,9 @@ title: Navigation menu
 permalink: /navigation-menu/
 ---
 
-Legacy IBMi Applications were *typically* navigated using keyboard special keys. We are talking about the **F** (or *Function*) keys IBM keyboards have on top of the keyboard. 
+Legacy IBM i Applications were *typically* navigated using keyboard special keys. We are talking about the **F** (or *Function*) keys IBM keyboards have on top of the keyboard. 
 
-Pages are described in *Displayfile*s on the IBMi Platform using a language called DDS.
+Pages are described in *Displayfile*s on the IBM i Platform using a language called DDS.
 
 A *Displayfile* describes one or more *records* (sections of a page), where the developer can indicate which of the *Function* keys are *Active*, keys that are allowed for the operation and navigation of the page.
 
@@ -18,7 +18,7 @@ F3=Exit
 
 In addition to *Function* keys, there are other *Aid* keys used for navigation, such as: **Enter**, **PageUp** and **PageDown**. These are typically **not** presented along with the *Function* keys when they are active (*Enter* is reserved to **Submit** the Page for processing)
 
-During Migration *ASNA Monarch Cocoon for Nomad&reg;* will use DDS keywords to extract *Active* aid keys and present them as a Navigation menu (to the left of the Page). Different to typical IBMi legacy pages, the **Enter**, **PageUp** and **PageDown** navigation buttons will be presented, in case the Device being used, does not have an attached keyboard, such as a *Tablet* or a large *Smart Phone*.
+During Migration *ASNA Monarch Cocoon for Nomad&reg;* will use DDS keywords to extract *Active* aid keys and present them as a Navigation menu (to the left of the Page). Different to typical IBM i Legacy pages, the **Enter**, **PageUp** and **PageDown** navigation buttons will be presented, in case the Device being used, does not have an attached keyboard, such as a *Tablet* or a large *Smart Phone*.
 
 The DDS keywords had limited space to describe the *Active* aid keys, and the Text was optional, in which case the Migration cannot help to improve the label on the Navigation Menu item.
 
@@ -81,7 +81,7 @@ As we have mentioned before, Monarch Nomad&reg; Applications may run on *Devices
 F3
 ~~~
 
-Means nothing to a *Tablet* user who has never seen an IBMi Application.
+Means nothing to a *Tablet* user who has never seen an IBM i Application.
 
 Better *key* names than:
 1. Enter

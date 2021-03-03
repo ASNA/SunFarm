@@ -85,7 +85,7 @@ If the `ButtonStyle` attribute is set to `Icon` (which is what we use in this Gu
 
 *Icon Shapes* are rendered with square dimensions (*width* equals to *height*) and are scaled to fit in a **cell** of the height of the font and the `fore-color` of the `CSS` text, (think of a character with a *graphic shape*).
 
-`AidKey` is an attribute that takes the name of an IBMi *Aid* key (`F1` ...  `F24`, `Clear`, `Help`, `PageUp`, `PageDown`, `Print`, `Home`, `Enter`, `Attn` and `Reset` ).
+`AidKey` is an attribute that takes the name of an IBM i *Aid* key (`F1` ...  `F24`, `Clear`, `Help`, `PageUp`, `PageDown`, `Print`, `Home`, `Enter`, `Attn` and `Reset` ).
 
 `FocusField` is an attribute that is set to the *field-name* of the record written to the page where we want to simulate user navigation *right before* the Display Page is *auto-submitted*.
 

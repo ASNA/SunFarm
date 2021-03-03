@@ -4,7 +4,7 @@ title: Data Files Used
 permalink: /data-files-used/
 ---
 
-The Sample Customer Application uses existing files created on IBMi.
+The Sample Customer Application uses existing files created on IBM i.
 
 SunFarm Migration expects those files to have been previously Migrated to Microsoft SQL Database.
 
