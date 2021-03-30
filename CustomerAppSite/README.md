@@ -1,9 +1,9 @@
 ﻿# SunFarm Customer App Site
 Use this Project's History to identify the different steps in the development of the "Enhancing ASNA Monarch Nomad Migration Guide" Guide.
 
-This Sample Project depends on the following `asnaqsys` github project
+This Sample Project depends on the following `asnaqsys` github project:
 
-[ASNA Expo Support](https://github.com/asnaqsys/ASNA.QSys.Expo)
+[ASNA QSys Expo](https://github.com/asnaqsys/ASNA.QSys.Expo)
 
 ## After Cloning this Repository, please:
 
