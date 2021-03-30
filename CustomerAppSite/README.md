@@ -1,20 +1,16 @@
 ﻿# SunFarm Customer App Site
-Use this Project's History to identify the different steps in the development of the "Enhancing Expo Displayfile Razor Pages" Guide.
-This Sample Project depends on the following ASNA-RND github project
+Use this Project's History to identify the different steps in the development of the "Enhancing ASNA Monarch Nomad Migration Guide" Guide.
 
-[ASNA Expo Support](https://github.com/asnarnd/QSys)
+This Sample Project depends on the following `asnaqsys` github project
+
+[ASNA Expo Support](https://github.com/asnaqsys/ASNA.QSys.Expo)
 
 ## After Cloning this Repository, please:
 
-1. Clone the QSys/Expo source.
-2. Update ..\SunFarm\CustomerAppSite\libman.json file, with your local references for:
-
-```
-[7]  "library": "QSys/src/Expo/ExpoTags/src/WebsiteResources/css"
-[16] "library": "QSys/src/Expo/ExpoTags/src/WebsiteResources/js"
-[76] "library": "QSys/src/Expo/ExpoTags/src/WebsiteResources/js/bterm/"
-
-3. If the references are succesful, you will see the wwwroot file structure updated, such that:
+1. Obtain a license to the `asnaqsys` [NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget) packages.
+2. Add the `ASNA.QSys.Expo` NuGet reference.
+3. Read and follow  [QSys Expo Web Content](https://asnaqsys.github.io/concepts/user-interface/qsys-expo-web-content.html) to get the [Expo Client Library](https://asnaqsys.github.io/concepts/user-interface/qsys-expo-client-library.html)
+4. If the references are successful, you will see the wwwroot file structure updated, such that:
 
 ```
 wwwroot       
@@ -23,9 +19,12 @@ wwwroot
         .  
         .  
             lib
-                 asna  
+                 asna-expo
+                    audio  
                     css  
                     js  
+```
+5. Build and run the Application.
 
                  
 
