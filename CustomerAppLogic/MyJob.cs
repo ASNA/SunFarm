@@ -13,7 +13,7 @@ namespace SunFarm.Customers.Application_Job
         protected Indicator _INRT;
         protected IndicatorArray<Len<_1, _0, _0>> _IN;
         protected dynamic DynamicCaller_;
-        public Database MyDatabase = new Database("NancySql");
+        public Database MyDatabase = new Database("SunFarm");
         // public Database MyPrinterDB = new Database("cypress");
 
         override protected Database getDatabase()
