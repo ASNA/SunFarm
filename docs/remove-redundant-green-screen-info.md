@@ -6,7 +6,7 @@ permalink: /remove-redundant-green-screen-info/
 
 The *Canvas* used to render Pages on Modern Browsers is totally different than the fixed-position grid layout used by a Page on the IBM i.
 
-Not only does the real state is larger and varying in its dimensions but the color schema is almost incomparable.
+Not only is the real state larger and varying in its dimensions but the color schema is almost incomparable.
 
 Typical color effects such as reverse-video colors are often quite distracting. In addition, we *may* identify typical information as irrelevant, such as:
 
