@@ -16,7 +16,7 @@ CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml
 <DdsRecord For="CUSTREC"
 ```
 
-1. Remove redundant **Program Name**, **Date** and **Time**
+1. Remove redundant **Program Name**, **User**, **Date** and **Time**
 2. Improve KeyNames (Navigation Menu): ‘Submit’ ‘Exit' ‘Prompt’ ‘New Customer’ ‘Remove Customer’ and ‘Back’.
 3. Reset StretchConstantText to false (record level)
 4. Replace **Page Title** by standard HTML and CSS
@@ -44,7 +44,7 @@ CustomerAppSite\wwwroot\css\site.css
 }
 ```
 
-Change the markup to show the Customer number data on row 2, aligned accordingly:[^2]
+Change the markup to show the Customer number data on row 2 (used to be "5"), aligned accordingly:[^2]
 
 ```html
 <div Row="2">
@@ -96,7 +96,7 @@ The new Markup is:
 
 Notice also that we have given **CUSTREC.SFCITY** field a ColSpan of 10 *- while the definition of the field is Char(30) -*. We confidently reduced it, because most US cities will fit in the width provided. It is safe to reduce field's width when all (or most) of the possible values are small. In the extreme case, where a larger should appear, the field scroll horizontally *by default*, allowing for the 30 positions max field length.
 
-(Since we removed the **"F4"** constant, we should add a push button to indicate that State is *"promptable"* -adding such element is described in a later Chapter of this Guide).
+(Since we removed the **"F4"** constant, we should add a push button to indicate that State is *"promptable"* -adding such element is described in a [later Chapter of this Guide](/replacing-prompt-with-icon/)).
 
 Move the rest of fields up and around the Customer Photo area
 
@@ -105,7 +105,7 @@ What used to be Rows **13, 14, 15, 16, 17** and **18** is now Rows *8*, *9* and 
 ![Fields around Photo Area](/images/page-two-03.png/)
 
 
-**Note:** The use of **Y/N** fields as User-Interface Artifacts is **discouraged** in Modern Applications. It may be confusing to users never exposed to *Legacy* Applications. There are better paradigms we can apply, such as *Checkboxes*. We will replace **Y/N** fields later in this Guide.
+**Note:** The use of **Y/N** fields as User-Interface Artifacts is **discouraged** in Modern Applications. It may be confusing to users never exposed to *Legacy* Applications. There are better paradigms we can apply, such as *Checkboxes*. We will replace **Y/N** fields [later in this Guide](/replacing-yesno-with-checkboxes/).
 
 
 
