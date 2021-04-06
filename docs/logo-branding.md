@@ -97,9 +97,12 @@ The top header for all pages will contain a *division* designated for the Logo B
 1. An image
 2. A division for two legends, positioned to produce the complete Logo.
 
-![Logo image](/images/logo-banner.png)
 
+![Logo image](images/logo-banner.png)
 
+<br>
+
+The Web Browser *caches* `CSS` (and other frequently used resources, for performance). If you did not get the Logo Branding as shown in the image above, you may need to **clear** the *cache*. Most browsers use the key combination `Ctrl + F5` to clear website caches.  
 
 <br>
 <br>
