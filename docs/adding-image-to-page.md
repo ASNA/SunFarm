@@ -36,6 +36,37 @@ The same is true for *Standard HTML* elements added *inside* **div Row** contain
 
 Let’s add a Customer Photo placeholder on this page.
 
+*First*, let's create the [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) image. 
+
+Copy the XML source from next paragraph and save it to new file: `CustomerAppSite\wwwroot\customer-icon.svg`
+
+```xml
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 508.609 508.609" style="enable-background:new 0 0 508.609 508.609;" xml:space="preserve">
+    <g>
+        <circle style="fill:#EEB490;" cx="163.942" cy="159.364" r="36.959"/>
+        <circle style="fill:#EEB490;" cx="344.328" cy="159.364" r="36.959"/>
+    </g>
+    <circle style="fill:#56545F;" cx="254.135" cy="115.285" r="115.285"/>
+    <path style="fill:#FF667C;" d="M338.564,284.821H169.706c-77.309,0-140.037,62.728-140.037,140.037v83.751H478.94v-83.751 C478.601,347.55,415.873,284.821,338.564,284.821z"/>
+    <path style="fill:#D34A5E;" d="M166.993,284.821v116.98c0,48.148,38.993,87.142,87.142,87.142s87.142-38.993,87.142-87.142v-116.98	H166.993z"/>
+    <circle style="fill:#EEB490;" cx="254.135" cy="271.936" r="62.728"/>
+    <g>
+        <circle style="fill:#F1F3F7;" cx="218.872" cy="341.785" r="26.109"/>
+        <circle style="fill:#F1F3F7;" cx="289.399" cy="341.785" r="26.109"/>
+    </g>
+    <circle style="fill:#D6D6D8;" cx="254.135" cy="341.785" r="19.666"/>
+    <path style="fill:#FACCB4;" d="M330.766,74.257c-10.172,17.971-40.689,31.195-76.63,31.195s-66.458-13.224-76.63-31.195 c-11.189,15.597-17.632,34.585-17.632,54.93v69.171c0,52.217,42.4,94.262,94.262,94.262c52.217,0,94.262-42.384,94.262-94.262 v-68.832C348.397,108.842,341.955,89.854,330.766,74.257z"/>
+</svg>
+```
+
+*Next*, add a reference to the new image by adding Row="3" to the record "CUSTREC" in the markup file:
+
+`CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml`
+
+With this HTML segment:
+
 ```html
 <div Row="3">
     <img id="customer-icon" ExpoCol="8" src="~/customer-icon.svg" />
@@ -61,9 +92,13 @@ We need to complete the position and dimensions of the image by adding the follo
 }
 ```
 
->&#128161; Notice how **Row="3"** became as tall as the height of the image, pushing all the rest of the rows down. This may or not be what we intended.
+> The `#customer-icon` style sets the **width** of the image element, yet the SVG definition is defined to **preserve** aspect-ratio, meaning, the *height* will also follow the *width* to preserve the proportions.
+
+Notice how **Row="3"** became as tall as the height of the image, pushing all the rest of the rows down. This may or not be what we intended.
 
 ![Customer Icon Shows](/images/page-two-04_a.png)
+
+>If you still not see the image with proper width, clear the Browser's CSS cache.
 
 If we prefer not *to push* the rest of rows down, we can change the position style from: "relative" to: "absolute"[^1].
 
