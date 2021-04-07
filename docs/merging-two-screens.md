@@ -22,7 +22,7 @@ The *Legacy* **Display Sales** green-screen looks like the following image:
 
 ![Two Screens merged](/images/legacy-display-sales-screen.png)
 
-The *Legacy* **Display Sales** green-screen shows only two new data items which *can easily* fit in the improved **Customer Maintenance** Display Page.  
+The *Legacy* **Display Sales** green-screen shows only two new data items which *can easily* fit into the improved **Customer Maintenance** Display Page.  
 
 Furthermore, the database contains much more useful information about the Sales (not shown in the *Legacy* version) that we could now exploit.
 
@@ -99,13 +99,16 @@ We can copy code from **CUSTCALC.cs** to **CUSTINQ.cs**
 
 ## Declaring DatabaseFiles in C# does not make fields available to Program
 
->&#128161; We don't get the benefits of RPG -- *we are not in Kansas anymore* ;) -- 
+>&#128161; We don't get the benefits of RPG -- [we are not in Kansas anymore](https://wordhistories.net/2019/06/25/kansas-anymore/) -- 
 
 RPG developers were accustomed to database language facilities that do not exist in a *General Purpose* Language such as C#.
 
 In particular, declaring files in RPG would make available *global* fields that provided access to active records defined in these files (Database or Workstation).
 
-ASNA Monarch Runtime uses [Partial classes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) to *complete* the equivalent database facilities built-into RPG Language.
+>Please read [RPG Database Language Support](https://asnaqsys.github.io/concepts/program-structure/rpg-language-support.html) to understand how Database access is supported by ASNA QSys.
+
+ASNA QSys Runtime uses [Partial classes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) to *complete* the equivalent database facilities built-into RPG Language.
+
 >Note: When adding new database file references to a C# Program, the implementation of the *partial* IO classes needs to be re-generated. We will show later in this chapter how that is done.   
 
 ### Declaring Sales and Returns Database file
