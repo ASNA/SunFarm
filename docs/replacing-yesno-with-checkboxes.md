@@ -12,7 +12,7 @@ It is rendered as:
 
 ![Send Confirmation YES/NO](/images/page-two-checkbox-01.png/)
 
-&#128161; Using character fields for booleans presents several problems, among them are:
+Using character fields for booleans presents several problems, among them are:
 
 1. Fields need a constant to the right to show the possible *expected* values, in this example `(Y/N)`. Not only does it waste valuable screen real-estate , but also requires the constant to be properly aligned.
 2. Having a character input field that allows more than two possible values, makes the interface *error prone* and therefore more validation will be required.
