@@ -44,8 +44,9 @@ Markup File: `CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml`[^1]
 
 Focusing on the new `DdsRadioButtonGroupField`, let's describe the attributes used:
 
-| **Attribute** | **Definition** 
-| *Text* | The Label for the Group of Radio Buttons
+| Attribute    | Definition 
+| ------------ | ---
+| *Text*       | The Label for the Group of Radio Buttons
 | *ValuesText* | A comma separated list of labels for each of the Radio Buttons
 
 Please note that:
