@@ -251,6 +251,9 @@ tbody tr:nth-child(odd) th {
   background-color: #f9f9f9;
 }
 
+thead {
+  background: hsl(206,   5%,  82%);
+}
 
 /*
  * Custom type

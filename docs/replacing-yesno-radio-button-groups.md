@@ -16,7 +16,7 @@ ASNA Monarch Nomad&reg; provides a TagHelper to simplify the production of *Radi
 
 To explore the use of `DdsRadioGroupField` we will replace the `DdsCheckboxField`  [described in this Guide before]({{ site.rooturl }}/replacing-yesno-with-checkboxes/).
 
-* The *field definition* in the `Model` file does **not** need to change.
+The *field definition* in the `Model` file does **not** need to change.
 
 *For reference*, here is the definition used for Checkboxes:
 
