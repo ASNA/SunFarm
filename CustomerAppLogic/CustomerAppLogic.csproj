@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\AsnaRnD\ASNA.QSys.DataGate.Client\src\ASNA.QSys.DataGate.Client.csproj" />
-    <ProjectReference Include="..\..\..\Source\AsnaRnD\ASNA.QSys.Runtime\src\ASNA.QSys.Runtime.csproj" />
+    <PackageReference Include="ASNA.QSys.DataGate.Client" Version="2.0.0" />
+    <PackageReference Include="ASNA.QSys.Runtime" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>

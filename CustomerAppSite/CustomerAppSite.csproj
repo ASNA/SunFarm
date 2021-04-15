@@ -5,8 +5,11 @@
 
     <!-- Warning: Setting the following switch is *NOT* recommended in web apps. -->
     <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <NoWarn>NU1701</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="ASNA.QSys.Expo" Version="2.0.0" />
+    <PackageReference Include="ASNA.QSys.MonaServer" Version="2.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -18,10 +21,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MessageFiles\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\AsnaRnD\ASNA.QSys.Expo\src\ASNA.QSys.Expo.Model\src\ASNA.QSys.Expo.Model.csproj" />
-    <ProjectReference Include="..\..\..\Source\AsnaRnD\ASNA.QSys.Expo\src\ASNA.QSys.Expo.Tags\src\ASNA.QSys.Expo.Tags.csproj" />
-    <ProjectReference Include="..\..\..\Source\AsnaRnD\ASNA.QSys.MonaServer\src\ASNA.QSys.MonaServer\ASNA.QSys.MonaServer.csproj" />
   </ItemGroup>
 </Project>
