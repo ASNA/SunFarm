@@ -268,9 +268,9 @@ These files are *generated* files and should be re-generated using [Nomad Tools]
 
 All we need is access to the **Nomad Tools**, which can be reached in Visual Studio 2019 Solution Explorer, by selecting a program - such as `CUSTCALC` - and opening the *Context Menu* options using *right-mouse* click.
 
-![Nomad Tools Context Menu Options](/images/serengeti-context-menus.jpg)
+![Nomad Tools Context Menu Options](/images/nomad-tools.png)
 
-Serengeti Context Menu Tools:
+Nomad Context Menu Tools:
 1. Refresh XFU
 2. Run Custom Tool
 
