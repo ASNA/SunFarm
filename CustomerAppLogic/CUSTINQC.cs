@@ -34,7 +34,7 @@ namespace SunFarm.Customers
             AddMsgToIgnore(typeof(CPF2103)); /* LIBRARY SO_AND_SO ALREADY IN LIBL */
             //Error Warning: Please review commands that do not start with "Try" (.Net does not support Exception Catch/Ignore and Continue)
 
-            TryAddLibLEntry("NUTSWINGS");
+            TryAddLibLEntry("SunFarm");
             DynamicCaller_.CallD("SunFarm.Customers.CUSTINQ", out _LR);
         }
 
