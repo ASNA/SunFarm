@@ -252,7 +252,7 @@ override public void Dispose(bool disposing)
 To make available fields to the Program as specified by the record's database schema, we need to do the following:
 
 1. Declare fields (as defined by the record schema).
-2. Implement populate field's in-out (*of DataSet*) methods in the IO partial class.
+2. Implement populate field's in/out (*of DataSet*) methods in the IO partial class.
 
 
 ## Declare fields (as defined by the record schema)  
