@@ -262,7 +262,7 @@ Without getting into too deep an explanation, the `DynamicCaller_` object will a
 
 Remember the call:
 
-![Call from CL to RPG](call-from-cl-to-rpg.png)
+![Call from CL to RPG](/images/call-from-cl-to-rpg.png)
 
 With code:
 
@@ -291,5 +291,5 @@ TBD ... (To be continued)
 <br>
 
 
-[^1]: Some programs not call directly by the Application have been excluded.
+[^1]: Some programs not called directly by the Application have been excluded.
 [^2]: There are in fact 100 indicators, but the first (index zero) is not used. This is done such that _IN[1] can be read as the first indicator, avoiding the subtraction from one, like: _IN[1-1], or _IN[0].
