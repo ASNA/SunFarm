@@ -378,6 +378,8 @@ The instance is passed to the `ActivationManager`, where depending on the last v
 
 > Notice also that when **LR** indicator is not set to `1`, and the Program remains *Active*, the files stay open.
 
+>&#128161; QSys Program Bootstrapping seems intimidating. Rest assured that the steps taken are the **same** steps IBMi needs to execute (or very similar). RPG runtime on the IBM i hides the Bootstrap code from you. The Bootstrap process is **very* fast, the most time consuming is the external file access (and of course the Application developer's logic code). 
+
 <br>
 <br>
 <br>
