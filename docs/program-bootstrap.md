@@ -25,7 +25,7 @@ namespace SunFarm.Customers
 }
 ```
 
-The initial contents are just the empty *partial class* with its required using statement.
+The initial contents are just the empty *partial class* with its required C# `using` statement.
 
 ## Dynamically calling a QSys Program
 
@@ -132,7 +132,7 @@ Two phases of the Program Bootstrap are invoked:
 1. **Find** the Program instance (ENTRY with *one* underscore prefix).
 2. **Process** the instance (ENTRY with *two* underscore prefix).
 
-Note how in the [IBMi Developer Model](https://asnaqsys.github.io/concepts/background/ibmi-developer-model.html) it is possible that the instance of the Program called, may be *Active*, in this case, the **Find** phase will be successful and there is no need to initialize the Program.
+Note how in the [IBMi Developer Model](https://asnaqsys.github.io/concepts/background/ibmi-developer-model.html) it is possible that the instance of the Program called, to be *Active*, in this case, the **Find** phase will be successful and there is no need to initialize the Program.
 
 When there is **no** *Active* instance (as would be the case for the first time the Application runs), the following steps are executed:
 
@@ -165,7 +165,7 @@ void StarEntry(int _pc_parms)
 }
 ```
 
-This Boilerplate code is known as the *Implicit Cycle*. The \*InLR flag, short from **L**ast **R**ecord indicator, came from the Punch-card era, where the duration of the program depended upon a stack of Punch-cards fed to a *Hopper*. Cards were taken of the top of the *Hopper*, processed one by one, until the **last** one.
+This Boilerplate code is known as the *Implicit Cycle*. The \*InLR flag, short from **L**ast **R**ecord indicator, came from the Punch-card era, where the duration of the program depended upon a stack of Punch-cards fed into a *Hopper*. Cards were taken of the top of the *Hopper*, processed one by one, until the **last** one.
 
 Notice the peculiar implementation of **LR** indicator.
 
@@ -212,7 +212,7 @@ We have in the class:
 
 1. [Last Record Indicator](https://www.ibm.com/docs/en/i/7.3?topic=indicators-last-record-indicator-lr) `_INLR`.
 2. [Return Indicator](https://www.ibm.com/docs/en/i/7.3?topic=specifications-return-indicator-rt) `_INRT`.
-3. Ninety nine general purpose [Internal Indicators](https://www.ibm.com/docs/en/i/7.3?topic=specifications-internal-indicators) `_IN` array.[^2]
+3. Ninety-nine general purpose [Internal Indicators](https://www.ibm.com/docs/en/i/7.3?topic=specifications-internal-indicators) `_IN` array.[^2]
 4. We have mentioned `_parms` before.
 5. There is also the object declaration: `DynamicCaller_` that deserves its own section description ("Calling other Programs from this class" below).
 
@@ -258,7 +258,7 @@ Focus first on `DynamicCaller_ = new DynamicCaller(this)`. The DynamicCaller is 
 
 Without getting into too deep an explanation, the `DynamicCaller_` object will allow:
 
-`DynamicCaller_.CallD(` *program-by-string-name*, *<variable>* parameter-list )
+`DynamicCaller_.CallD(` *program-by-string-name* , <*variable*> *parameter-list* )
 
 Remember the call:
 
@@ -274,7 +274,7 @@ DynamicCaller_.CallD("SunFarm.Customers.CUSTINQ", out _LR);
 
 Notice:
 1. The name of the *qualified* program is a string. The object binding happens at **runtime** (not compile time).
-2. The parameters match the declaration of matches the declared parameters in `public static void _ENTRY(ICaller _caller, out Indicator __inLR)`. This is specific to `SunFarm.Customers.CUSTINQ`.
+2. The parameters match the declaration of declared parameters in `public static void _ENTRY(ICaller _caller, out Indicator __inLR)`. This is specific to `SunFarm.Customers.CUSTINQ`.
 
 > There are all kinds of supported parameter passing (copy in/ copy out) as [supported by legacy RPG](https://www.ibm.com/docs/en/i/7.1?topic=procedures-passing-data-ile-rpg-program-procedure). 
 
@@ -284,7 +284,99 @@ The concepts described in this topic are advanced topics, but general understand
 
 Since we have isolated the **Bootstrap** Boilerplate code into its own little source file, let's run a step by step *Debugging* session to put all these ideas together and make some sense of it.
 
-TBD ... (To be continued)
+Using Visual Studio, load the solution corresponding to the SunFarm Application.
+We will work on the CustomerAppLogic Project. 
+
+1. Load the source file: ..\SunFarm\CustomerAppLogic\CUSTINQC.cs. Set a breakpoint (`F9`) on the line where the `DynamicCaller_.CallD` appears, as shown in following image:
+
+![Debug Step One](/images/bootstrap-debug-1.png)
+
+2. Start the Debugging Session (`F5`). Before the Browser presents the first Page, the debugging session will hit the breakpoint.
+
+3. Step into the code (`F11`). ..\SunFarm\CustomerAppLogic\CUSTINQ.Bootstrap.cs is loaded an the instruction pointer is position at the start of method  `_ENTRY(`.
+
+![Debug Step Two](/images/bootstrap-debug-2.png)
+
+Notice:
+- ENTRY prefix is *one* underscore.
+- The Method is declared **static**.
+- Visual Studio *intellisense* annotation reports **0 references**. Remember, the call is made in a *dynamic* way.
+- There is only **one** *out* parameter (after the required ICaller parameter). The caller also used only one parameter (passing out _LR). Different programs will use different parameters (or none).
+
+<br>
+
+4. Step four times (`F10`) stopping right before the call to `_instance = _manager.GetInstance(`.
+
+![Debug Step Three](/images/bootstrap-debug-3.png)
+
+5. Step into code (`F11`). Code reaches the `_classfactory(` static method. This happened because the `ActivationManager` **did not** find an *Active* instance of CUSTINQ program. A *new* instance needs to be created. 
+
+![Debug Step Four](/images/bootstrap-debug-4.png)
+
+6. Step into code (twice `F11`). You will see some class field members being constructed. Continue until you get to the `Custinq` constructor.
+
+![Debug Step Five](/images/bootstrap-debug-5.png)
+
+7. The constructor allocates the *Indicators*, then calls the `_instanceInit(` 
+
+![Debug Step Six](/images/bootstrap-debug-6.png)
+
+8. `_instanceInit(` which is *not* static, will allocate the rest of the dynamic field members, including:
+- Workstation file. Notice that right after allocating the Workstation file, the workstation is opened.
+- Database file(s).
+- Printfile(s) - in this case there aren't any -.
+- Data-structures (bound to database and printfile fields).
+
+> Note that `instanceInit()` allocates the `DynamicCaller_` object. A reference to *self* **this** is passed in the constructor. This object will be used to Call *dynamically* other Programs **inside** CUSTINQ.
+
+Keep executing Step by Step (`F10`) until the end of  `_instanceInit(`. Note that when executing Open on the Workstation file, the Browser window may flash.
+
+9. Back in the CUSTINQ constructor, after `_instanceInit(` ran, the database files may be opened. Execute all the database file(s) `Open` methods - may take a bit longer, since external files accessed -, and get to the end of the method.
+
+![Debug Step Seven](/images/bootstrap-debug-7.png)
+
+10. The `_classFactory(` has completed manufacturing a new instance of CUSTINQ (which allocated the new object and opened external files). It then returns a reference to the newly created instance. Step one more time to return to the caller (`F10`).
+
+![Debug Step Eight](/images/bootstrap-debug-8.png)
+
+11. The `ActivationManager` finally completing *getting* an instance of CUSTINQ. As you can see from the image below, the *type* of the new instance is correctly shown as a `SunFarm.Customers.Custinq` class.
+
+![Debug Step Nine](/images/bootstrap-debug-9.png)
+
+12. With the *instance* (new or otherwise), the next step is to **Call** the logic (Main C-Specs in Legacy Terms), but right before doing so, the passed parameters need to be processed. Step into the **non** static ENTRY method (note two underscore symbols in the prefix).
+
+![Debug Step Ten](/images/bootstrap-debug-10.png)
+
+13. Notice how all parameters are passed to the *none* static `ENTRY` method, with an additional one at the end: `bool _isNew`. As you may have guessed, this flag determines whether to call `PROCESS_STAR_INZSR(` or not. Only ehwn the instance is brand new, does the framework call the *Initialization Subroutine*.
+   * Parameters are copied to instance member fields.
+   * \*INZSR is called (for new instances).
+   * And **finally** `StarEntry` (aka. Main C-Specs), runs.
+
+   >  `StarEntry` is expected to do the heavy lifting, interacting with the User (if Program uses a Workstation file).
+   > Execution of `StarEntry` is *guarded* with some expected premature termination blocks, or  with normal completion.
+
+14. Set a breakpoint at the end of `__ENTRY` and continue execution (`F5`).
+
+![Debug Step Eleven](/images/bootstrap-debug-11.png)
+
+15. The Web Browser will present the Display Page. Click 'Exit' menu option at the bottom (or press `F3`), and the last breakpoint set on 14 will hit.
+
+![Debug Step Eleven](/images/bootstrap-debug-12.png)
+![Debug Step Eleven](/images/bootstrap-debug-13.png)
+
+16. Back to the *static* _ENTRY (one underscore prefix), the framework will processes the return from the CALL. 
+
+![Debug Step Eleven](/images/bootstrap-debug-14.png)
+
+The instance is passed to the `ActivationManager`, where depending on the last value of LR (*Last Record*) indicator, the instance may be *Disposed* or stored (in the proper [Group](https://www.ibm.com/docs/en/i/7.4?topic=concepts-program-activation))
+
+17. In the particular case of the call to CUSTINQ when the User requested to `Exit`, the Program sets in the logic LR to `1`. If you Step into `manager.DisposeInstance(`, you will get to the destructor of CUSTINQ, as shown by the next image:
+
+![Debug Step Eleven](/images/bootstrap-debug-15.png)
+
+> When *Disposing* of a Program instance, the files are closed (including the Workstation file). Closing the Workstation file **does not** end the ASP.NET session, it just leaves other programs to set a different *Active* Displayfile.
+
+> Notice also that when **LR** indicator is not set to `1`, and the Program remains *Active*, the files stay open.
 
 <br>
 <br>
