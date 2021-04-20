@@ -4,7 +4,7 @@ title: Program Bootstrapping
 permalink: /program-bootstrap/
 ---
 
-To support the [IBMi RPG Developer's Model](https://asnaqsys.github.io/concepts/background/ibmi-developer-model.html), every time a `QSys Program` is called there is logic that runs which may be important to understand. We will refer in this topic to this code as **Program Bootstrap** code.
+To support the [IBM i RPG Developer's Model](https://asnaqsys.github.io/concepts/background/ibmi-developer-model.html), every time a `QSys Program` is called there is logic that runs which may be important to understand. We will refer in this topic to this code as **Program Bootstrap** code.
 
 [ASNA QSys docs Concepts](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html) mentions the need for explicit Boilerplate code *on every program*, given that C# is a [General Purpose Programming Language](https://en.wikipedia.org/wiki/General-purpose_programming_language). This Boilerplate code implementing the *Program Bootstrap* logic is produced during migration using the same `<program-name>.cs` source file (mostly at the end of the file).
 
@@ -58,7 +58,7 @@ The whole mission of CUSTINQC Program is to prepare for the call to the `SunFarm
  
 After that, the program calls `SunFarm.Customers.CUSTINQ` (and throws away the resulting LR indicator).
 
-Calling `SunFarm.Customers.CUSTINQ` is done as a **Dynamic** way, meaning that it uses the [Procedure Activation Manager](https://asnaqsys.github.io/concepts/program-structure/qsys-program).
+Calling `SunFarm.Customers.CUSTINQ` is done in a **Dynamic** way, meaning that it uses the [Procedure Activation Manager](https://asnaqsys.github.io/concepts/program-structure/qsys-program).
 
 Ignore for a moment (we will come back to it later), the instantiation of `DynamicCaller_` object. Suffice for now that the *Dynamic* calling process starts here.
 
@@ -132,7 +132,7 @@ Two phases of the Program Bootstrap are invoked:
 1. **Find** the Program instance (ENTRY with *one* underscore prefix).
 2. **Process** the instance (ENTRY with *two* underscore prefix).
 
-Note how in the [IBMi Developer Model](https://asnaqsys.github.io/concepts/background/ibmi-developer-model.html) it is possible that the instance of the Program called, to be *Active*, in this case, the **Find** phase will be successful and there is no need to initialize the Program.
+Note how in the [IBM i Developer Model](https://asnaqsys.github.io/concepts/background/ibmi-developer-model.html) it is possible that the instance of the Program called, to be *Active*, in this case, the **Find** phase will be successful and there is no need to initialize the Program.
 
 When there is **no** *Active* instance (as would be the case for the first time the Application runs), the following steps are executed:
 
@@ -227,7 +227,7 @@ The last part of the implementation *puzzle* is the declaration of the *object* 
 
 RPG `CALL` is a dynamic call. 
 
-Move the `instanceInit` method (last to move in this topic), from `CUSTINQ.cs` to `CUSTINQ.Bootstrap.cs`, a code similar ro the folloing:
+Move the `instanceInit` method (last to move in this topic), from `CUSTINQ.cs` to `CUSTINQ.Bootstrap.cs`, a code to the following:
 
 ```cs
 void _instanceInit()
@@ -293,7 +293,7 @@ We will work on the CustomerAppLogic Project.
 
 2. Start the Debugging Session (`F5`). Before the Browser presents the first Page, the debugging session will hit the breakpoint.
 
-3. Step into the code (`F11`). ..\SunFarm\CustomerAppLogic\CUSTINQ.Bootstrap.cs is loaded an the instruction pointer is position at the start of method  `_ENTRY(`.
+3. Step into the code (`F11`). ..\SunFarm\CustomerAppLogic\CUSTINQ.Bootstrap.cs is loaded an the instruction pointer is positioned at the start of method  `_ENTRY(`.
 
     ![Debug Step Two](/images/bootstrap-debug-2.png)
 
@@ -326,7 +326,7 @@ We will work on the CustomerAppLogic Project.
     - Printfile(s) - in this case there aren't any -.
     - Data-structures (bound to database and printfile fields).
 
-    > Note that `instanceInit()` allocates the `DynamicCaller_` object. A reference to *self* **this** is passed in the constructor. This object will be used to Call *dynamically* other Programs **inside** CUSTINQ.
+    > Note that `instanceInit()` allocates the `DynamicCaller_` object. A reference to *self* (or **this** in C# terms) is passed in the constructor. This object will be used to Call *dynamically* other Programs **inside** CUSTINQ.
 
     Keep executing Step by Step (`F10`) until the end of  `_instanceInit(`. Note that when executing Open on the Workstation file, the Browser window may flash.
 
@@ -346,7 +346,7 @@ We will work on the CustomerAppLogic Project.
 
     ![Debug Step Ten](/images/bootstrap-debug-10.png)
 
-13. Notice how all parameters are passed to the *none* static `ENTRY` method, with an additional one at the end: `bool _isNew`. As you may have guessed, this flag determines whether to call `PROCESS_STAR_INZSR(` or not. Only ehwn the instance is brand new, does the framework call the *Initialization Subroutine*.
+13. Notice how all parameters are passed to the *none* static `ENTRY` method, with an additional one at the end: `bool _isNew`. As you may have guessed, this flag determines whether to call `PROCESS_STAR_INZSR(` or not. Only when the instance is brand new, does the framework call the *Initialization Subroutine*.
     * Parameters are copied to instance member fields.
     * \*INZSR is called (for new instances).
     * And **finally** `StarEntry` (aka. Main C-Specs), runs.
@@ -363,7 +363,7 @@ We will work on the CustomerAppLogic Project.
     ![Debug Step Eleven](/images/bootstrap-debug-12.png)
     ![Debug Step Eleven](/images/bootstrap-debug-13.png)
 
-16. Back to the *static* _ENTRY (one underscore prefix), the framework will processes the return from the CALL. 
+16. Back to the *static* _ENTRY (one underscore prefix), the framework will process the return from the CALL. 
 
     ![Debug Step Eleven](/images/bootstrap-debug-14.png)
 
@@ -380,7 +380,7 @@ We will work on the CustomerAppLogic Project.
 <br>
 <br>
 
-&#128161; QSys Program Bootstrapping seems intimidating. Rest assured that the steps taken are the **same** steps IBMi needs to execute (or very similar). RPG runtime on the IBM i hides the Bootstrap code from you. The Bootstrap process is **very* fast, the most time consuming is the external file access (and of course the Application developer's logic code). 
+&#128161; QSys Program Bootstrapping seems intimidating. Rest assured that the steps taken are the **same** steps IBM i needs to execute (or very similar). RPG runtime on the IBM i hides the Bootstrap code from you. The Bootstrap process is **very** fast, the most time consuming is the external file access (and of course the Application developer's logic code). 
 
 <br>
 <br>
