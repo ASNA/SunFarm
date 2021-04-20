@@ -289,96 +289,98 @@ We will work on the CustomerAppLogic Project.
 
 1. Load the source file: ..\SunFarm\CustomerAppLogic\CUSTINQC.cs. Set a breakpoint (`F9`) on the line where the `DynamicCaller_.CallD` appears, as shown in following image:
 
-![Debug Step One](/images/bootstrap-debug-1.png)
+    ![Debug Step One](/images/bootstrap-debug-1.png)
 
 2. Start the Debugging Session (`F5`). Before the Browser presents the first Page, the debugging session will hit the breakpoint.
 
 3. Step into the code (`F11`). ..\SunFarm\CustomerAppLogic\CUSTINQ.Bootstrap.cs is loaded an the instruction pointer is position at the start of method  `_ENTRY(`.
 
-![Debug Step Two](/images/bootstrap-debug-2.png)
+    ![Debug Step Two](/images/bootstrap-debug-2.png)
 
-Notice:
-- ENTRY prefix is *one* underscore.
-- The Method is declared **static**.
-- Visual Studio *intellisense* annotation reports **0 references**. Remember, the call is made in a *dynamic* way.
-- There is only **one** *out* parameter (after the required ICaller parameter). The caller also used only one parameter (passing out _LR). Different programs will use different parameters (or none).
-
-<br>
+    Notice:
+       - ENTRY prefix is *one* underscore.
+       - The Method is declared **static**.
+       - Visual Studio *intellisense* annotation reports **0 references**. Remember, the call is made in a *dynamic* way.
+       - There is only **one** *out* parameter (after the required ICaller parameter). The caller also used only one parameter (passing out _LR). Different programs will use different parameters (or none).
 
 4. Step four times (`F10`) stopping right before the call to `_instance = _manager.GetInstance(`.
 
-![Debug Step Three](/images/bootstrap-debug-3.png)
+    ![Debug Step Three](/images/bootstrap-debug-3.png)
 
 5. Step into code (`F11`). Code reaches the `_classfactory(` static method. This happened because the `ActivationManager` **did not** find an *Active* instance of CUSTINQ program. A *new* instance needs to be created. 
 
-![Debug Step Four](/images/bootstrap-debug-4.png)
+    ![Debug Step Four](/images/bootstrap-debug-4.png)
 
 6. Step into code (twice `F11`). You will see some class field members being constructed. Continue until you get to the `Custinq` constructor.
 
-![Debug Step Five](/images/bootstrap-debug-5.png)
+    ![Debug Step Five](/images/bootstrap-debug-5.png)
 
 7. The constructor allocates the *Indicators*, then calls the `_instanceInit(` 
 
-![Debug Step Six](/images/bootstrap-debug-6.png)
+    ![Debug Step Six](/images/bootstrap-debug-6.png)
 
 8. `_instanceInit(` which is *not* static, will allocate the rest of the dynamic field members, including:
-- Workstation file. Notice that right after allocating the Workstation file, the workstation is opened.
-- Database file(s).
-- Printfile(s) - in this case there aren't any -.
-- Data-structures (bound to database and printfile fields).
 
-> Note that `instanceInit()` allocates the `DynamicCaller_` object. A reference to *self* **this** is passed in the constructor. This object will be used to Call *dynamically* other Programs **inside** CUSTINQ.
+    - Workstation file. Notice that right after allocating the Workstation file, the workstation is opened.
+    - Database file(s).
+    - Printfile(s) - in this case there aren't any -.
+    - Data-structures (bound to database and printfile fields).
 
-Keep executing Step by Step (`F10`) until the end of  `_instanceInit(`. Note that when executing Open on the Workstation file, the Browser window may flash.
+    > Note that `instanceInit()` allocates the `DynamicCaller_` object. A reference to *self* **this** is passed in the constructor. This object will be used to Call *dynamically* other Programs **inside** CUSTINQ.
+
+    Keep executing Step by Step (`F10`) until the end of  `_instanceInit(`. Note that when executing Open on the Workstation file, the Browser window may flash.
 
 9. Back in the CUSTINQ constructor, after `_instanceInit(` ran, the database files may be opened. Execute all the database file(s) `Open` methods - may take a bit longer, since external files accessed -, and get to the end of the method.
 
-![Debug Step Seven](/images/bootstrap-debug-7.png)
+    ![Debug Step Seven](/images/bootstrap-debug-7.png)
 
 10. The `_classFactory(` has completed manufacturing a new instance of CUSTINQ (which allocated the new object and opened external files). It then returns a reference to the newly created instance. Step one more time to return to the caller (`F10`).
 
-![Debug Step Eight](/images/bootstrap-debug-8.png)
+    ![Debug Step Eight](/images/bootstrap-debug-8.png)
 
 11. The `ActivationManager` finally completing *getting* an instance of CUSTINQ. As you can see from the image below, the *type* of the new instance is correctly shown as a `SunFarm.Customers.Custinq` class.
 
-![Debug Step Nine](/images/bootstrap-debug-9.png)
+    ![Debug Step Nine](/images/bootstrap-debug-9.png)
 
 12. With the *instance* (new or otherwise), the next step is to **Call** the logic (Main C-Specs in Legacy Terms), but right before doing so, the passed parameters need to be processed. Step into the **non** static ENTRY method (note two underscore symbols in the prefix).
 
-![Debug Step Ten](/images/bootstrap-debug-10.png)
+    ![Debug Step Ten](/images/bootstrap-debug-10.png)
 
 13. Notice how all parameters are passed to the *none* static `ENTRY` method, with an additional one at the end: `bool _isNew`. As you may have guessed, this flag determines whether to call `PROCESS_STAR_INZSR(` or not. Only ehwn the instance is brand new, does the framework call the *Initialization Subroutine*.
-   * Parameters are copied to instance member fields.
-   * \*INZSR is called (for new instances).
-   * And **finally** `StarEntry` (aka. Main C-Specs), runs.
+    * Parameters are copied to instance member fields.
+    * \*INZSR is called (for new instances).
+    * And **finally** `StarEntry` (aka. Main C-Specs), runs.
 
-   >  `StarEntry` is expected to do the heavy lifting, interacting with the User (if Program uses a Workstation file).
-   > Execution of `StarEntry` is *guarded* with some expected premature termination blocks, or  with normal completion.
+    >  `StarEntry` is expected to do the heavy lifting, interacting with the User (if Program uses a Workstation file).
+    > Execution of `StarEntry` is *guarded* with some expected premature termination blocks, or  with normal completion.
 
 14. Set a breakpoint at the end of `__ENTRY` and continue execution (`F5`).
 
-![Debug Step Eleven](/images/bootstrap-debug-11.png)
+    ![Debug Step Eleven](/images/bootstrap-debug-11.png)
 
 15. The Web Browser will present the Display Page. Click 'Exit' menu option at the bottom (or press `F3`), and the last breakpoint set on 14 will hit.
 
-![Debug Step Eleven](/images/bootstrap-debug-12.png)
-![Debug Step Eleven](/images/bootstrap-debug-13.png)
+    ![Debug Step Eleven](/images/bootstrap-debug-12.png)
+    ![Debug Step Eleven](/images/bootstrap-debug-13.png)
 
 16. Back to the *static* _ENTRY (one underscore prefix), the framework will processes the return from the CALL. 
 
-![Debug Step Eleven](/images/bootstrap-debug-14.png)
+    ![Debug Step Eleven](/images/bootstrap-debug-14.png)
 
-The instance is passed to the `ActivationManager`, where depending on the last value of LR (*Last Record*) indicator, the instance may be *Disposed* or stored (in the proper [Group](https://www.ibm.com/docs/en/i/7.4?topic=concepts-program-activation))
+    The instance is passed to the `ActivationManager`, where depending on the last value of LR (*Last Record*) indicator, the instance may be *Disposed* or stored (in the proper [Group](https://www.ibm.com/docs/en/i/7.4?topic=concepts-program-activation))
 
 17. In the particular case of the call to CUSTINQ when the User requested to `Exit`, the Program sets in the logic LR to `1`. If you Step into `manager.DisposeInstance(`, you will get to the destructor of CUSTINQ, as shown by the next image:
 
-![Debug Step Eleven](/images/bootstrap-debug-15.png)
+    ![Debug Step Eleven](/images/bootstrap-debug-15.png)
 
-> When *Disposing* of a Program instance, the files are closed (including the Workstation file). Closing the Workstation file **does not** end the ASP.NET session, it just leaves other programs to set a different *Active* Displayfile.
+    > When *Disposing* of a Program instance, the files are closed (including the Workstation file). Closing the Workstation file **does not** end the ASP.NET session, it just leaves other programs to set a different *Active* Displayfile.
 
-> Notice also that when **LR** indicator is not set to `1`, and the Program remains *Active*, the files stay open.
+    > Notice also that when **LR** indicator is not set to `1`, and the Program remains *Active*, the files stay open.
 
->&#128161; QSys Program Bootstrapping seems intimidating. Rest assured that the steps taken are the **same** steps IBMi needs to execute (or very similar). RPG runtime on the IBM i hides the Bootstrap code from you. The Bootstrap process is **very* fast, the most time consuming is the external file access (and of course the Application developer's logic code). 
+<br>
+<br>
+
+&#128161; QSys Program Bootstrapping seems intimidating. Rest assured that the steps taken are the **same** steps IBMi needs to execute (or very similar). RPG runtime on the IBM i hides the Bootstrap code from you. The Bootstrap process is **very* fast, the most time consuming is the external file access (and of course the Application developer's logic code). 
 
 <br>
 <br>
