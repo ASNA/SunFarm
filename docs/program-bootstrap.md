@@ -132,7 +132,7 @@ Two phases of the Program Bootstrap are invoked:
 1. **Find** the Program instance (ENTRY with *one* underscore prefix).
 2. **Process** the instance (ENTRY with *two* underscore prefix).
 
-Note how in the [IBM i Developer Model](https://asnaqsys.github.io/concepts/background/ibmi-developer-model.html) it is possible that the instance of the Program called, to be *Active*, in this case, the **Find** phase will be successful and there is no need to initialize the Program.
+Note how in the [IBM i Developer Model](https://asnaqsys.github.io/concepts/background/ibmi-developer-model.html) it is possible that the instance of the Program called to be *Active*, in this case, the **Find** phase will be successful and there is no need to initialize the Program.
 
 When there is **no** *Active* instance (as would be the case for the first time the Application runs), the following steps are executed:
 
@@ -280,7 +280,7 @@ Notice:
 
 ## Putting all together
 
-The concepts described in this topic are advanced topics, but general understanding is crucial when maintaining Nomad migrating Applications.
+The concepts described in this topic are advanced topics, but general understanding is crucial when maintaining Nomad migrated Applications.
 
 Since we have isolated the **Bootstrap** Boilerplate code into its own little source file, let's run a step by step *Debugging* session to put all these ideas together and make some sense of it.
 
