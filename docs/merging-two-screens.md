@@ -1,10 +1,12 @@
 ---
 layout: page
-title: Merging two Screens
+title: Room for more fields
 permalink: /merging-two-screens/
 ---
 
 Oftentimes after reorganizing and cleaning up Green-Screen elements on **Display Pages** — *particularly when preparing for Desktop Browser or large Tablets* — we end up with **lots** of unused space where more information *can* be displayed.
+
+<br>
 
 ## *We could go from this look:*
 ![Screen with Unused Space](/images/page-two-04_b.png)
@@ -14,21 +16,25 @@ Oftentimes after reorganizing and cleaning up Green-Screen elements on **Display
 ## *To this richer look:*
 ![Two Screens merged](/images/page-two-09.png)
 
-The two Green-Screens we will merge are:
-1. *Customer Maintenance* Screen.
-2. *Display Sales* Screen.
+<br>
+
+The base Green-Screen we are changing is the legacy *Customer Maintenance* Screen. The new fields we want to display are related to Sales data partially displayed by *Display Sales* Screen.
 
 The *Legacy* **Display Sales** green-screen looks like the following image:
 
 ![Two Screens merged](/images/legacy-display-sales-screen.png)
 
-The *Legacy* **Display Sales** green-screen shows only two new data items which *can easily* fit into the improved **Customer Maintenance** Display Page.  
+<br>
 
-Furthermore, the database contains much more useful information about the Sales (not shown in the *Legacy* version) that we could now exploit.
+The *Legacy* **Display Sales** green-screen shows only two data items which *can easily* fit into the improved **Customer Maintenance** Display Page.  
+
+Furthermore, the database contains much more useful Sales information (not shown in the *Legacy* version) that we could now exploit.
 
 If we look at database records (logical file **CSMASTERL1**), we can see that for each customer we keep monthly sales and returns information on a given year (sales records have the **CSTYPE** code ‘1’ and returns the code ‘2’).
 
 ![Database Sales Info](/images/sales-returns-log-file.png)
+
+<br>
 
 Displaying the total sales (of all recorded years) is too limited (original *Legacy* Design).  
 
@@ -39,9 +45,10 @@ Depending on the needs of SunFarm company we could argue that it would be more b
 3. Sales trend (last month vs first month of that year)
 4. A chart showing how sales progressed throughout the year.
 
+
 # Business Logic Changes
 
-The Legacy Business Logic, was implemented in two different programs:
+The data we need to display comes from a different *Logical* database file, not currently referred to by the Legacy Business Logic. In fact, two different programs are providing all the information we need for our new design:
 
 1. **CUSTINQ** -- Customer Inquiry *Interactive* Program.
 2. **CUSTCALC** -- Customer Calculations (i.e. Total Sales and Returns) *Batch* Program.
@@ -72,9 +79,9 @@ Three files are referred:
 2. Database Logical File: **CUSTOMERL2**
 3. Database Logical File: **CUSTOMERL1**
 
-Both Database Logical File(s): **CUSTOMERL1** and **CUSTOMERL2** are two different views on the **CUSTOMER** physical file, but the information About the Sales and Returns is not in the **CUSTOMER** physical file.
+The two database files, namely: **CUSTOMERL1** and **CUSTOMERL2**, represent *views* on the **CUSTOMER** physical file, but the information related to Sales and Returns **is not** in the **CUSTOMER** physical file.
 
-The second program we have mentioned above, the **CUSTCALC** batch Program, *knows* how to get to Sales and Returns records, to compute those Totals.
+The second program we have mentioned, the **CUSTCALC** batch Program, *knows* how to get Sales and Returns records from the database, to compute *Totals*.
 
 If you look at the C# source code for CUSTCALC.cs, you will find:
 
@@ -93,11 +100,11 @@ namespace SunFarm.Customers
         DatabaseFile CSMASTERL1; // Sales and Returns file
 ```
 
-There is reference to the **CSMASTER** file - thru its Logical file **CSMASTERL1** -
+There is reference to the **CSMASTER** physical file - thru its Logical file **CSMASTERL1** -
 
 We can copy code from **CUSTCALC.cs** to **CUSTINQ.cs**
 
-## Declaring DatabaseFiles in C# does not make fields available to Program
+## Declaring Database files in C# does not make fields available to Program
 
 >&#128161; We don't get the benefits of RPG -- [we are not in Kansas anymore](https://wordhistories.net/2019/06/25/kansas-anymore/) -- 
 
@@ -109,11 +116,11 @@ In particular, declaring files in RPG would make available *global* fields that 
 
 ASNA QSys Runtime uses [Partial classes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) to *complete* the equivalent database facilities built-into RPG Language.
 
->Note: When adding new database file references to a C# Program, the implementation of the *partial* IO classes needs to be re-generated. We will show later in this chapter how that is done.   
+>Note: When adding new database file references to a C# Program, the implementation of the *partial* IO classes needs to be re-generated. We will show later in this chapter how that is done (with ASNA Tools integrated with Visual Studio 2019).  
 
 ### Declaring Sales and Returns Database file
 
-Let’s add the following database file declaration on Program CUSTINQC:
+Let’s add the following database file declaration on Program CUSTINQ:
 
 ```c#
 namespace SunFarm.Customers
@@ -133,9 +140,7 @@ namespace SunFarm.Customers
 As we have been discussing above, declaring CSMASTERL1 is not enough, we need to:
 
 1. Instance the new DatabaseFile CSMASTERL1 field.
-
 2. Set new file Job’s overrider class.
-
 3. Open and Close the new database file.
 
 ## Instance the new DatabaseFile CSMASTERL1 field.
@@ -184,10 +189,13 @@ void _instanceInit()
 >Note: `PopulateFieldsCSMASTERL1` and `CSMASTERL1FormatIDs` are not defined yet. We'll add them later.
 
 <br>
+
 ## Set new file Job’s overrider class  
-Every **DatabaseFile** field instance has a property to set the *Overrider* Job instance. This property is used by the `QSys` runtime support to implement [Overriding](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rzasc/redfio.htm). You don't need to be concerned if your don't understand right now what *Overriding* means, just know that this reference is required.
+
+Every **DatabaseFile** field instance has a property to set the *Overrider* Job instance. This property is used by the `QSys` runtime support to implement [Overriding](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rzasc/redfio.htm). You don't need to be concerned - right now - if your don't understand what *Overriding* means, just know that this reference is **required**.
 
 **Source file:** `CustomerAppLogic/CUSTINQ.cs`
+
 ```cs
 public Custinq()
 {
@@ -204,7 +212,8 @@ public Custinq()
 }
 ```
 
-## Open and Close the new database file.  
+## Open and Close the new database file.
+
 Opening the `CSMASTERL1` database file and closing it, is done - *as expected* - during *construction* and *disposal* of the Program instance.
 
 Copy lines related to Open and Close from `CUSTCALC.cs` to `CUSTINQ.cs`, the complete **CUSTINQ** *Constructor* and *Disposal* methods should look like the following code [^1]:
@@ -229,8 +238,7 @@ public Custinq()
 override public void Dispose(bool disposing)
 {
     if (disposing)
-    {
-        
+    {     
         CUSTDSPF.Close();
         CUSTOMERL2.Close();
         CUSTOMERL1.Close();
@@ -244,53 +252,100 @@ override public void Dispose(bool disposing)
 To make available fields to the Program as specified by the record's database schema, we need to do the following:
 
 1. Declare fields (as defined by the record schema).
-2. Implement populate field's in-out (*of dataset*) methods in the IO partial class.
+2. Implement populate field's in/out (*of DataSet*) methods in the IO partial class.
 
 
 ## Declare fields (as defined by the record schema)  
 Once we have copied the declaration of database file `CSMASTERL1` from CUSTCALC.cs to CUSTINQ.cs, and updated its Instantiation and Open/Close code, we proceed to complete its setup by declaring fields (as defined by the record schema).
 
-The easiest, and less error-prone method to declare fields (as defined in the record schema), is to use a Tool. It can be done manually, but it may be too cumbersome and error-prone.
+The easiest and less error-prone method to declare fields (as defined in the record schema), is to use a **Tool**. It can be done manually, but it may be too cumbersome and error-prone.
 
 Notice how each Program listed under the CustomerAppLogic in the Visual Studio Solution shows an icon that can be used to expand the Program node in the tree to show related source files (in this case partial class sources).
 
 For example, expanding node CUSTINQ.cs on the Project tree, will show the following sources:
 
-~~~
+```
 CUSTINQ.cs
    CUSTINQ.Io.cs      
    CUSTINQ.Io.xfu
-~~~
+```
 
 The **IO** (*Input* / *Output*) sources are the implementation of the *partial classes* that complete the Program with the RPG database facilities mentioned above.
 
-These files are *generated* files and should be re-generated using [Nomad Tools](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html)
+These files were created by the Migration process:
+* `CUSTINQ.Io.cs` is **auto-generated** each time the file with same name, but with extension `.Io.xfu` is modified.
+* `CUSTINQ.Io.xfu` is manually maintained to drive the tool-generated `*.Io.cs` (by the same name).  
 
-All we need is access to the **Nomad Tools**, which can be reached in Visual Studio 2019 Solution Explorer, by selecting a program - such as `CUSTCALC` - and opening the *Context Menu* options using *right-mouse* click.
+## External File Definition (Schema) cache
+Compiling the Sun Farm Logic project **does not** need to access the database. This is different from how the IBM i RPG Compiler works. 
+
+Mostly for performance reasons, the File definition *Schemas* for all the database files used by *all* QSys Programs in the Logic project are kept on a hidden folder created automatically as needed. (This is similar to how C# creates *obj* folder to store temporary files).
+
+ > Please consult [Nomad Tools](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html) for further details.
+
+In Visual Studio Solution explorer, select the file `CUSTINQ.Io.xfu`, then using the right mouse button, open the *Context Menu* options and the following menus will appear:
 
 ![Nomad Tools Context Menu Options](/images/nomad-tools.png)
 
-Nomad Context Menu Tools:
+> The image shows red *hollow arrows* on the right. These are not part of the *Context Menu*, they are show here to highlight the two we are concerned with, on this topic.
+
+The new Context Menu options added by ASNA Nomad are:
 1. Refresh XFU
 2. Run Custom Tool
 
-## Refresh XFU
-If you look at the contents of `CUSTINQ.Io.xfu` you will find a stand-alone [XML](https://en.wikipedia.org/wiki/XML) document which contains external description of all database files used by the program `CUSTINQ.cs`. Since we have added one more Database file to `CUSTINQ` we need to *regenerate* or *refresh* the contents of the XML file.
+## "Refresh XFU" Menu Option
+If you look at the contents of `CUSTINQ.Io.xfu` you will find a stand-alone [XML](https://en.wikipedia.org/wiki/XML) document which contains:
 
-Run **Refresh XFU**
+1. References to **all** externally described files use by the program (workstation, database and printfiles).
+2. Directives on all records for all the files, to *drive* the generation of the *partial* class for the QSys Program.
 
-## Run Custom Tool
-Once we have the `CUSTINQ.Io.xfu` up-to-date (after running **Refresh XFU**), we need to execute the second Nomad Tool: **Run Custom Tool**
+Running **Refresh XFU** updates the **External File Definition cache** for all the files used by the program. Since `CSMASTERL1` file we added to `CUSTINQ` Program is *also* used by `CUSTCALC` program, we don't need to execute **Refresh XFU** at this time.
 
-What **Run Custom Tool** does is *re-generate*:
+We do however want to update the file `CUSTINQ.Io.xfu` (to prepare it for the re-generation of the partial class, to define the database fields we need for the new database file reference added).
 
-a. Field declarations of files according to the latest definition in `CUSTINQ.Io.xfu` 
+Locate the following XML definition lines on file `CUSTCALC.Io.xfu`:
 
-b. Implementation of methods *PopulateBuffer* and *PopulateFields* in source file `CUSTINQ.Io.cs` for every single file referred to by `CUSTINQ.cs` 
+```html
+<FileUsage DBName="SunFarm" FilePath="*LIBL/CSMASTERL1" FileType="DBFile" FileFieldName="CSMASTERL1" Access="" IsStatic="false" UsesUpdateWithFields="false" IsProgramDescribed="false">
+<Record Name="RCSMASTL1" OriginalName="RCSMASTL1" UsesClearFormat="false">
+    <DeclaredInClass>
+    <Field Name="CSCUSTNO" />
+    <Field Name="CSYEAR" />
+    <Field Name="CSTYPE" />
+    <Field Name="CSSALES01" />
+    <Field Name="CSSALES02" />
+    <Field Name="CSSALES03" />
+    <Field Name="CSSALES04" />
+    <Field Name="CSSALES05" />
+    <Field Name="CSSALES06" />
+    <Field Name="CSSALES07" />
+    <Field Name="CSSALES08" />
+    <Field Name="CSSALES09" />
+    <Field Name="CSSALES10" />
+    <Field Name="CSSALES11" />
+    <Field Name="CSSALES12" />
+    </DeclaredInClass>
+</Record>
+</FileUsage>
+```
 
->Once we run the Nomad Tools, our *CustomerAppLogic* Project should compile. We need to move to to the *Interactive* section of the program, that is, work on the Website Pages.
+Copy those lines to `CUSTINQ.Io.xfu`, after the declaration of the file `CUSTOMERL1` as shown in the image.
 
-# Displaying new data on Customer Maintenance Page
+![XFU paste from CustCalc](/images/xfu-from-custcalc.png)
+
+## "Run Custom Tool" Menu Option
+Once we have the `CUSTINQ.Io.xfu` updated, the *Custom Tool* associated with file `CUSTINQ.Io.xfu` runs **automatically**. 
+
+Recall from the discussion above, that the purpose of the *Custom Tool* is to generate the *partial* class implemented in source file: `CUSTINQ.Io.cs`. That is,
+
+a. Declare the fields of **all** files listed in `CUSTINQ.Io.xfu`, according to the *Schema* currently store in the **cache**. 
+b. Implement methods *PopulateBuffer* and *PopulateFields* for **all** files referred to by `CUSTINQ.cs` (as indicated in `CUSTINQ.Io.xfu`).
+
+The *CustomerAppLogic* Project should compile without errors. We will leave the logic untouched for now, and move to the *Interactive* part of the Application, that is, work on the Website Pages.
+
+<br>
+
+## Displaying new data on Customer Maintenance Page
 
 We added the ability to Program `CUSTINQ` to deal with *Sales and Returns* information for a customer (previously only in `CUSTCALC`).
 
@@ -346,20 +401,21 @@ First let’s start by displaying Sales information. Rows 12 thru 15:
 
 If we ignore for a moment the display attributes and concentrate on the new data-fields we have twelve new fields:
 
-```html
-    For="CUSTREC.CSSALES01"
-    For="CUSTREC.CSSALES02"
-    For="CUSTREC.CSSALES03"
-    For="CUSTREC.CSSALES04"
-    For="CUSTREC.CSSALES05"
-    For="CUSTREC.CSSALES06"
-    For="CUSTREC.CSSALES07"
-    For="CUSTREC.CSSALES08"
-    For="CUSTREC.CSSALES09"
-    For="CUSTREC.CSSALES10"
-    For="CUSTREC.CSSALES11"
-    For="CUSTREC.CSSALES12"
+```cs
+For="CUSTREC.CSSALES01"
+For="CUSTREC.CSSALES02"
+For="CUSTREC.CSSALES03"
+For="CUSTREC.CSSALES04"
+For="CUSTREC.CSSALES05"
+For="CUSTREC.CSSALES06"
+For="CUSTREC.CSSALES07"
+For="CUSTREC.CSSALES08"
+For="CUSTREC.CSSALES09"
+For="CUSTREC.CSSALES10"
+For="CUSTREC.CSSALES11"
+For="CUSTREC.CSSALES12"
 ```
+
 You may have noticed that Visual Studio Razor Page smart editor is highlighting names with the reference to known CUSTREC Model property as `undefined`.
 
 Let's proceed to define the *twelve* sales fields.
@@ -370,9 +426,9 @@ In this particular case, we need to add fields to `CUSTREC` record in the Model.
 
 Open the Model C# source file:
 
-~~~
+```
 CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtml.cs
-~~~
+```
 
 Locate the `CUSTREC_Model` class.
 
@@ -451,6 +507,7 @@ public decimal CSSALES11 { get; private set; }
 [Dec(11, 2)]
 public decimal CSSALES12 { get; private set; }
 ```
+
 >Note: We used Dec(11,2) because we know the schema definition for the *Sales and Returns* physical file: `CSMASTER`. 
 
 ## Refreshing XFU after adding fields to Markup 
@@ -469,10 +526,15 @@ The following graph shows a simplified representation of the *DataSet* communica
 
 The *DataSet* holds the values of all *active* records. Similarly to the way RPG application works, the control flow starts with a *Program* writing records and then executing formats. The *schema* of the records in the DataSet must match the *schema* of the fields declared in the Program as well as the fields declared in the Model.
 
-Similarly to how we executed [Nomad Tools](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html) earlier in this Chapter to update the *IO* **XFU** file, we need to repeat the process every time we modify the *Model* to keep the *DataSet* in sync.
+Similarly to how we executed [Nomad Tools](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html) earlier in this Chapter to update the *IO* partial class implementation we need to repeat a similar process every time we modify the *Model* to keep the *DataSet* definition in sync.
 
-* Run **Refresh XFU**
-* Run Custom Tool
+> There is no separate cache for the Display Page Model.
+
+Changing the Display Page Model, for a Display Page Razor Page markup is equivalent to changing the File Definition on an externally described database file.
+
+There is no direct way in Visual Studio where we can associate a *Custom Tool* from the Website to the Logic Project, so no automatic generation will occur. This is why ASNA *Run Custom Tool* may be ran manually.
+
+Go back to the Logic Project, position the selection on top of the source file `CUSTINQ.Io.xfu` and execute **Run Custom Tool*.
 
 If no errors are generated by [Nomad Tools](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html), compile the Business Logic Project and run the Website. 
 
@@ -633,7 +695,7 @@ public decimal CSRETURN11 { get; private set; }
 public decimal CSRETURN12 { get; private set; }
 ```
 
-Re-run [Nomad Tools](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html) on the `CUSTINQ` Program, in the `CustomerAppLogic` Project.[^3]
+Re-run [Nomad Run CustomTool](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html) on the `CUSTINQ` Program, in the `CustomerAppLogic` Project.[^3]
 
 Re-run the Website and navigate to a Customer "Update" Page:
 
