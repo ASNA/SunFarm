@@ -3,6 +3,11 @@ layout: page
 title: Application Logo Branding
 permalink: /logo-branding/
 ---
+| Quick How-to: 
+|:-------------
+| [Logo resources](https://github.com/ASNA/SunFarm/search?q=Logo+resources&type=commits)
+
+<br>
 
 We want to show the SunFarm Logo on all pages of the Enhanced Customer Application.
 

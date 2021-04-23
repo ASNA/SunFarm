@@ -3,6 +3,13 @@ layout: page
 title: Remove Redundant Green-screen Info
 permalink: /remove-redundant-green-screen-info/
 ---
+| Quick How-to: 
+|:-------------
+| [Subfile selection options as pull-down options](https://github.com/ASNA/SunFarm/search?q=Subfile+selection+options+as+pull-down+options&type=commits)
+| [Replacing Page Title](https://github.com/ASNA/SunFarm/search?q=Replacing+Page+Title&type=commits)
+| [Fourteen records subfile](https://github.com/ASNA/SunFarm/search?q=Fourteen+records+subfile&type=commits)
+
+<br>
 
 The *Canvas* used to render Pages on Modern Browsers is totally different than the fixed-position grid layout used by a Page on the IBM i.
 

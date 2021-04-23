@@ -3,6 +3,16 @@ layout: page
 title: Customer Maintenance Enhancement
 permalink: /customer-maintenance-enhancement/
 ---
+
+| Quick How-to: 
+|:-------------
+| [Customer Maintenance Preparation](https://github.com/ASNA/SunFarm/search?q=Customer+Maintenance+Preparation&type=commits)
+| [Left aligned decimal field](https://github.com/ASNA/SunFarm/search?q=Left+aligned+decimal+field&type=commits)
+| [Input capable field block](https://github.com/ASNA/SunFarm/search?q=Input+capable+field+block&type=commits)
+| [Rest of fields up and around Customer photo area](https://github.com/ASNA/SunFarm/search?q=Rest+of+fields+up+and+around+Customer+photo+area&type=commits)
+
+<br>
+
 Let’s apply the same techniques like we did for the [Customer Inquiry Page]({{ site.rooturl }}/remove-redundant-green-screen-info/).
 
 *Same Markup file*:

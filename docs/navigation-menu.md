@@ -3,6 +3,9 @@ layout: page
 title: Navigation menu
 permalink: /navigation-menu/
 ---
+| Quick How-to: 
+|:-------------
+| [Navigation Menu Customization](https://github.com/ASNA/SunFarm/search?q=Navigation+Menu+Customization&type=commits)
 
 Legacy IBM i Applications were *typically* navigated using keyboard special keys. We are talking about the **F** (or *Function*) keys IBM keyboards have on top of the keyboard. 
 

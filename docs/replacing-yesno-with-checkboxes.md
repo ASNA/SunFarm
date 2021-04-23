@@ -3,6 +3,12 @@ layout: page
 title: Replacing YES/NO fields with Check-boxes
 permalink: /replacing-yesno-with-checkboxes/
 ---
+| Quick How-to: 
+|:-------------
+| [Replaced Y/N field with Checkbox](https://github.com/ASNA/SunFarm/search?q=Replaced+Y%2FN+field+with+Checkbox&type=commits)
+| [Using Decimal Fields with Checkboxes](https://github.com/ASNA/SunFarm/search?q=Using+Decimal+Fields+with+Checkboxes&type=commits)
+
+<br>
 
 **Green-screen** Displayfiles typically used *boolean* fields with a *one-char* field that expects the value `‘Y’` or `’N’`. 
 

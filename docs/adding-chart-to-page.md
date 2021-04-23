@@ -6,11 +6,11 @@ permalink: /adding-chart-to-page/
 
 | Quick How-to: 
 |:-------------
-| [Descriptive Customer Status field](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Descriptive+Customer+Status+Field)
-| [Chart heading showing the Status Description Centered](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+heading+showing+the+Status+Description+Centered)
-| [Chart Placeholder](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+Placeholder)
-| [Empty Chart](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Empty+Chart)
-| [Chart showing Sales data](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+showing+Sales+data)
+| [Descriptive Customer Status field](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Descriptive+Customer+Status+Field&type=commits)
+| [Chart heading showing the Status Description Centered](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+heading+showing+the+Status+Description+Centered&type=commits)
+| [Chart Placeholder](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+Placeholder&type=commits)
+| [Empty Chart](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Empty+Chart&type=commits)
+| [Chart showing Sales data](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+showing+Sales+data&type=commits)
 
 <br>
 

@@ -3,6 +3,11 @@ layout: page
 title: Enhancements affecting Business Logic
 permalink: /enhancements-affecting-logic/
 ---
+| Quick How-to: 
+|:-------------
+| [Customer Inquiry Twenty records per page](https://github.com/ASNA/SunFarm/search?q=Customer+Inquiry+Twenty+records+per+page&type=commits)
+
+<br>
 
 [In the last section]({{ site.rooturl }}/enhancements-affecting-logic/), we left the *Customer Inquiry* Page, looking like the following image:
 

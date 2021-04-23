@@ -3,6 +3,15 @@ layout: page
 title: Room for more fields
 permalink: /merging-two-screens/
 ---
+| Quick How-to: 
+|:-------------
+| [Declaration of Sales Returns file in CUSTINQ.cs](https://github.com/ASNA/SunFarm/search?q=Declaration+of+Sales+Returns+file+in+CUSTINQ.cs&type=commits)
+| [First Sales information added to Page](https://github.com/ASNA/SunFarm/search?q=First+Sales+information+added+to+Page&type=commits)
+| [Adding Returns to the CUSTREC_Model DataSet](https://github.com/ASNA/SunFarm/search?q=Adding+Returns+to+the+CUSTREC_Model+DataSet&type=commits)
+| [Last Registered Sales Heading](https://github.com/ASNA/SunFarm/search?q=Last+Registered+Sales+Heading&type=commits)
+| [Last registered returns heading complete](https://github.com/ASNA/SunFarm/search?q=Last+registered+returns+heading+complete&type=commits)
+
+<br>
 
 Oftentimes after reorganizing and cleaning up Green-Screen elements on **Display Pages** — *particularly when preparing for Desktop Browser or large Tablets* — we end up with **lots** of unused space where more information *can* be displayed.
 

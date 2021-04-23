@@ -4,6 +4,12 @@ title: Data Files Used
 permalink: /data-files-used/
 ---
 
+| Quick How-to: 
+|:-------------
+| [Get data files](https://github.com/ASNA/SunFarmData)
+
+<br>
+
 The Customer Sample Application uses existing files created on IBM i.
 
 SunFarm Migration expects those files to have been previously Migrated to Microsoft SQL Database.[^1]

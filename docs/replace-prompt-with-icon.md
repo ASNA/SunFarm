@@ -3,7 +3,11 @@ layout: page
 title: Replacing Prompt (F4) with clickable icon
 permalink: /replacing-prompt-with-icon/
 ---
+| Quick How-to: 
+|:-------------
+| [Adding icon to simulate F4 prompt](https://github.com/ASNA/SunFarm/search?q=Adding+icon+to+simulate+F4+prompt&type=commits)
 
+<br>
 Prompting for possible values of fields (also known as *drilling-down* on a user interface) is very common.
 
 There are several ways to enhance a Display Page with this functionality, such as using *drop-down* lists. 

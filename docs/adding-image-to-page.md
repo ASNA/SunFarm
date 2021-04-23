@@ -3,6 +3,13 @@ layout: page
 title: Adding Image to Page
 permalink: /adding-image-to-page/
 ---
+
+| Quick How-to: 
+|:-------------
+| [Adding an Image to the Page](https://github.com/ASNA/SunFarm/search?q=Adding+an+Image+to+the+Page&type=commits)
+
+<br>
+
 **Monarch Display Pages** are Microsoft Razor Pages where *Standard HTML elements* may also be used.
 
 You may have noticed that we have been using **Row** attributes on *Standard HTML "div" elements* to indicate that div container becomes a **One-row Grid Display Element** where we can position other elements converting **Col** and **ColSpan** attributes to **grid-column** CSS styles.
