@@ -1,4 +1,4 @@
-﻿// Translated from AVR to C# on 11/5/2020 at 11:57:57 AM by ASNA Serengeti® version 16.0.3.0
+﻿// Translated from AVR to C# on 11/5/2020 at 11:57:57 AM by ASNA Monarch® Nomad version 16.0.3.0
 // ASNA Monarch(R) version 10.0.24.0 at 11/4/2020
 // Migrated source location: library NUTSNBOLTS, file QRPGSRC, member ITEMINQ
 

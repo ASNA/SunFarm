@@ -1,4 +1,4 @@
-﻿// Translated from AVR to C# on 11/5/2020 at 11:57:57 AM by ASNA Serengeti® version 16.0.3.0
+﻿// Translated from AVR to C# on 11/5/2020 at 11:57:57 AM by ASNA Monarch® Nomad version 16.0.3.0
 using ASNA.QSys;
 using ASNA.DataGate.Common;
 using System.Reflection;
