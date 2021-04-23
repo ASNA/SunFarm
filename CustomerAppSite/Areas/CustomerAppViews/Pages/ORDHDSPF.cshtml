@@ -49,7 +49,6 @@
             </DdsRecord>
             @{
                 int SFLC_SubfilePage = 10;
-                int SFLC_SubfileRowsPerRecord = 1;
             }
             <DdsSubfileControl For="SFLC" KeyNames="ENTER 'Enter'; F6 'Add'; PageUp; PageDown;" SubfilePage="@SFLC_SubfilePage" CueCurrentRecord=true ClickSetsCurrentRecord=true>
                 <div Row="1">
@@ -100,9 +99,10 @@
                     <DdsConstant Col="71+1" Text="Stat" Color="DarkBlue" Underline="*True" />
                     <DdsConstant Col="76+1" Text="Via" Color="DarkBlue" Underline="*True" />
                 </div>
-                <div Row="12" RowSpan="@SFLC_SubfilePage * @SFLC_SubfileRowsPerRecord">
-                    @for (int rrn=0, row = 12; rrn < Model.SFLC.SFL1.Count; rrn++, row += @SFLC_SubfileRowsPerRecord)
+                <div Row="12" RowSpan="@SFLC_SubfilePage">
+                    @for (int rrn=0; rrn < Model.SFLC.SFL1.Count; rrn++)
                     {
+                        int row = 12 + rrn;
                         <DdsSubfileRecord RecordNumber="rrn" For="SFLC.SFL1">
                             <div IsGridRow>
                                 <DdsDecField Col="2" For="SFLC.SFL1[rrn].SFSEL" VisibleCondition="!( 60 )" VirtualRowCol="@row,2" EditCode="Z" ValuesText="'0','2','3','6'" tabIndex=1 />
@@ -125,12 +125,12 @@
             </DdsRecord>
             @{
                 int MSGSFC_SubfilePage = 1;
-                int MSGSFC_SubfileRowsPerRecord = 1;
             }
             <DdsSubfileControl For="MSGSFC" KeyNames="ENTER 'Enter'; " SubfilePage="@MSGSFC_SubfilePage">
-                <div Row="24" RowSpan="@MSGSFC_SubfilePage * @MSGSFC_SubfileRowsPerRecord">
-                    @for (int rrn=0, row = 24; rrn < Model.MSGSFC.MSGSF.Count; rrn++, row += @MSGSFC_SubfileRowsPerRecord)
+                <div Row="24" RowSpan="@MSGSFC_SubfilePage">
+                    @for (int rrn=0; rrn < Model.MSGSFC.MSGSF.Count; rrn++)
                     {
+                        int row = 24 + rrn;
                         <DdsSubfileRecord RecordNumber="rrn" For="MSGSFC.MSGSF">
                             <div IsGridRow>
                                 <DdsCharField Col="2" For="MSGSFC.MSGSF[rrn].MessageText" Upper=true data-asna-msg-text="" VirtualRowCol="@row,2" />

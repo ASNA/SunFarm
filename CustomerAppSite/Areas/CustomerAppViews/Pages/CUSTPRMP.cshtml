@@ -19,7 +19,6 @@
                        WindowTitle=@Model.MYWINDOW.WINTITLE ReturnData="True" >
                 @{
                     int SFLC_SubfilePage = 8;
-                    int SFLC_SubfileRowsPerRecord = 1;
                 }
                 <DdsSubfileControl For="SFLC" StretchConstantText=false
                                    KeyNames="ENTER 'Enter'; " SubfilePage=@SFLC_SubfilePage ShowRecordNumber=(int)@Model.SFLC.SFLRRN CueCurrentRecord=true ClickSetsCurrentRecord=true>
@@ -29,9 +28,10 @@
                         <DdsConstant Col="15" ColSpan="17" class="prompt-column-header" Text="Description"/>
                     </div>
 
-                    <div Row="3" RowSpan="@SFLC_SubfilePage * @SFLC_SubfileRowsPerRecord">
-                        @for (int rrn = 0, row = 5; rrn < Model.SFLC.SFL1.Count; rrn++, row += @SFLC_SubfileRowsPerRecord)
+                    <div Row="3" RowSpan="@SFLC_SubfilePage">
+                        @for (int rrn = 0; rrn < Model.SFLC.SFL1.Count; rrn++)
                         {
+                            int row = 5 + rrn;
                             <DdsSubfileRecord RecordNumber="rrn" For="SFLC.SFL1">
                                 <div IsGridRow>
                                     <DdsCheckboxField Col="3" For="SFLC.SFL1[rrn].SFLSEL" VirtualRowCol="@row,3" />
