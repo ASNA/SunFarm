@@ -4,6 +4,16 @@ title: Adding Chart To Page
 permalink: /adding-chart-to-page/
 ---
 
+| Quick How-to: 
+|:-------------
+| [Descriptive Customer Status field](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Descriptive+Customer+Status+Field)
+| [Chart heading showing the Status Description Centered](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+heading+showing+the+Status+Description+Centered)
+| [Chart Placeholder](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+Placeholder)
+| [Empty Chart](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Empty+Chart)
+| [Chart showing Sales data](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+showing+Sales+data)
+
+<br>
+
 You may have noticed that when reorganizing the data on the [Customer Maintenance]({{ site.rooturl }}/customer-maintenance-enhancement/) Page, we left a distinctive area on the upper-right hand corder of the page, looking something like:
 
 ![Space for Chart](/images/page-two-chart-01.png/)
