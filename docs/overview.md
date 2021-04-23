@@ -22,7 +22,10 @@ A footnote such as:
 1 Commit "Navigation menu customization"
 ~~~
 
-Indicates that it is recommended to locate the comment *Navigation menu customization* in the commit history and compare the code to the previous commit to show the exact code that was changed.
+Indicates that it is recommended to locate the comment *Navigation menu customization* in the commit history and compare the code to the previous commit to show the exact code that was affected.
+
+> To simplify localization of commit history, most of the pages that discuss source code changes have a **Quick How-to** table at the top of the page. These are very helpful when using the Guide as a reference, when all you want to do is quickly recall how to code that particular feature. 
+
 <br>
 <br>
 <br>
