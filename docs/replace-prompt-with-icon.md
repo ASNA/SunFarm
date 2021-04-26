@@ -95,15 +95,15 @@ If the `ButtonStyle` attribute is set to `Icon` (which is what we use in this Gu
 
 ## Icon Payload efficiency
 
-*ASNA Monarch Nomad&reg;* rendering engine is optimized to include in the Page payload only **ONE** copy of a particular *Icon Shape*. If you plan to add `DdsButton` TahHelpers in records of a subfile, you can be assured that the Page’s *payload* will **NOTE** grow. When more than one instance of a particular shape is rendered on a Page, there is a single copy in memory of the shape and multiple *references* to it.
+*ASNA Monarch Base* rendering engine is optimized to include in the Page payload only **ONE** copy of a particular *Icon Shape*. If you plan to add `DdsButton` TahHelpers in records of a subfile, you can be assured that the Page’s *payload* will **NOTE** grow. When more than one instance of a particular shape is rendered on a Page, there is a single copy in memory of the shape and multiple *references* to it.
 
 ## `IconId` available Names
 
-*ASNA Monarch Nomad&reg;* provides a collection of *Icon Shapes* in the form of [SVG Images](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) with commonly used shapes that are inspired by the [Font Awesome free library](https://fontawesome.com/plans).
+*ASNA Monarch* provides a collection of *Icon Shapes* in the form of [SVG Images](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) with commonly used shapes that are inspired by the [Font Awesome free library](https://fontawesome.com/plans).
 
 The *Icon Shapes* are simple and clean, monochrome (color can be selected), scaled without loss and respect the background (use *transparent* background).
 
-*ASNA Monarch Nomad&reg;* Icon library contains 250 named shapes, which should be sufficient for most of the DdsButtons you application may need.
+*ASNA Monarch&reg;* Icon library contains 250 named shapes, which should be sufficient for most of the DdsButtons you application may need.
 
 [Browse the Icon library]({{ site.rooturl }}/asna-icon-library-reference/)
 

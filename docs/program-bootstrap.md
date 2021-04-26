@@ -280,7 +280,7 @@ Notice:
 
 ## Putting all together
 
-The concepts described in this topic are advanced topics, but general understanding is crucial when maintaining Nomad migrated Applications.
+The concepts described in this topic are advanced topics, but general understanding is crucial when maintaining Monarch&reg; migrated Applications.
 
 Since we have isolated the **Bootstrap** Boilerplate code into its own little source file, let's run a step by step *Debugging* session to put all these ideas together and make some sense of it.
 

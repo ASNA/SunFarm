@@ -197,7 +197,7 @@ We will be using [AMCHARTS Version 4](https://www.amcharts.com/) - commercial th
 
 >Note: The *free-trial* usage of [AMCHARTS Version 4](https://www.amcharts.com/) shows a [watermark](https://en.wikipedia.org/wiki/Watermark) icon. If you like this library, and plan to use it in production, you can eliminate the [watermark](https://en.wikipedia.org/wiki/Watermark) icon buying a license.
 
-We will not delve in all the details on how to use [AMCHARTS Library](https://www.amcharts.com/), this is outside the *Scope* for this **Guide**, but we will provide sufficient explanation to demonstrate how *third-party* JavaScript Libraries may be used on ASNA Nomad&reg; Migrated Applications.
+We will not delve in all the details on how to use [AMCHARTS Library](https://www.amcharts.com/), this is outside the *Scope* for this **Guide**, but we will provide sufficient explanation to demonstrate how *third-party* JavaScript Libraries may be used on ASNA Monarch&reg; Migrated Applications.
 
 The Chart we want is an `XY line chart` that will plot *one value* for *every* one of the **twelve months** in a given year connecting these points with straight `lines`. 
 

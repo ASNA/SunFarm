@@ -17,7 +17,7 @@ When *more* that *two* values of a discreet collection is expected, a *Radio But
 
 An important distinction, when comparing *Checkbox Groups* with *Radio Button Groups* is that, in addition to listing the available choices, *selecting* one choice automatically *de-selects* the others. In other words, choices are *mutually* exclusive.
 
-ASNA Monarch Nomad&reg; provides a TagHelper to simplify the production of *Radio Button Groups* named `DdsRadioGroupField`.
+*ASNA Monarch&reg; Base* provides a TagHelper to simplify the production of *Radio Button Groups* named `DdsRadioGroupField`.
 
 To explore the use of `DdsRadioGroupField` we will replace the `DdsCheckboxField`  [described in this Guide before]({{ site.rooturl }}/replacing-yesno-with-checkboxes/).
 

@@ -64,7 +64,7 @@ The data we need to display comes from a different *Logical* database file, not 
 
 As an *Interactive* Program, **CUSTINQ** uses a Displayfile, in this case **CUSTDSPF** (which migrated to a *Display Page* with same name with *cshtml* extension, on the Website).
 
-All Programs were migrated and converted by **ASNA Nomad&reg;** to C# under the *CustomerAppLogic* Project in the Visual Studio Solution. 
+All Programs were migrated and converted by **ASNA Nomad** Tool to C# under the *CustomerAppLogic* Project in the Visual Studio Solution. 
 
 Locate CUSTINQ.cs source file in CustomerAppLogic\CUSTINQ.cs, and pay attention to the files being referred:
 
@@ -299,16 +299,16 @@ In Visual Studio Solution explorer, select the file `CUSTINQ.Io.xfu`, then using
 > The image shows red *hollow arrows* on the right. These are not part of the *Context Menu*, they are show here to highlight the two we are concerned with, on this topic.
 
 The new Context Menu options added by ASNA Nomad are:
-1. Refresh XFU
+1. Refresh XFU Cache
 2. Run Custom Tool
 
-## "Refresh XFU" Menu Option
+## "Refresh XFU Cache" Menu Option
 If you look at the contents of `CUSTINQ.Io.xfu` you will find a stand-alone [XML](https://en.wikipedia.org/wiki/XML) document which contains:
 
 1. References to **all** externally described files use by the program (workstation, database and printfiles).
 2. Directives on all records for all the files, to *drive* the generation of the *partial* class for the QSys Program.
 
-Running **Refresh XFU** updates the **External File Definition cache** for all the files used by the program. Since `CSMASTERL1` file we added to `CUSTINQ` Program is *also* used by `CUSTCALC` program, we don't need to execute **Refresh XFU** at this time.
+Running **Refresh XFU Cache** updates the **External File Definition cache** for all the files used by the program. Since `CSMASTERL1` file we added to `CUSTINQ` Program is *also* used by `CUSTCALC` program, we don't need to execute **Refresh XFU Cache** at this time.
 
 We do however want to update the file `CUSTINQ.Io.xfu` (to prepare it for the re-generation of the partial class, to define the database fields we need for the new database file reference added).
 

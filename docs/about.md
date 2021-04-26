@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-This guide shows basic techniques to improve the *Look and Feel* of **ASNA Monarch Nomad&reg;** Migrated applications.
+This guide shows basic techniques to improve the *Look and Feel* of **ASNA Monarch&reg;** Migrated Applications.
 
 ## GitHub Reference Source 
 A public Repository on GitHub is used to document the steps taken while applying the techniques in this guide.
