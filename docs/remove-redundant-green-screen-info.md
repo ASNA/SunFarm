@@ -55,9 +55,10 @@ CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtm
 *(Lines `51`, `52` and `53`)*
 
 ```html
-<div Row="8" RowSpan="@SFLC_SubfilePage * @SFLC_SubfileRowsPerRecord">
-    @for (int rrn=0, row = 8; rrn < Model.SFLC.SFL1.Count; rrn++, row += @SFLC_SubfileRowsPerRecord)
+<div Row="8" RowSpan="@SFLC_SubfilePage">
+    @for (int rrn=0,; rrn < Model.SFLC.SFL1.Count; rrn++)
     {
+        int  row = 8 + rrn;
         <DdsSubfileRecord RecordNumber="rrn" For="SFLC.SFL1">
             <div IsGridRow>
                 <DdsCharField Col="2" For="SFLC.SFL1[rrn].SFCOLOR" VisibleCondition="*False" VirtualRowCol="@row,2" tabIndex=1 />
@@ -74,9 +75,10 @@ CustomerAppSite\Areas\CustomerAppViews\Pages\CUSTDSPF.cshtm
 Simplifies the markup and produces a nicer effect:
 
 ```html
-<div Row="8" RowSpan="@SFLC_SubfilePage * @SFLC_SubfileRowsPerRecord">
-    @for (int rrn=0, row = 8; rrn < Model.SFLC.SFL1.Count; rrn++, row += @SFLC_SubfileRowsPerRecord)
+<div Row="8" RowSpan="@SFLC_SubfilePage">
+    @for (int rrn=0; rrn < Model.SFLC.SFL1.Count; rrn++)
     {
+        int row = 8 + rrn;
         <DdsSubfileRecord RecordNumber="rrn" For="SFLC.SFL1">
             <div IsGridRow>
                 <DdsCharField Col="2" For="SFLC.SFL1[rrn].SFCOLOR" VisibleCondition="*False" VirtualRowCol="@row,2" tabIndex=1 />
