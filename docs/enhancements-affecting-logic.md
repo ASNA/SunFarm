@@ -115,7 +115,6 @@ In the Markup file, we just need to change the value of the variable that contro
 ```html
 @{
       int SFLC_SubfilePage = 20; // Was 14 originally.
-      int SFLC_SubfileRowsPerRecord = 1;
   }
   <DdsSubfileControl For="SFLC" StretchConstantText=false KeyNames
 ```
