@@ -103,9 +103,9 @@ If we had `DECSNDCONF` in the database declared as decimal (1,0) that would be *
 
 This should be simple to do.
 
-Let’s  first run the [Nomad Tools](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html) to update the Display Page *DataSet* and make `DECSNDCONF` available to the Program `CUSTINQ`.
+Let’s  first run the [Monarch Base Dev Tools](https://asnaqsys.github.io/concepts/enhancements/dev-tools.html) to update the Display Page *DataSet* and make `DECSNDCONF` available to the Program `CUSTINQ`.
 
-Locate the sourcefile `CustomerAppLogic/CUSTINQ.cs` using *Visual Studio Solution Explorer* and invoke the *context-menu* options and execute: ` Cache` and `Run Custom Tools` Nomad commands.
+Locate the sourcefile `CustomerAppLogic/CUSTINQ.cs` using *Visual Studio Solution Explorer* and invoke the *context-menu* options and execute: ` Cache` and `Run Custom Tools` Monarch Base commands.
 
 To keep in *Sync* the Decimal field `DECSNDCONF` with the database field `SFYN01` all we need to do in the Business Logic - Program `CUSTINQ` - is:
 
