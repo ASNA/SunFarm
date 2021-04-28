@@ -118,7 +118,7 @@ Verify the Navigation Menu changes:
 
 ![New Menu options labels](/images/relabel-menu-options.png)
 
->Notice how *hovering* over the menu name shows the *Active* key associated (useful for Users that have keyboards attached to their device)
+>Notice how, by *hovering* over the menu name shows the *Active* key associated (useful for Users that have keyboards attached to their devices).
 
 <br>
 <br>
