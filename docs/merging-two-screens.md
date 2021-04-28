@@ -125,7 +125,7 @@ In particular, declaring files in RPG would make available *global* fields that 
 
 ASNA QSys Runtime uses [Partial classes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) to *complete* the equivalent database facilities built-into RPG Language.
 
->Note: When adding new database file references to a C# Program, the implementation of the *partial* IO classes needs to be re-generated. We will show later in this chapter how that is done (with ASNA Tools integrated with Visual Studio 2019).  
+>Note: When adding new database file references to a C# Program, the implementation of the *partial* IO classes needs to be re-generated. We will show later in this chapter how that is done (using *Monarch Base Dev Tools* integrated with Visual Studio 2019).  
 
 ### Declaring Sales and Returns Database file
 
