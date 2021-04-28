@@ -105,7 +105,7 @@ Notice how **Row="3"** became as tall as the height of the image, pushing all th
 
 ![Customer Icon Shows](/images/page-two-04_a.png)
 
->If you still not see the image with proper width, clear the Browser's CSS cache.
+>If you still don't see the image with proper width, clear the Browser's CSS cache.
 
 If we prefer not *to push* the rest of rows down, we can change the position style from: "relative" to: "absolute"[^1].
 
