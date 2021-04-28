@@ -62,7 +62,7 @@ The data we need to display comes from a different *Logical* database file, not 
 1. **CUSTINQ** -- Customer Inquiry *Interactive* Program.
 2. **CUSTCALC** -- Customer Calculations (i.e. Total Sales and Returns) *Batch* Program.
 
-As an *Interactive* Program, **CUSTINQ** uses a Displayfile, in this case **CUSTDSPF** (which migrated to a *Display Page* with same name with *cshtml* extension, on the Website).
+As an *Interactive* Program, **CUSTINQ** uses a Displayfile, in this case **CUSTDSPF** (which migrated to a *Display Page* with same name but with *cshtml* file extension).
 
 All Programs were migrated and converted by **ASNA Nomad** Translator to C# under the *CustomerAppLogic* Project in the Visual Studio Solution. 
 
