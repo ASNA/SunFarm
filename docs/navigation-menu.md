@@ -118,11 +118,14 @@ Verify the Navigation Menu changes:
 
 ![New Menu options labels](/images/relabel-menu-options.png)
 
-<sub>Notice how *hovering* over the menu name shows the *Active* key associated (useful for Users that have keyboards attached to their device)</sub>
+>Notice how *hovering* over the menu name shows the *Active* key associated (useful for Users that have keyboards attached to their device)
+
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/remove-redundant-green-screen-info/)
 
+<br>
+<br>
 
-[^1]: Commit "Navigation Menu Customization"
+[^1]: [Commit: "Navigation Menu Customization"](https://github.com/ASNA/SunFarm/search?q=Navigation+Menu+Customization&type=commits)

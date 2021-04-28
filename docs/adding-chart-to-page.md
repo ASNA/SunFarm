@@ -395,11 +395,14 @@ With the Chart you can quickly see that the Customer 46000 increased sales in 19
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/replacing-yesno-with-checkboxes/)
 
-[^1]: Commit "Descriptive Customer Status field"
-[^2]: Commit "Chart heading showing the Status Description Centered"
-[^3]: Commit "Chart Placeholder"
-[^4]: Commit "Empty Chart"
-[^5]: Commit "Chart showing Sales data"
+<br>
+<br>
+
+[^1]: [Commit: "Descriptive Customer Status field"](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Descriptive+Customer+Status+Field&type=commits)
+[^2]: [Commit: "Chart heading showing the Status Description Centered"](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+heading+showing+the+Status+Description+Centered&type=commits)
+[^3]: [Commit: "Chart Placeholder"](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+Placeholder&type=commits)
+[^4]: [Commit: "Empty Chart"](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Empty+Chart&type=commits)
+[^5]: [Commit: "Chart showing Sales data"](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+showing+Sales+data&type=commits)

@@ -124,8 +124,10 @@ If we prefer not *to push* the rest of rows down, we can change the position sty
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/merging-two-screens/)
 
+<br>
+<br>
 
-[^1]: Commit "Adding an Image to the Page"
+[^1]: [Commit: "Adding an Image to the Page"](https://github.com/ASNA/SunFarm/search?q=Adding+an+Image+to+the+Page&type=commits)

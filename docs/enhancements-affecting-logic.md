@@ -127,10 +127,13 @@ If all goes well, twenty records per page should show in the Subfile [^1]:
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/customer-maintenance-enhancement/)
 
-[^1]: Commit "Customer Inquiry Twenty records per page"
+<br>
+<br>
+
+[^1]: [Commit: "Customer Inquiry Twenty records per page"](https://github.com/ASNA/SunFarm/search?q=Customer+Inquiry+Twenty+records+per+page&type=commits)
 
 
 

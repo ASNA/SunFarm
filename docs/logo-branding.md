@@ -111,9 +111,11 @@ The Web Browser *caches* `CSS` (and other frequently used resources, for perform
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/navigation-menu/)
 
+<br>
+<br>
 
-[^1]: Commit: "Logo resources"
+[^1]: [Commit: "Logo resources"](https://github.com/ASNA/SunFarm/search?q=Logo+resources&type=commits)
 

@@ -126,9 +126,11 @@ Updating Customer records by changing the state of the "Send Confirmation” che
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/replacing-yesno-with-radio-button-groups/)
 
+<br>
+<br>
 
-[^1]: Commit "Replaced Y/N field with Checkbox”
-[^2]: Commit "Using Decimal Fields with Checkboxes”
+[^1]: [Commit: "Replaced Y/N field with Checkbox”](https://github.com/ASNA/SunFarm/search?q=Replaced+Y%2FN+field+with+Checkbox&type=commits)
+[^2]: [Commit: "Using Decimal Fields with Checkboxes”](https://github.com/ASNA/SunFarm/search?q=Using+Decimal+Fields+with+Checkboxes&type=commits)

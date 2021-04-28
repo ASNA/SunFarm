@@ -420,9 +420,12 @@ The Legacy DDS had the Subfile Page set at 14 records. Modern computer devices t
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/enhancements-affecting-logic/)
 
-[^1]: Commit "Subfile selection options as pull-down options".
-[^2]: Commit "Replacing Page Title".
-[^3]: Commit "Fourteen records subfile".
+<br>
+<br>
+
+[^1]: [Commit: "Subfile selection options as pull-down options"](https://github.com/ASNA/SunFarm/search?q=Subfile+selection+options+as+pull-down+options&type=commits)
+[^2]: [Commit: "Replacing Page Title"](https://github.com/ASNA/SunFarm/search?q=Replacing+Page+Title&type=commits)
+[^3]: [Commit: "Fourteen records subfile"](https://github.com/ASNA/SunFarm/search?q=Fourteen+records+subfile&type=commits)

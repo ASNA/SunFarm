@@ -151,10 +151,11 @@ The prompts with their corresponding titles should now look like the following i
 
 <br>
 <br>
-<br>
+
 ## *Last Page of this Guide*
+
 <br>
 <br>
 
-[^1]: Commit "Adding icon to simulate F4 prompt"
+[^1]: [Commit: "Adding icon to simulate F4 prompt"](https://github.com/ASNA/SunFarm/search?q=Adding+icon+to+simulate+F4+prompt&type=commits)
 

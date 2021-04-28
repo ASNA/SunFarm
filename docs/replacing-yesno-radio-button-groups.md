@@ -103,7 +103,10 @@ May be *bound* to the following (*unmodified*) Markup:
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/replacing-prompt-with-icon/)
 
-[^1]: Commit "Replacing YES/NO field with a Radio Button Group”
+<br>
+<br>
+
+[^1]: [Commit: "Replacing YES/NO field with a Radio Button Group”](https://github.com/ASNA/SunFarm/search?q=Replacing+YES%2FNO+field+with+a+Radio+Button+Group&type=commits)

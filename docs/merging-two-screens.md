@@ -1036,11 +1036,14 @@ The two headings should now show like the following image[^5]:
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/adding-chart-to-page/)
 
-[^1]: Commit "Declaration of Sales Returns file in CUSTINQ.cs"
-[^2]: Commit "First Sales information added to Page"
-[^3]: Commit "Adding Returns to the CUSTREC_Model DataSet"
-[^4]: Commit "Last Registered Sales Heading"
-[^5]: Commit "Last registered returns heading complete"
+<br>
+<br>
+
+[^1]: [Commit: "Declaration of Sales Returns file in CUSTINQ.cs"](https://github.com/ASNA/SunFarm/search?q=Declaration+of+Sales+Returns+file+in+CUSTINQ.cs&type=commits)
+[^2]: [Commit: "First Sales information added to Page"](https://github.com/ASNA/SunFarm/search?q=First+Sales+information+added+to+Page&type=commits)
+[^3]: [Commit: "Adding Returns to the CUSTREC_Model DataSet"](https://github.com/ASNA/SunFarm/search?q=Adding+Returns+to+the+CUSTREC_Model+DataSet&type=commits)
+[^4]: [Commit: "Last Registered Sales Heading"](https://github.com/ASNA/SunFarm/search?q=Last+Registered+Sales+Heading&type=commits)
+[^5]: [Commit: "Last registered returns heading complete"](https://github.com/ASNA/SunFarm/search?q=Last+registered+returns+heading+complete&type=commits)

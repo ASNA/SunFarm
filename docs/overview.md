@@ -19,7 +19,7 @@ This Guide shows the **git** *Commit Comment* as a reference for the Step comple
 
 A footnote such as:
 ~~~
-1 Commit "Navigation menu customization"
+1 Commit: "Navigation menu customization"
 ~~~
 
 Indicates that it is recommended to locate the comment *Navigation menu customization* in the commit history and compare the code to the previous commit to show the exact code that was affected.
@@ -28,5 +28,5 @@ Indicates that it is recommended to locate the comment *Navigation menu customiz
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/guide-objective/)
