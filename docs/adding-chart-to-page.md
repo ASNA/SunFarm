@@ -14,7 +14,7 @@ permalink: /adding-chart-to-page/
 
 <br>
 
-You may have noticed that when reorganizing the data on the [Customer Maintenance]({{ site.rooturl }}/customer-maintenance-enhancement/) Page, we left a distinctive area on the upper-right hand corder of the page, looking something like:
+You may have noticed that when reorganizing the data on the [Customer Maintenance]({{ site.rooturl }}/customer-maintenance-enhancement/) Page, we left a distinctive area on the upper-right hand corner of the page, looking something like:
 
 ![Space for Chart](/images/page-two-chart-01.png/)
 
@@ -197,7 +197,7 @@ We will be using [AMCHARTS Version 4](https://www.amcharts.com/) - commercial th
 
 >Note: The *free-trial* usage of [AMCHARTS Version 4](https://www.amcharts.com/) shows a [watermark](https://en.wikipedia.org/wiki/Watermark) icon. If you like this library, and plan to use it in production, you can eliminate the [watermark](https://en.wikipedia.org/wiki/Watermark) icon buying a license.
 
-We will not delve in all the details on how to use [AMCHARTS Library](https://www.amcharts.com/), this is outside the *Scope* for this **Guide**, but we will provide sufficient explanation to demonstrate how *third-party* JavaScript Libraries may be used on ASNA Monarch&reg; Migrated Applications.
+We will not delve in all the details on how to use [AMCHARTS Library](https://www.amcharts.com/), this is outside the *Scope* for this **Guide**, rather we will provide sufficient explanation to demonstrate how *third-party* JavaScript Libraries may be used on ASNA Monarch&reg; Migrated Applications.
 
 The Chart we want is an `XY line chart` that will plot *one value* for *every* one of the **twelve months** in a given year connecting these points with straight `lines`. 
 
