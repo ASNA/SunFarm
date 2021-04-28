@@ -19,7 +19,7 @@ The SunFarm Logo consisits of:
   * Company name ("sunfarm")
   * Company Motto ("always fresh")
 
-The image we use is names "sun-farm", it is a *raster* **png** format image, designed with transparency:
+The image we use is named "sun-farm", it is a *raster* **png** format image, designed with transparency:
 
 ![Logo image](/images/logo.png)
 
