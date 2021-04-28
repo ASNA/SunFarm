@@ -258,7 +258,7 @@ override public void Dispose(bool disposing)
 }
 ```
 
-To make available fields to the Program as specified by the record's database schema, we need to do the following:
+To make fields available to the Program as specified by the record's database schema, we need to do the following:
 
 1. Declare fields (as defined by the record schema).
 2. Implement populate field's in/out (*of DataSet*) methods in the IO partial class.
@@ -296,7 +296,7 @@ In Visual Studio Solution explorer, select the file `CUSTINQ.Io.xfu`, then using
 
 ![Monarch Base Dev Tools Context Menu Options](/images/nomad-tools.png)
 
-> The image shows red *hollow arrows* on the right. These are not part of the *Context Menu*, they are show here to highlight the two we are concerned with, on this topic.
+> The image shows red *hollow arrows* on the right. These are not part of the *Context Menu*, they are shown here to highlight the two options we are interested, for this topic.
 
 The new Context Menu options added by ASNA Monarch Base Dev Tools are:
 1. Refresh XFU Cache
