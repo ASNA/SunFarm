@@ -346,7 +346,7 @@ Add in its place [^2]:
 <div id="page-title">Customer Inquiry</div>
 ```
 
-Once you have CSS styles defined, you can take advantage of Modern Browsers *Developer Tools* to experiment with different styles, even with **text-align: center** if you width to preserve the original developer design.
+Once you have CSS styles defined, you can take advantage of Modern Browsers *Developer Tools* to experiment with different styles, even with **text-align: center** if you wish to preserve the original developer design.
 
 <sub>Note: If you wish to experiment with Browser's **Developer Tools** you can find excellent learning resources online.</sub>
 
@@ -361,7 +361,7 @@ Once you have CSS styles defined, you can take advantage of Modern Browsers *Dev
 
 Field’s starting positions are very accurately identified on the page based on the original DDS row and col positions. But identifying ending column positions is harder.
 
-The default Font for *Monarch Base* Display Pages is of the type *variable-pitch*, meaning that the physical width of characters varies according to the Font’s designer’s stroke used. When using **variable-pitch** fonts, letter occupy different width, notably **thinner** letters, such as `i` use a lot less character width than wider letters, such as upper-case `M`.
+The default Font for *Monarch Base* Display Pages is of the type *variable-pitch*, meaning that the physical width of characters varies according to the Font’s designer’s stroke used. When using **variable-pitch** fonts, letters occupy different widths, notably **thinner** letters, such as `i` use a lot less character width than wider letters, such as upper-case `M`.
 
 Green-screen page designers used a Font that is of the type *fixed-pitch*, meaning that the width of ALL characters is **the same**.
 
@@ -373,7 +373,7 @@ A green-screen label starting at column 5 with the constant **"THIS CONSTANT"** 
 
 This **no longer** works on Browser fonts (even with those so-called *"Monospace"*).
 
-*Monarch&reg; Display Page Agent* will use the length of the field of constant to approximate the *Grid Column Span* (ending position), by the use of a *fudge-factor* to account for the variability of *Web fonts*.
+*Monarch&reg; Display Page Agent* will use the length of the field of a constant to approximate the *Grid Column Span* (ending position), by the use of a *fudge-factor* multiplier to account for the variability of *Web fonts*.
 
 We can apply a technique to correct this approximation.
 
