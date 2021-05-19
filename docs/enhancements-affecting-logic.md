@@ -3,6 +3,11 @@ layout: page
 title: Enhancements affecting Business Logic
 permalink: /enhancements-affecting-logic/
 ---
+| Quick How-to: 
+|:-------------
+| [Customer Inquiry Twenty records per page](https://github.com/ASNA/SunFarm/search?q=Customer+Inquiry+Twenty+records+per+page&type=commits)
+
+<br>
 
 [In the last section]({{ site.rooturl }}/enhancements-affecting-logic/), we left the *Customer Inquiry* Page, looking like the following image:
 
@@ -110,7 +115,6 @@ In the Markup file, we just need to change the value of the variable that contro
 ```html
 @{
       int SFLC_SubfilePage = 20; // Was 14 originally.
-      int SFLC_SubfileRowsPerRecord = 1;
   }
   <DdsSubfileControl For="SFLC" StretchConstantText=false KeyNames
 ```
@@ -123,10 +127,13 @@ If all goes well, twenty records per page should show in the Subfile [^1]:
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/customer-maintenance-enhancement/)
 
-[^1]: Commit "Customer Inquiry Twenty records per page"
+<br>
+<br>
+
+[^1]: [Commit: "Customer Inquiry Twenty records per page"](https://github.com/ASNA/SunFarm/search?q=Customer+Inquiry+Twenty+records+per+page&type=commits)
 
 
 

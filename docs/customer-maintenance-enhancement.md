@@ -3,6 +3,16 @@ layout: page
 title: Customer Maintenance Enhancement
 permalink: /customer-maintenance-enhancement/
 ---
+
+| Quick How-to: 
+|:-------------
+| [Customer Maintenance Preparation](https://github.com/ASNA/SunFarm/search?q=Customer+Maintenance+Preparation&type=commits)
+| [Left aligned decimal field](https://github.com/ASNA/SunFarm/search?q=Left+aligned+decimal+field&type=commits)
+| [Input capable field block](https://github.com/ASNA/SunFarm/search?q=Input+capable+field+block&type=commits)
+| [Rest of fields up and around Customer photo area](https://github.com/ASNA/SunFarm/search?q=Rest+of+fields+up+and+around+Customer+photo+area&type=commits)
+
+<br>
+
 Let’s apply the same techniques like we did for the [Customer Inquiry Page]({{ site.rooturl }}/remove-redundant-green-screen-info/).
 
 *Same Markup file*:
@@ -107,16 +117,15 @@ What used to be Rows **13, 14, 15, 16, 17** and **18** is now Rows *8*, *9* and 
 
 **Note:** The use of **Y/N** fields as User-Interface Artifacts is **discouraged** in Modern Applications. It may be confusing to users never exposed to *Legacy* Applications. There are better paradigms we can apply, such as *Checkboxes*. We will replace **Y/N** fields [later in this Guide](/replacing-yesno-with-checkboxes/).
 
+<br>
+<br>
 
-
-<br>
-<br>
-<br>
 [Continue ...]({{ site.rooturl }}/adding-image-to-page/)
 
+<br>
+<br>
 
-
-[^1]: Commit "Customer Maintenance Preparation"
-[^2]: Commit "Left aligned decimal field"
-[^3]: Commit "Input capable field block"
-[^4]: Commit "Rest of fields up and around Customer photo area”
+[^1]: [Commit: "Customer Maintenance Preparation"](https://github.com/ASNA/SunFarm/search?q=Customer+Maintenance+Preparation&type=commits)
+[^2]: [Commit: "Left aligned decimal field"](https://github.com/ASNA/SunFarm/search?q=Left+aligned+decimal+field&type=commits)
+[^3]: [Commit: "Input capable field block"](https://github.com/ASNA/SunFarm/search?q=Input+capable+field+block&type=commits)
+[^4]: [Commit: "Rest of fields up and around Customer photo area”](https://github.com/ASNA/SunFarm/search?q=Rest+of+fields+up+and+around+Customer+photo+area&type=commits)

@@ -1,8 +1,11 @@
 ---
 layout: page
 ---
+| Quick How-to: 
+|:-------------
+| [Before and After Pages]({{ site.rooturl }}/guide-objective/)
 
-*ASNA Monarch&reg; Nomad* Applications are Legacy Applications written in RPG/CL languages on IBM i that have been Migrated to Microsoft [ASP.NET 5 Websites](https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core) .
+*ASNA Monarch&reg;* Applications are Legacy Applications written in RPG/CL languages on IBM i that have been Migrated to Microsoft [ASP.NET Websites](https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core) .
 
 ## Assumptions
 

@@ -48,7 +48,7 @@ For example, we want "CUSTREC" to **NOT* Stretch the text in the constants:
 
 # Preferred technique to Align text to the right
 
-ASNA Cocoon for Nomad&reg; will not try to guess *right-alignment* intent. (Unfortunately, DDS does not have a place to indicate such intent).
+ASNA *Cocoon for Base* will not try to guess *right-alignment* intent. (Unfortunately, DDS does not have a place to indicate such intent).
 
 The *Stretching effect* is not perfect. There are differences in the rendering of Font families and rendering engines which vary according to the Browser vendor.
 

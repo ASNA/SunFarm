@@ -1,4 +1,4 @@
-# SunFarm *Enhancing ASNA Monarch Nomad&reg; Migration Guide*
+# SunFarm *Enhancing ASNA Monarch&reg; Migration Guide*
 
  
 

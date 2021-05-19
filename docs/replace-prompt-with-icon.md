@@ -3,7 +3,11 @@ layout: page
 title: Replacing Prompt (F4) with clickable icon
 permalink: /replacing-prompt-with-icon/
 ---
+| Quick How-to: 
+|:-------------
+| [Adding icon to simulate F4 prompt](https://github.com/ASNA/SunFarm/search?q=Adding+icon+to+simulate+F4+prompt&type=commits)
 
+<br>
 Prompting for possible values of fields (also known as *drilling-down* on a user interface) is very common.
 
 There are several ways to enhance a Display Page with this functionality, such as using *drop-down* lists. 
@@ -91,15 +95,15 @@ If the `ButtonStyle` attribute is set to `Icon` (which is what we use in this Gu
 
 ## Icon Payload efficiency
 
-*ASNA Monarch Nomad&reg;* rendering engine is optimized to include in the Page payload only **ONE** copy of a particular *Icon Shape*. If you plan to add `DdsButton` TahHelpers in records of a subfile, you can be assured that the Page’s *payload* will **NOTE** grow. When more than one instance of a particular shape is rendered on a Page, there is a single copy in memory of the shape and multiple *references* to it.
+*ASNA Monarch Base* rendering engine is optimized to include in the Page payload only **ONE** copy of a particular *Icon Shape*. If you plan to add `DdsButton` TahHelpers in records of a subfile, you can be assured that the Page’s *payload* will **NOTE** grow. When more than one instance of a particular shape is rendered on a Page, there is a single copy in memory of the shape and multiple *references* to it.
 
 ## `IconId` available Names
 
-*ASNA Monarch Nomad&reg;* provides a collection of *Icon Shapes* in the form of [SVG Images](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) with commonly used shapes that are inspired by the [Font Awesome free library](https://fontawesome.com/plans).
+*ASNA Monarch* provides a collection of *Icon Shapes* in the form of [SVG Images](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) with commonly used shapes that are inspired by the [Font Awesome free library](https://fontawesome.com/plans).
 
 The *Icon Shapes* are simple and clean, monochrome (color can be selected), scaled without loss and respect the background (use *transparent* background).
 
-*ASNA Monarch Nomad&reg;* Icon library contains 250 named shapes, which should be sufficient for most of the DdsButtons you application may need.
+*ASNA Monarch&reg;* Icon library contains 250 named shapes, which should be sufficient for most of the DdsButtons you application may need.
 
 [Browse the Icon library]({{ site.rooturl }}/asna-icon-library-reference/)
 
@@ -147,10 +151,11 @@ The prompts with their corresponding titles should now look like the following i
 
 <br>
 <br>
-<br>
+
 ## *Last Page of this Guide*
+
 <br>
 <br>
 
-[^1]: Commit "Adding icon to simulate F4 prompt"
+[^1]: [Commit: "Adding icon to simulate F4 prompt"](https://github.com/ASNA/SunFarm/search?q=Adding+icon+to+simulate+F4+prompt&type=commits)
 

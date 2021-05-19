@@ -347,3 +347,5 @@ _site
 ### NPM ###
 /node_modules/
 
+# Mac OS
+**/.DS_Store

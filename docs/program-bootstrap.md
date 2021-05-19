@@ -6,7 +6,7 @@ permalink: /program-bootstrap/
 
 To support the [IBM i RPG Developer's Model](https://asnaqsys.github.io/concepts/background/ibmi-developer-model.html), every time a `QSys Program` is called there is logic that runs which may be important to understand. We will refer in this topic to this code as **Program Bootstrap** code.
 
-[ASNA QSys docs Concepts](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html) mentions the need for explicit Boilerplate code *on every program*, given that C# is a [General Purpose Programming Language](https://en.wikipedia.org/wiki/General-purpose_programming_language). This Boilerplate code implementing the *Program Bootstrap* logic is produced during migration using the same `<program-name>.cs` source file (mostly at the end of the file).
+[ASNA QSys docs Concepts](https://asnaqsys.github.io/concepts/enhancements/dev-tools.html) describe the need for explicit Boilerplate code *on every program*, given that C# is a [General Purpose Programming Language](https://en.wikipedia.org/wiki/General-purpose_programming_language). This Boilerplate code implementing the *Program Bootstrap* logic is produced during migration using the same `<program-name>.cs` source file (mostly at the end of the file).
 
 For the purposes of this Guide, we will isolate that code into its own source file, using the same technique used by [QSys DatabaseFile Support](https://asnaqsys.github.io/concepts/program-structure/qsys-databasefile), in which [C# partial classes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) facilitates the isolation of - *otherwise* - internal implementation details.
 
@@ -280,7 +280,7 @@ Notice:
 
 ## Putting all together
 
-The concepts described in this topic are advanced topics, but general understanding is crucial when maintaining Nomad migrated Applications.
+The concepts described in this topic are advanced topics, but general understanding is crucial when maintaining Monarch&reg; migrated Applications.
 
 Since we have isolated the **Bootstrap** Boilerplate code into its own little source file, let's run a step by step *Debugging* session to put all these ideas together and make some sense of it.
 

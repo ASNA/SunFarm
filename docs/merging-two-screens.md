@@ -3,6 +3,15 @@ layout: page
 title: Room for more fields
 permalink: /merging-two-screens/
 ---
+| Quick How-to: 
+|:-------------
+| [Declaration of Sales Returns file in CUSTINQ.cs](https://github.com/ASNA/SunFarm/search?q=Declaration+of+Sales+Returns+file+in+CUSTINQ.cs&type=commits)
+| [First Sales information added to Page](https://github.com/ASNA/SunFarm/search?q=First+Sales+information+added+to+Page&type=commits)
+| [Adding Returns to the CUSTREC_Model DataSet](https://github.com/ASNA/SunFarm/search?q=Adding+Returns+to+the+CUSTREC_Model+DataSet&type=commits)
+| [Last Registered Sales Heading](https://github.com/ASNA/SunFarm/search?q=Last+Registered+Sales+Heading&type=commits)
+| [Last registered returns heading complete](https://github.com/ASNA/SunFarm/search?q=Last+registered+returns+heading+complete&type=commits)
+
+<br>
 
 Oftentimes after reorganizing and cleaning up Green-Screen elements on **Display Pages** — *particularly when preparing for Desktop Browser or large Tablets* — we end up with **lots** of unused space where more information *can* be displayed.
 
@@ -53,9 +62,9 @@ The data we need to display comes from a different *Logical* database file, not 
 1. **CUSTINQ** -- Customer Inquiry *Interactive* Program.
 2. **CUSTCALC** -- Customer Calculations (i.e. Total Sales and Returns) *Batch* Program.
 
-As an *Interactive* Program, **CUSTINQ** uses a Displayfile, in this case **CUSTDSPF** (which migrated to a *Display Page* with same name with *cshtml* extension, on the Website).
+As an *Interactive* Program, **CUSTINQ** uses a Displayfile, in this case **CUSTDSPF** (which migrated to a *Display Page* with same name but with *cshtml* file extension).
 
-All Programs were migrated and converted by **ASNA Nomad&reg;** to C# under the *CustomerAppLogic* Project in the Visual Studio Solution. 
+All Programs were migrated and converted by **ASNA Nomad** Translator to C# under the *CustomerAppLogic* Project in the Visual Studio Solution. 
 
 Locate CUSTINQ.cs source file in CustomerAppLogic\CUSTINQ.cs, and pay attention to the files being referred:
 
@@ -116,7 +125,7 @@ In particular, declaring files in RPG would make available *global* fields that 
 
 ASNA QSys Runtime uses [Partial classes](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) to *complete* the equivalent database facilities built-into RPG Language.
 
->Note: When adding new database file references to a C# Program, the implementation of the *partial* IO classes needs to be re-generated. We will show later in this chapter how that is done (with ASNA Tools integrated with Visual Studio 2019).  
+>Note: When adding new database file references to a C# Program, the implementation of the *partial* IO classes needs to be re-generated. We will show later in this chapter how that is done (using *Monarch Base Dev Tools* integrated with Visual Studio 2019).  
 
 ### Declaring Sales and Returns Database file
 
@@ -249,7 +258,7 @@ override public void Dispose(bool disposing)
 }
 ```
 
-To make available fields to the Program as specified by the record's database schema, we need to do the following:
+To make fields available to the Program as specified by the record's database schema, we need to do the following:
 
 1. Declare fields (as defined by the record schema).
 2. Implement populate field's in/out (*of DataSet*) methods in the IO partial class.
@@ -281,25 +290,25 @@ Compiling the Sun Farm Logic project **does not** need to access the database. T
 
 Mostly for performance reasons, the File definition *Schemas* for all the database files used by *all* QSys Programs in the Logic project are kept on a hidden folder created automatically as needed. (This is similar to how C# creates *obj* folder to store temporary files).
 
- > Please consult [Nomad Tools](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html) for further details.
+ > Please consult [Monarch Base Dev Tools](https://asnaqsys.github.io/concepts/enhancements/dev-tools.html) for further details.
 
 In Visual Studio Solution explorer, select the file `CUSTINQ.Io.xfu`, then using the right mouse button, open the *Context Menu* options and the following menus will appear:
 
-![Nomad Tools Context Menu Options](/images/nomad-tools.png)
+![Monarch Base Dev Tools Context Menu Options](/images/nomad-tools.png)
 
-> The image shows red *hollow arrows* on the right. These are not part of the *Context Menu*, they are show here to highlight the two we are concerned with, on this topic.
+> The image shows red *hollow arrows* on the right. These are not part of the *Context Menu*, they are shown here to highlight the two options we are interested, for this topic.
 
-The new Context Menu options added by ASNA Nomad are:
-1. Refresh XFU
+The new Context Menu options added by ASNA Monarch Base Dev Tools are:
+1. Refresh XFU Cache
 2. Run Custom Tool
 
-## "Refresh XFU" Menu Option
+## "Refresh XFU Cache" Menu Option
 If you look at the contents of `CUSTINQ.Io.xfu` you will find a stand-alone [XML](https://en.wikipedia.org/wiki/XML) document which contains:
 
 1. References to **all** externally described files use by the program (workstation, database and printfiles).
 2. Directives on all records for all the files, to *drive* the generation of the *partial* class for the QSys Program.
 
-Running **Refresh XFU** updates the **External File Definition cache** for all the files used by the program. Since `CSMASTERL1` file we added to `CUSTINQ` Program is *also* used by `CUSTCALC` program, we don't need to execute **Refresh XFU** at this time.
+Running **Refresh XFU Cache** updates the **External File Definition cache** for all the files used by the program. Since `CSMASTERL1` file we added to `CUSTINQ` Program is *also* used by `CUSTCALC` program, we don't need to execute **Refresh XFU Cache** at this time.
 
 We do however want to update the file `CUSTINQ.Io.xfu` (to prepare it for the re-generation of the partial class, to define the database fields we need for the new database file reference added).
 
@@ -338,8 +347,8 @@ Once we have the `CUSTINQ.Io.xfu` updated, the *Custom Tool* associated with fil
 
 Recall from the discussion above, that the purpose of the *Custom Tool* is to generate the *partial* class implemented in source file: `CUSTINQ.Io.cs`. That is,
 
-a. Declare the fields of **all** files listed in `CUSTINQ.Io.xfu`, according to the *Schema* currently store in the **cache**. 
-b. Implement methods *PopulateBuffer* and *PopulateFields* for **all** files referred to by `CUSTINQ.cs` (as indicated in `CUSTINQ.Io.xfu`).
+1. Declare the fields of **all** files listed in `CUSTINQ.Io.xfu`, according to the *Schema* currently store in the **cache**. 
+2. Implement methods *PopulateBuffer* and *PopulateFields* for **all** files referred to by `CUSTINQ.cs` (as indicated in `CUSTINQ.Io.xfu`).
 
 The *CustomerAppLogic* Project should compile without errors. We will leave the logic untouched for now, and move to the *Interactive* part of the Application, that is, work on the Website Pages.
 
@@ -526,7 +535,7 @@ The following graph shows a simplified representation of the *DataSet* communica
 
 The *DataSet* holds the values of all *active* records. Similarly to the way RPG application works, the control flow starts with a *Program* writing records and then executing formats. The *schema* of the records in the DataSet must match the *schema* of the fields declared in the Program as well as the fields declared in the Model.
 
-Similarly to how we executed [Nomad Tools](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html) earlier in this Chapter to update the *IO* partial class implementation we need to repeat a similar process every time we modify the *Model* to keep the *DataSet* definition in sync.
+Similarly to how we executed [Monarch Base Dev Tools](https://asnaqsys.github.io/concepts/enhancements/dev-tools.html) earlier in this Chapter to update the *IO* partial class implementation we need to repeat a similar process every time we modify the *Model* to keep the *DataSet* definition in sync.
 
 > There is no separate cache for the Display Page Model.
 
@@ -534,11 +543,11 @@ Changing the Display Page Model, for a Display Page Razor Page markup is equival
 
 There is no direct way in Visual Studio where we can associate a *Custom Tool* from the Website to the Logic Project, so no automatic generation will occur. This is why ASNA *Run Custom Tool* may be ran manually.
 
-Go back to the Logic Project, position the selection on top of the source file `CUSTINQ.Io.xfu` and execute **Run Custom Tool*.
+Go back to the Logic Project, position the selection on top of the source file `CUSTINQ.Io.xfu` and execute **Run Custom Tool**.
 
-If no errors are generated by [Nomad Tools](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html), compile the Business Logic Project and run the Website. 
+If no errors are generated by [Monarch Base Dev Tools](https://asnaqsys.github.io/concepts/enhancements/dev-tools.html), compile the Business Logic Project and run the Website. 
 
-Selecting any of the records on the Customer list and opting to "Update", will present the Customer Maintenance Page will present a year worth of *Sales information*, but all values will be **zero**.
+Selecting any of the records on the Customer list and opting to "Update", will present the Customer Maintenance Page with a year worth of *Sales information* - but all values will be **zero** -.
 
 ### Populating Sales fields from Database file fields
 
@@ -589,13 +598,13 @@ private void LoadLastSalesAndReturns()
 
 We start by clearing the values of fields `CSSALES01` ... `CSSALES12`. Then we perform database file operations to find the record using the current `CustomerNumber`. If the search is successful, we **Read** the *Sales and Returns* record.
 
-Thanks to the **IO* partial class implementation in `CUSTINQ.Io.cs` the fields `CSSALES01` ... `CSSALES12` are populated with the values read from the database logical file `CSMASTERL1`.
+Thanks to the **IO** partial class implementation in `CUSTINQ.Io.cs` the fields `CSSALES01` ... `CSSALES12` are populated with the values read from the database logical file `CSMASTERL1`.
 
 >&#128161; Examine generated code in `CUSTINQ.Io.cs` to understand how method `PopulateFieldsCSMASTERL1()` takes care of populating fields `CSSALES01` ... `CSSALES12` while `CSMASTERL1.ReadNextEqual` runs. You may even set breakpoints to step thru the code while this happens.
 
 Compile the Business Logic Project and run the Website. 
 
-Selecting any of the records on the Customer list and opting to "Update", will present the *Customer Maintenance* Page will present a year worth of *Sales information*, with the first year of data values. (Note: the label says: "Last registered sales" we will fix that later) [^2].
+Selecting any of the records on the Customer list and opting to "Update", will present the *Customer Maintenance* Page with a year worth of *Sales information*, with the first year of data values. (Note: the label says: "Last registered sales", we will fix that later) [^2].
 
 The following image shows progress:
 
@@ -695,7 +704,7 @@ public decimal CSRETURN11 { get; private set; }
 public decimal CSRETURN12 { get; private set; }
 ```
 
-Re-run [Nomad Run CustomTool](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html) on the `CUSTINQ` Program, in the `CustomerAppLogic` Project.[^3]
+Re-run [Base Dev Tool: Run Custom Tool](https://asnaqsys.github.io/concepts/enhancements/dev-tools.html) on the `CUSTINQ` Program, in the `CustomerAppLogic` Project.[^3]
 
 Re-run the Website and navigate to a Customer "Update" Page:
 
@@ -703,7 +712,7 @@ Re-run the Website and navigate to a Customer "Update" Page:
 
 We got values for all Sales *Returns* for one year, but all values are *zero*.
 
-You should figure out by now, that we are missing some code in the program logic.
+You should have figured out by now, that we are missing some code in the program logic.
 
 Get back to Program `CUSTINQ` and *add* the code to `LoadLastSalesAndReturns` private method, to match the following listing:
 
@@ -837,8 +846,10 @@ Compile CustomerAppLogic and run Website. Navigate to any customer to *Update* i
 
 ![Last Registered Returns](/images/page-two-07.png/)
 
+<br>
+<br>
 
-## Additional Table heading data: Year, Total and Trend
+## Additional Table heading's data: *Year*, *Total* and *Trend*
 
 Let’s define one more CSS Style - to make Sales and Returns label stronger -.
 
@@ -868,9 +879,9 @@ public decimal TOTAL_SALES { get; private set; }
 [Char(20)]
 public string PERCENT_CHANGE_SALES { get; private set; }
 ```
->Note how we define the properties as *output-only* (public get, private set). We define `TOTAL_SALES` as decimal (so we can take advantage of EditCode formatter). But since we want an uncommon formatting for the `Year` and `Sales` change in percent for December, we will use business logic with nice `.Net` framework formatting classes to format this data as a string and use it as such.
+>Note how we define the properties as *output-only* (public get, private set). We define `TOTAL_SALES` as decimal (so we can take advantage of EditCode formatter). But since we want an uncommon formatting for the `Year` and `Sales` change in percent for December, we will use business logic with nice `.NET` framework formatting classes to format this data as a string and use it as such.
   
-As we did before, navigate to the `CUSTINQ` Program in the CustomerAppLogic Project using *Visual Studio Solution Explorer* and run the [Nomad Tools](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html). With the updated *DataSet*, we should have the fields `YEAR_SALES`, `TOTAL_SALES` and `PERCENT_CHANGE_SALES` available for us to use (and populate) from within the `CUSTINQ` Program logic.
+As we did before, navigate to the `CUSTINQ` Program in the CustomerAppLogic Project using *Visual Studio Solution Explorer* and run the [Monarch Base Dev Tools](https://asnaqsys.github.io/concepts/enhancements/dev-tools.html). With the updated *DataSet*, we should have the fields `YEAR_SALES`, `TOTAL_SALES` and `PERCENT_CHANGE_SALES` available for us to use (and populate) from within the `CUSTINQ` Program logic.
 
 Add the code that deals with `YEAR_SALES`, `TOTAL_SALES` and `PERCENT_CHANGE_SALES` calculations, by updating the method `LoadLastSalesAndReturns()`, matching this listing:
 
@@ -1027,11 +1038,14 @@ The two headings should now show like the following image[^5]:
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/adding-chart-to-page/)
 
-[^1]: Commit "Declaration of Sales Returns file in CUSTINQ.cs"
-[^2]: Commit "First Sales information added to Page"
-[^3]: Commit "Adding Returns to the CUSTREC_Model DataSet"
-[^4]: Commit "Last Registered Sales Heading"
-[^5]: Commit "Last registered returns heading complete"
+<br>
+<br>
+
+[^1]: [Commit: "Declaration of Sales Returns file in CUSTINQ.cs"](https://github.com/ASNA/SunFarm/search?q=Declaration+of+Sales+Returns+file+in+CUSTINQ.cs&type=commits)
+[^2]: [Commit: "First Sales information added to Page"](https://github.com/ASNA/SunFarm/search?q=First+Sales+information+added+to+Page&type=commits)
+[^3]: [Commit: "Adding Returns to the CUSTREC_Model DataSet"](https://github.com/ASNA/SunFarm/search?q=Adding+Returns+to+the+CUSTREC_Model+DataSet&type=commits)
+[^4]: [Commit: "Last Registered Sales Heading"](https://github.com/ASNA/SunFarm/search?q=Last+Registered+Sales+Heading&type=commits)
+[^5]: [Commit: "Last registered returns heading complete"](https://github.com/ASNA/SunFarm/search?q=Last+registered+returns+heading+complete&type=commits)

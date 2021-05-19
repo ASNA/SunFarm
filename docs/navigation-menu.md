@@ -3,6 +3,9 @@ layout: page
 title: Navigation menu
 permalink: /navigation-menu/
 ---
+| Quick How-to: 
+|:-------------
+| [Navigation Menu Customization](https://github.com/ASNA/SunFarm/search?q=Navigation+Menu+Customization&type=commits)
 
 Legacy IBM i Applications were *typically* navigated using keyboard special keys. We are talking about the **F** (or *Function*) keys IBM keyboards have on top of the keyboard. 
 
@@ -18,7 +21,7 @@ F3=Exit
 
 In addition to *Function* keys, there are other *Aid* keys used for navigation, such as: **Enter**, **PageUp** and **PageDown**. These are typically **not** presented along with the *Function* keys when they are active (*Enter* is reserved to **Submit** the Page for processing)
 
-During Migration *ASNA Monarch Cocoon for Nomad&reg;* will use DDS keywords to extract *Active* aid keys and present them as a Navigation menu (to the left of the Page). Different to typical IBM i Legacy pages, the **Enter**, **PageUp** and **PageDown** navigation buttons will be presented, in case the Device being used, does not have an attached keyboard, such as a *Tablet* or a large *Smart Phone*.
+During Migration *ASNA Monarch&reg; Cocoon for Base* will use DDS keywords to extract *Active* aid keys and present them as a Navigation menu (to the left of the Page). Different to typical IBM i Legacy pages, the **Enter**, **PageUp** and **PageDown** navigation buttons will be presented, in case the Device being used, does not have an attached keyboard, such as a *Tablet* or a large *Smart Phone*.
 
 The DDS keywords had limited space to describe the *Active* aid keys, and the Text was optional, in which case the Migration cannot help to improve the label on the Navigation Menu item.
 
@@ -30,7 +33,7 @@ Both Pages are described in the **CUSTDSPF** Displayfile which became the ASP.NE
 
 ASP.NET Web Pages are described by the *[Razor Page](https://docs.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-5.0&tabs=visual-studio)* syntax, which extends HTML.
 
-ASNA Monarch Nomad&reg; provides *TagHelpers* to represent DDS equivalent artifacts.
+ASNA Monarch&reg; Base assembly provides *TagHelpers* to represent DDS equivalent artifacts.
 
 The *TagHelper* that controls the *Active* Functions keys that will be part of the *File* Navigation Menu is:
 
@@ -75,7 +78,7 @@ Build the Application, and run it to see how this small change makes a big diffe
 
 Each *Active* aid key typically executes a command, with a name that comes from DDS keywords.
 
-As we have mentioned before, Monarch Nomad&reg; Applications may run on *Devices* that do not have keyboard attached. A *command* or *Key* name such as:
+As we have mentioned before, Monarch&reg; Applications may run on *Devices* that do not have keyboard attached. A *command* or *Key* name such as:
 
 ~~~
 F3
@@ -115,11 +118,14 @@ Verify the Navigation Menu changes:
 
 ![New Menu options labels](/images/relabel-menu-options.png)
 
-<sub>Notice how *hovering* over the menu name shows the *Active* key associated (useful for Users that have keyboards attached to their device)</sub>
+>Notice how, by *hovering* over the menu name shows the *Active* key associated (useful for Users that have keyboards attached to their devices).
+
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/remove-redundant-green-screen-info/)
 
+<br>
+<br>
 
-[^1]: Commit "Navigation Menu Customization"
+[^1]: [Commit: "Navigation Menu Customization"](https://github.com/ASNA/SunFarm/search?q=Navigation+Menu+Customization&type=commits)

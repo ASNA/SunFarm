@@ -3,6 +3,12 @@ layout: page
 title: Replacing YES/NO fields with Check-boxes
 permalink: /replacing-yesno-with-checkboxes/
 ---
+| Quick How-to: 
+|:-------------
+| [Replaced Y/N field with Checkbox](https://github.com/ASNA/SunFarm/search?q=Replaced+Y%2FN+field+with+Checkbox&type=commits)
+| [Using Decimal Fields with Checkboxes](https://github.com/ASNA/SunFarm/search?q=Using+Decimal+Fields+with+Checkboxes&type=commits)
+
+<br>
 
 **Green-screen** Displayfiles typically used *boolean* fields with a *one-char* field that expects the value `‘Y’` or `’N’`. 
 
@@ -97,9 +103,9 @@ If we had `DECSNDCONF` in the database declared as decimal (1,0) that would be *
 
 This should be simple to do.
 
-Let’s  first run the [Nomad Tools](https://asnaqsys.github.io/concepts/enhancements/nomad-tools.html) to update the Display Page *DataSet* and make `DECSNDCONF` available to the Program `CUSTINQ`.
+Let’s  first run the [Monarch Base Dev Tools](https://asnaqsys.github.io/concepts/enhancements/dev-tools.html) to update the Display Page *DataSet* and make `DECSNDCONF` available to the Program `CUSTINQ`.
 
-Locate the sourcefile `CustomerAppLogic/CUSTINQ.cs` using *Visual Studio Solution Explorer* and invoke the *context-menu* options and execute: `Refresh XFU` and `Run Custom Tools` Nomad commands.
+Locate the sourcefile `CustomerAppLogic/CUSTINQ.cs` using *Visual Studio Solution Explorer* and invoke the *context-menu* options and execute: ` Cache` and `Run Custom Tools` Monarch Base commands.
 
 To keep in *Sync* the Decimal field `DECSNDCONF` with the database field `SFYN01` all we need to do in the Business Logic - Program `CUSTINQ` - is:
 
@@ -120,9 +126,11 @@ Updating Customer records by changing the state of the "Send Confirmation” che
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/replacing-yesno-with-radio-button-groups/)
 
+<br>
+<br>
 
-[^1]: Commit "Replaced Y/N field with Checkbox”
-[^2]: Commit "Using Decimal Fields with Checkboxes”
+[^1]: [Commit: "Replaced Y/N field with Checkbox”](https://github.com/ASNA/SunFarm/search?q=Replaced+Y%2FN+field+with+Checkbox&type=commits)
+[^2]: [Commit: "Using Decimal Fields with Checkboxes”](https://github.com/ASNA/SunFarm/search?q=Using+Decimal+Fields+with+Checkboxes&type=commits)

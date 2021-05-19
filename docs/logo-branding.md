@@ -3,6 +3,11 @@ layout: page
 title: Application Logo Branding
 permalink: /logo-branding/
 ---
+| Quick How-to: 
+|:-------------
+| [Logo resources](https://github.com/ASNA/SunFarm/search?q=Logo+resources&type=commits)
+
+<br>
 
 We want to show the SunFarm Logo on all pages of the Enhanced Customer Application.
 
@@ -14,7 +19,7 @@ The SunFarm Logo consisits of:
   * Company name ("sunfarm")
   * Company Motto ("always fresh")
 
-The image we use is names "sun-farm", it is a *raster* **png** format image, designed with transparency:
+The image we use is named "sun-farm", it is a *raster* **png** format image, designed with transparency:
 
 ![Logo image](/images/logo.png)
 
@@ -106,9 +111,11 @@ The Web Browser *caches* `CSS` (and other frequently used resources, for perform
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/navigation-menu/)
 
+<br>
+<br>
 
-[^1]: Commit: "Logo resources"
+[^1]: [Commit: "Logo resources"](https://github.com/ASNA/SunFarm/search?q=Logo+resources&type=commits)
 

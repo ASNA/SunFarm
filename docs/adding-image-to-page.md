@@ -3,6 +3,13 @@ layout: page
 title: Adding Image to Page
 permalink: /adding-image-to-page/
 ---
+
+| Quick How-to: 
+|:-------------
+| [Adding an Image to the Page](https://github.com/ASNA/SunFarm/search?q=Adding+an+Image+to+the+Page&type=commits)
+
+<br>
+
 **Monarch Display Pages** are Microsoft Razor Pages where *Standard HTML elements* may also be used.
 
 You may have noticed that we have been using **Row** attributes on *Standard HTML "div" elements* to indicate that div container becomes a **One-row Grid Display Element** where we can position other elements converting **Col** and **ColSpan** attributes to **grid-column** CSS styles.
@@ -98,7 +105,7 @@ Notice how **Row="3"** became as tall as the height of the image, pushing all th
 
 ![Customer Icon Shows](/images/page-two-04_a.png)
 
->If you still not see the image with proper width, clear the Browser's CSS cache.
+>If you still don't see the image with proper width, clear the Browser's CSS cache.
 
 If we prefer not *to push* the rest of rows down, we can change the position style from: "relative" to: "absolute"[^1].
 
@@ -117,8 +124,10 @@ If we prefer not *to push* the rest of rows down, we can change the position sty
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/merging-two-screens/)
 
+<br>
+<br>
 
-[^1]: Commit "Adding an Image to the Page"
+[^1]: [Commit: "Adding an Image to the Page"](https://github.com/ASNA/SunFarm/search?q=Adding+an+Image+to+the+Page&type=commits)

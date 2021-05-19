@@ -4,7 +4,17 @@ title: Adding Chart To Page
 permalink: /adding-chart-to-page/
 ---
 
-You may have noticed that when reorganizing the data on the [Customer Maintenance]({{ site.rooturl }}/customer-maintenance-enhancement/) Page, we left a distinctive area on the upper-right hand corder of the page, looking something like:
+| Quick How-to: 
+|:-------------
+| [Descriptive Customer Status field](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Descriptive+Customer+Status+Field&type=commits)
+| [Chart heading showing the Status Description Centered](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+heading+showing+the+Status+Description+Centered&type=commits)
+| [Chart Placeholder](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+Placeholder&type=commits)
+| [Empty Chart](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Empty+Chart&type=commits)
+| [Chart showing Sales data](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+showing+Sales+data&type=commits)
+
+<br>
+
+You may have noticed that when reorganizing the data on the [Customer Maintenance]({{ site.rooturl }}/customer-maintenance-enhancement/) Page, we left a distinctive area on the upper-right hand corner of the page, looking something like:
 
 ![Space for Chart](/images/page-two-chart-01.png/)
 
@@ -187,7 +197,7 @@ We will be using [AMCHARTS Version 4](https://www.amcharts.com/) - commercial th
 
 >Note: The *free-trial* usage of [AMCHARTS Version 4](https://www.amcharts.com/) shows a [watermark](https://en.wikipedia.org/wiki/Watermark) icon. If you like this library, and plan to use it in production, you can eliminate the [watermark](https://en.wikipedia.org/wiki/Watermark) icon buying a license.
 
-We will not delve in all the details on how to use [AMCHARTS Library](https://www.amcharts.com/), this is outside the *Scope* for this **Guide**, but we will provide sufficient explanation to demonstrate how *third-party* JavaScript Libraries may be used on ASNA Nomad&reg; Migrated Applications.
+We will not delve in all the details on how to use [AMCHARTS Library](https://www.amcharts.com/), this is outside the *Scope* for this **Guide**, rather we will provide sufficient explanation to demonstrate how *third-party* JavaScript Libraries may be used on ASNA Monarch&reg; Migrated Applications.
 
 The Chart we want is an `XY line chart` that will plot *one value* for *every* one of the **twelve months** in a given year connecting these points with straight `lines`. 
 
@@ -385,11 +395,14 @@ With the Chart you can quickly see that the Customer 46000 increased sales in 19
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/replacing-yesno-with-checkboxes/)
 
-[^1]: Commit "Descriptive Customer Status field"
-[^2]: Commit "Chart heading showing the Status Description Centered"
-[^3]: Commit "Chart Placeholder"
-[^4]: Commit "Empty Chart"
-[^5]: Commit "Chart showing Sales data"
+<br>
+<br>
+
+[^1]: [Commit: "Descriptive Customer Status field"](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Descriptive+Customer+Status+Field&type=commits)
+[^2]: [Commit: "Chart heading showing the Status Description Centered"](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+heading+showing+the+Status+Description+Centered&type=commits)
+[^3]: [Commit: "Chart Placeholder"](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+Placeholder&type=commits)
+[^4]: [Commit: "Empty Chart"](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Empty+Chart&type=commits)
+[^5]: [Commit: "Chart showing Sales data"](https://github.com/search?q=repo%3Aasna%2Fsunfarm+merge%3Afalse+Chart+showing+Sales+data&type=commits)

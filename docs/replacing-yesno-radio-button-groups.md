@@ -3,6 +3,11 @@ layout: page
 title: Replacing YES/NO fields with Radio-button Groups
 permalink: /replacing-yesno-with-radio-button-groups/
 ---
+| Quick How-to: 
+|:-------------
+| [Replacing YES/NO field with a Radio Button Group](https://github.com/ASNA/SunFarm/search?q=Replacing+YES%2FNO+field+with+a+Radio+Button+Group&type=commits)
+
+<br>
 
 Certain fields are expected to have a **value** which is *one* of *many* discreet values. We have seen the simpler case where *two* values are allowed: `YES`, `NO` (or *true* *false*) — and we used a `Checkbox` element for that scenario —.
 
@@ -12,7 +17,7 @@ When *more* that *two* values of a discreet collection is expected, a *Radio But
 
 An important distinction, when comparing *Checkbox Groups* with *Radio Button Groups* is that, in addition to listing the available choices, *selecting* one choice automatically *de-selects* the others. In other words, choices are *mutually* exclusive.
 
-ASNA Monarch Nomad&reg; provides a TagHelper to simplify the production of *Radio Button Groups* named `DdsRadioGroupField`.
+*ASNA Monarch&reg; Base* provides a TagHelper to simplify the production of *Radio Button Groups* named `DdsRadioGroupField`.
 
 To explore the use of `DdsRadioGroupField` we will replace the `DdsCheckboxField`  [described in this Guide before]({{ site.rooturl }}/replacing-yesno-with-checkboxes/).
 
@@ -98,7 +103,10 @@ May be *bound* to the following (*unmodified*) Markup:
 
 <br>
 <br>
-<br>
+
 [Continue ...]({{ site.rooturl }}/replacing-prompt-with-icon/)
 
-[^1]: Commit "Replacing YES/NO field with a Radio Button Group”
+<br>
+<br>
+
+[^1]: [Commit: "Replacing YES/NO field with a Radio Button Group”](https://github.com/ASNA/SunFarm/search?q=Replacing+YES%2FNO+field+with+a+Radio+Button+Group&type=commits)
