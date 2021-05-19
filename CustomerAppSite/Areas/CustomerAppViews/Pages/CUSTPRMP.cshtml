@@ -33,11 +33,9 @@
                         {
                             int row = 5 + rrn;
                             <DdsSubfileRecord RecordNumber="rrn" For="SFLC.SFL1">
-                                <div IsGridRow>
-                                    <DdsCheckboxField Col="3" For="SFLC.SFL1[rrn].SFLSEL" VirtualRowCol="@row,3" />
-                                    <DdsCharField Col="10" For="SFLC.SFL1[rrn].SFLVALUE" Upper=true VirtualRowCol="@row,6" />
-                                    <DdsCharField Col="15" ColSpan="17" For="SFLC.SFL1[rrn].SFLDESC" Upper=true VirtualRowCol="@row,12" />
-                                </div>
+                                <DdsCheckboxField Col="3" For="SFLC.SFL1[rrn].SFLSEL" VirtualRowCol="@row,3" />
+                                <DdsCharField Col="10" For="SFLC.SFL1[rrn].SFLVALUE" Upper=true VirtualRowCol="@row,6" />
+                                <DdsCharField Col="15" ColSpan="17" For="SFLC.SFL1[rrn].SFLDESC" Upper=true VirtualRowCol="@row,12" />
                             </DdsSubfileRecord>
                         }
                     </div>

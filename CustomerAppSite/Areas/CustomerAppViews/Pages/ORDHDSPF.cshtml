@@ -11,7 +11,7 @@
 <form id="MonarchForm" method="post">
     <DdsFile DisplayPageModel="Model">
 
-        <DdsFunctionKeys />
+        <DdsFunctionKeys Location="HorizontalBottom" />
 
         <main role="main" class="display-element-uninitialized">
             <DdsRecord For="MYWINDOW" KeyNames="ENTER 'Enter'; F12 'Previous';" WindowLeftCol=19 WindowTopRow=12 WindowWidthCols=36 WindowHeightRows=8 WindowTitle=@Model.MYWINDOW.WINTITLE ReturnData="True"> 
@@ -104,16 +104,14 @@
                     {
                         int row = 12 + rrn;
                         <DdsSubfileRecord RecordNumber="rrn" For="SFLC.SFL1">
-                            <div IsGridRow>
-                                <DdsDecField Col="2" For="SFLC.SFL1[rrn].SFSEL" VisibleCondition="!( 60 )" VirtualRowCol="@row,2" EditCode="Z" ValuesText="'0','2','3','6'" tabIndex=1 />
-                                <DdsDecField Col="7+1" For="SFLC.SFL1[rrn].SFORDNUM" VirtualRowCol="@row,7" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" EditCode="Z" />
-                                <DdsDateField Col="19+1" For="SFLC.SFL1[rrn].SFORDDATE"  VirtualRowCol="@row,19" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" Comment="ORDER DATE" />
-                                <DdsDateField Col="30+1" For="SFLC.SFL1[rrn].SFSHPDATE"  VirtualRowCol="@row,30" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" Comment="PRICE" />
-                                <DdsDecDateField Col="41+1" For="SFLC.SFL1[rrn].SFDELDATE" DateFormat="ISO" DateSeparator="'-'" SuppressLeadingZeroes=true VirtualRowCol="@row,41" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" />
-                                <DdsDecField Col="52+1" For="SFLC.SFL1[rrn].SFORDAMT" VirtualRowCol="@row,52" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" EditCode="A" />
-                                <DdsCharField Col="71+1" For="SFLC.SFL1[rrn].SFFILESTAT" Upper=true VirtualRowCol="@row,71" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" />
-                                <DdsDecField Col="76+1" For="SFLC.SFL1[rrn].SFSHPVIA" VirtualRowCol="@row,76" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" EditCode="Z" />
-                            </div>
+                            <DdsDecField Col="2" For="SFLC.SFL1[rrn].SFSEL" VisibleCondition="!( 60 )" VirtualRowCol="@row,2" EditCode="Z" ValuesText="'0','2','3','6'" tabIndex=1 />
+                            <DdsDecField Col="7+1" For="SFLC.SFL1[rrn].SFORDNUM" VirtualRowCol="@row,7" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" EditCode="Z" />
+                            <DdsDateField Col="19+1" For="SFLC.SFL1[rrn].SFORDDATE"  VirtualRowCol="@row,19" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" Comment="ORDER DATE" />
+                            <DdsDateField Col="30+1" For="SFLC.SFL1[rrn].SFSHPDATE"  VirtualRowCol="@row,30" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" Comment="PRICE" />
+                            <DdsDecDateField Col="41+1" For="SFLC.SFL1[rrn].SFDELDATE" DateFormat="ISO" DateSeparator="'-'" SuppressLeadingZeroes=true VirtualRowCol="@row,41" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" />
+                            <DdsDecField Col="52+1" For="SFLC.SFL1[rrn].SFORDAMT" VirtualRowCol="@row,52" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" EditCode="A" />
+                            <DdsCharField Col="71+1" For="SFLC.SFL1[rrn].SFFILESTAT" Upper=true VirtualRowCol="@row,71" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" />
+                            <DdsDecField Col="76+1" For="SFLC.SFL1[rrn].SFSHPVIA" VirtualRowCol="@row,76" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" EditCode="Z" />
                         </DdsSubfileRecord>
                     }
                 </div>
@@ -132,9 +130,7 @@
                     {
                         int row = 24 + rrn;
                         <DdsSubfileRecord RecordNumber="rrn" For="MSGSFC.MSGSF">
-                            <div IsGridRow>
-                                <DdsCharField Col="2" For="MSGSFC.MSGSF[rrn].MessageText" Upper=true data-asna-msg-text="" VirtualRowCol="@row,2" />
-                            </div>
+                            <DdsCharField Col="2" For="MSGSFC.MSGSF[rrn].MessageText" Upper=true data-asna-msg-text="" VirtualRowCol="@row,2" />
                         </DdsSubfileRecord>
                     }
                 </div>

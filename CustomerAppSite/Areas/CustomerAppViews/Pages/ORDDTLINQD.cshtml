@@ -74,15 +74,13 @@
                     {
                         int row = 9 + rrn;
                         <DdsSubfileRecord RecordNumber="rrn" For="SFLC.SFL1">
-                            <div IsGridRow>
-                                <DdsDecField Col="3" For="SFLC.SFL1[rrn].SFSEL" VisibleCondition="!( 60 )" VirtualRowCol="@row,3" EditCode="Z" ValuesText="'0','2','4'" tabIndex=1 />
-                                <DdsDecField Col="6+2" For="SFLC.SFL1[rrn].SFLINNBR" VirtualRowCol="@row,6" EditCode="Z" Comment="LINE NUMBER" />
-                                <DdsDecField Col="11+2" For="SFLC.SFL1[rrn].SFITMNBR" VirtualRowCol="@row,11" EditCode="Z" Comment="ITEM NBR" />
-                                <DdsCharField Col="21+2" For="SFLC.SFL1[rrn].SFITMDESC" VirtualRowCol="@row,21" Comment="ITEM DESC" />
-                                <DdsDecField Col="43+2" For="SFLC.SFL1[rrn].SFPRICE" VirtualRowCol="@row,43" EditCode="Two" Comment="PRICE" />
-                                <DdsDecField Col="55+2" For="SFLC.SFL1[rrn].SFQTYORD" VirtualRowCol="@row,55" EditCode="Two" Comment="ORDER QTY" />
-                                <DdsDecField Col="68+2" For="SFLC.SFL1[rrn].SFEXTAMT" VirtualRowCol="@row,68" EditCode="One" />
-                            </div>
+                            <DdsDecField Col="3" For="SFLC.SFL1[rrn].SFSEL" VisibleCondition="!( 60 )" VirtualRowCol="@row,3" EditCode="Z" ValuesText="'0','2','4'" tabIndex=1 />
+                            <DdsDecField Col="6+2" For="SFLC.SFL1[rrn].SFLINNBR" VirtualRowCol="@row,6" EditCode="Z" Comment="LINE NUMBER" />
+                            <DdsDecField Col="11+2" For="SFLC.SFL1[rrn].SFITMNBR" VirtualRowCol="@row,11" EditCode="Z" Comment="ITEM NBR" />
+                            <DdsCharField Col="21+2" For="SFLC.SFL1[rrn].SFITMDESC" VirtualRowCol="@row,21" Comment="ITEM DESC" />
+                            <DdsDecField Col="43+2" For="SFLC.SFL1[rrn].SFPRICE" VirtualRowCol="@row,43" EditCode="Two" Comment="PRICE" />
+                            <DdsDecField Col="55+2" For="SFLC.SFL1[rrn].SFQTYORD" VirtualRowCol="@row,55" EditCode="Two" Comment="ORDER QTY" />
+                            <DdsDecField Col="68+2" For="SFLC.SFL1[rrn].SFEXTAMT" VirtualRowCol="@row,68" EditCode="One" />
                         </DdsSubfileRecord>
                     }
                 </div>
@@ -101,9 +99,7 @@
                     {
                         int row = 24 + rrn;
                         <DdsSubfileRecord RecordNumber="rrn" For="MSGSFC.MSGSF">
-                            <div IsGridRow>
-                                <DdsCharField Col="2" For="MSGSFC.MSGSF[rrn].MessageText" data-asna-msg-text="" VirtualRowCol="@row,2" />
-                            </div>
+                            <DdsCharField Col="2" For="MSGSFC.MSGSF[rrn].MessageText" data-asna-msg-text="" VirtualRowCol="@row,2" />
                         </DdsSubfileRecord>
                     }
                 </div>

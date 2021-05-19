@@ -2,18 +2,17 @@
 // ASNA Monarch(R) version 10.0.24.0 at 11/4/2020
 // Migrated source location: library ERNUBO, file QRPGSRC, member CUSTINQ
 
-using ASNA.QSys;
 using ASNA.DataGate.Common;
-using SunFarm.Customers.Application_Job;
+using ASNA.QSys.Runtime;
 
 using System;
 using System.Collections.Generic;
 
 namespace SunFarm.Customers
 {
-    [ASNA.QSys.HostServices.ActivationGroup("*DFTACTGRP")]
+    [ASNA.QSys.Runtime.JobSupport.ActivationGroup("*DFTACTGRP")]
     [ProgramEntry("_ENTRY")]
-    public partial class Custinq : ASNA.QSys.HostServices.Program
+    public partial class Custinq : ASNA.QSys.Runtime.JobSupport.Program
     {
         const int SFLC_SubfilePage = 20;
 

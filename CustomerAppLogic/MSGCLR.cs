@@ -2,16 +2,8 @@
 // ASNA Monarch(R) version 10.0.24.0 at 11/4/2020
 // Migrated source location: library NUTSNBOLTS, file QCLSRC, member MSGCLR
 
-using ASNA.QSys;
-using ASNA.DataGate.Common;
-using SunFarm.Customers.Application_Job;
-
-using System;
-using System.Collections;
-using System.Collections.Specialized;
-using ASNA.QSys.HostServices;
-
-
+using ASNA.QSys.Runtime;
+using ASNA.QSys.Runtime.JobSupport;
 
 namespace SunFarm.Customers
 {

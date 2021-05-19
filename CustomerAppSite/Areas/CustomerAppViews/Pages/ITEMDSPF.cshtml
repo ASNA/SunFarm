@@ -39,13 +39,11 @@
                     {
                         int row = 8 + rrn;
                         <DdsSubfileRecord RecordNumber="rrn" For="SFLC.SFL1">
-                            <div IsGridRow>
-                                <DdsDecField Col="4" For="SFLC.SFL1[rrn].SFSEL" VisibleCondition="!( 60 )" VirtualRowCol="@row,4" EditCode="Z" ValuesText="'0','1'" tabIndex=2 />
-                                <DdsDecField Col="8+1" For="SFLC.SFL1[rrn].SFITEMNUM" VirtualRowCol="@row,8" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" EditCode="Z" />
-                                <DdsCharField Col="19+1" For="SFLC.SFL1[rrn].SFITEMDESC" Upper=true VirtualRowCol="@row,19" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" />
-                                <DdsDecField Col="43+1" For="SFLC.SFL1[rrn].SFITMPRIC" VirtualRowCol="@row,43" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" EditCode="A" />
-                                <DdsDecField Col="65+1" For="SFLC.SFL1[rrn].SFITMAVAIL" VirtualRowCol="@row,65" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" EditCode="J" />
-                            </div>
+                            <DdsDecField Col="4" For="SFLC.SFL1[rrn].SFSEL" VisibleCondition="!( 60 )" VirtualRowCol="@row,4" EditCode="Z" ValuesText="'0','1'" tabIndex=2 />
+                            <DdsDecField Col="8+1" For="SFLC.SFL1[rrn].SFITEMNUM" VirtualRowCol="@row,8" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" EditCode="Z" />
+                            <DdsCharField Col="19+1" For="SFLC.SFL1[rrn].SFITEMDESC" Upper=true VirtualRowCol="@row,19" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" />
+                            <DdsDecField Col="43+1" For="SFLC.SFL1[rrn].SFITMPRIC" VirtualRowCol="@row,43" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" EditCode="A" />
+                            <DdsDecField Col="65+1" For="SFLC.SFL1[rrn].SFITMAVAIL" VirtualRowCol="@row,65" Color="Green : !61 , DarkBlue : 61" InvertFontColors="*True" EditCode="J" />
                         </DdsSubfileRecord>
                     }
                 </div>
@@ -116,9 +114,7 @@
                     {
                         int row = 24 + rrn;
                         <DdsSubfileRecord RecordNumber="rrn" For="MSGSFC.MSGSF">
-                            <div IsGridRow>
-                                <DdsCharField Col="2" For="MSGSFC.MSGSF[rrn].MessageText" data-asna-msg-text="" VirtualRowCol="@row,2" />
-                            </div>
+                            <DdsCharField Col="2" For="MSGSFC.MSGSF[rrn].MessageText" data-asna-msg-text="" VirtualRowCol="@row,2" />
                         </DdsSubfileRecord>
                     }
                 </div>

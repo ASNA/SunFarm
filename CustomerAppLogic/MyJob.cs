@@ -1,13 +1,10 @@
 ﻿// Translated from AVR to C# on 11/5/2020 at 11:57:57 AM by ASNA Monarch® Nomad version 16.0.3.0
 // ASNA Monarch(R) version 10.0.24.0 at 11/4/2020
-using ASNA.QSys;
-using ASNA.DataGate.Common;
-using System;
-using SunFarm.Customers;
+using ASNA.QSys.Runtime;
 namespace SunFarm.Customers.Application_Job
 {
 
-    public partial class MyJob : ASNA.QSys.HostServices.WebJob
+    public partial class MyJob : ASNA.QSys.Runtime.JobSupport.WebJob
     {
         protected Indicator _INLR;
         protected Indicator _INRT;
@@ -36,7 +33,7 @@ namespace SunFarm.Customers.Application_Job
             base.Dispose(disposing);
         }
 
-        MyJob(ASNA.QSys.JobSupport.IJobServices JobServices)
+        MyJob(ASNA.QSys.Runtime.JobSupport.IJobServices JobServices)
             : base(JobServices)
         {
             _IN = new IndicatorArray<Len<_1, _0, _0>>((char[])null);
@@ -45,12 +42,12 @@ namespace SunFarm.Customers.Application_Job
 
         public static MyJob JobFactory()
         {
-            ASNA.QSys.HostServices.Spooler spooler = new ASNA.QSys.HostServices.Spooler("C:\\MonarchQueues\\OutputQueues", "QPRINT");
-            ASNA.QSys.HostServices.DocumentLibraryObject dlo = new ASNA.QSys.HostServices.DocumentLibraryObject("QDLS");
-            ASNA.QSys.HostServices.IntergratedFileSystem ifs = new ASNA.QSys.HostServices.IntergratedFileSystem("//MyServer/MyShare");
+            ASNA.QSys.Runtime.JobSupport.Spooler spooler = new ASNA.QSys.Runtime.JobSupport.Spooler("C:\\MonarchQueues\\OutputQueues", "QPRINT");
+            ASNA.QSys.Runtime.JobSupport.DocumentLibraryObject dlo = new ASNA.QSys.Runtime.JobSupport.DocumentLibraryObject("QDLS");
+            ASNA.QSys.Runtime.JobSupport.IntergratedFileSystem ifs = new ASNA.QSys.Runtime.JobSupport.IntergratedFileSystem("//MyServer/MyShare");
             MyJob job = null;
 
-            job = new MyJob(new ASNA.QSys.HostServices.JobServices(spooler, dlo, ifs));
+            job = new MyJob(new ASNA.QSys.Runtime.JobSupport.JobServices(spooler, dlo, ifs));
             job.JobQueueBaseQueuesPath = "C:\\MonarchQueues\\JobQueues";
             return job;
         }

@@ -10,10 +10,8 @@
 
 using ASNA.DataGate.Client;
 using ASNA.DataGate.Common;
-using ASNA.QSys;
-using System;
+using ASNA.QSys.Runtime;
 using System.Collections.Generic;
-
 
 namespace SunFarm.Customers
 {

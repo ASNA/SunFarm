@@ -9,8 +9,7 @@
 //------------------------------------------------------------------------------
 
 using ASNA.DataGate.Client;
-using ASNA.DataGate.Common;
-using ASNA.QSys;
+using ASNA.QSys.Runtime;
 using System;
 using System.Collections.Generic;
 

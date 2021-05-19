@@ -32,14 +32,12 @@
                 <div Row="4" RowSpan="@SFLC_SubfilePage">
                     @for (int rrn = 0; rrn < Model.SFLC.SFL1.Count; rrn++)
                     {
-                        int row = 8 + rrn;
+                        int row = 4 + rrn;
                         <DdsSubfileRecord RecordNumber="rrn" For="SFLC.SFL1">
-                            <div IsGridRow>
-                                <DdsDecField Col="4+4" For="SFLC.SFL1[rrn].SFSEL" VirtualRowCol="@row,4" EditCode="Z" ValuesText="' ','Update','Display sales','Delivery Addresses','Create sales record','Printsales (Online)','Print sales (Batch)','Orders'" tabIndex=2 />
-                                <DdsDecField Col="4+20" For="SFLC.SFL1[rrn].SFCUSTNO" VirtualRowCol="@row,7" Color="Green : !61 , DarkBlue : 61" EditCode="Z" Comment="CUSTOMER NUMBER" />
-                                <DdsCharField Col="4+27" ColSpan="30" For="SFLC.SFL1[rrn].SFNAME1" Upper=true VirtualRowCol="@row,14" Color="Green : !61 , DarkBlue : 61" />
-                                <DdsCharField Col="4+50" For="SFLC.SFL1[rrn].SFCSZ" Upper=true VirtualRowCol="@row,55" Color="Green : !61 , DarkBlue : 61" Comment="CITY-STATE-ZIP" />
-                            </div>
+                            <DdsDecField Col="4+4" For="SFLC.SFL1[rrn].SFSEL" VirtualRowCol="@row,4" EditCode="Z" ValuesText="' ','Update','Display sales','Delivery Addresses','Create sales record','Printsales (Online)','Print sales (Batch)','Orders'" tabIndex=2 />
+                            <DdsDecField Col="4+20" For="SFLC.SFL1[rrn].SFCUSTNO" VirtualRowCol="@row,7" Color="Green : !61 , DarkBlue : 61" EditCode="Z" Comment="CUSTOMER NUMBER" />
+                            <DdsCharField Col="4+27" ColSpan="30" For="SFLC.SFL1[rrn].SFNAME1" Upper=true VirtualRowCol="@row,14" Color="Green : !61 , DarkBlue : 61" />
+                            <DdsCharField Col="4+50" For="SFLC.SFL1[rrn].SFCSZ" Upper=true VirtualRowCol="@row,55" Color="Green : !61 , DarkBlue : 61" Comment="CITY-STATE-ZIP" />
                         </DdsSubfileRecord>
                     }
                 </div>
@@ -49,13 +47,13 @@
                 <div Row="2">
                     <DdsConstant Col="8" Text="Account number" />
                     <DdsDecField class="left-aligned-field" Col="20" For="CUSTREC.SFCUSTNO" VirtualRowCol="5,27" Color="DarkBlue" EditCode="Z" Comment="CUSTOMER NUMBER" />
-                    <span class="box-highlight-center-field" ExpoGridCol="72/90">@Model.CUSTREC.SF_STATUS_NAME</span>
+                    <span class="box-highlight-center-field" Col="72" ColSpan="18">@Model.CUSTREC.SF_STATUS_NAME</span>
                     <DdsCharField class="present-no-visible-field" Col="72" ColSpan="18" For="CUSTREC.SFSTATUS" Upper=true VirtualRowCol="15,27" PositionCursor="44" />
                     <DdsButton Col="91" IconId="search" ButtonStyle="Icon" AidKey="F4" FocusField="CUSTREC.SFSTATUS" IconTitle="Prompt for Status Codes" />
                 </div>
                 <div Row="3">
-                    <img id="customer-icon" ExpoCol="8" src="~/customer-icon.svg" />
-                    <div id="custrec-chart" ExpoCol="67">@Model.CUSTREC.SALES_CHART_DATA</div>
+                    <img id="customer-icon" Col="8" src="~/customer-icon.svg" />
+                    <div id="custrec-chart" Col="67">@Model.CUSTREC.SALES_CHART_DATA</div>
                 </div>
                 <div Row="4">
                     <DdsConstant Col="20" Text="Name" />
@@ -209,9 +207,7 @@
                     {
                         int row = 24 + rrn;
                         <DdsSubfileRecord RecordNumber="rrn" For="MSGSFC.MSGSF">
-                            <div IsGridRow>
-                                <DdsCharField Col="2" For="MSGSFC.MSGSF[rrn].MessageText" Upper=true data-asna-msg-text="" VirtualRowCol="@row,2" />
-                            </div>
+                            <DdsCharField Col="2" For="MSGSFC.MSGSF[rrn].MessageText" Upper=true data-asna-msg-text="" VirtualRowCol="@row,2" />
                         </DdsSubfileRecord>
                     }
                 </div>

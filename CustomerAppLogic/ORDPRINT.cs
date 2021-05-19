@@ -2,18 +2,16 @@
 // ASNA Monarch(R) version 10.0.24.0 at 11/4/2020
 // Migrated source location: library NUTSNBOLTS, file QRPGSRC, member ORDPRINT
 
-using ASNA.QSys;
+using ASNA.QSys.Runtime;
 using ASNA.DataGate.Common;
-using SunFarm.Customers.Application_Job;
 
 using System;
 
-
 namespace SunFarm.Customers
 {
-    [ASNA.QSys.HostServices.ActivationGroup("*DFTACTGRP")]
+    [ASNA.QSys.Runtime.JobSupport.ActivationGroup("*DFTACTGRP")]
     [ProgramEntry("_ENTRY")]
-    public partial class Ordprint : ASNA.QSys.HostServices.Program
+    public partial class Ordprint : ASNA.QSys.Runtime.JobSupport.Program
     {
         protected Indicator _INLR;
         protected Indicator _INRT;
@@ -68,7 +66,7 @@ namespace SunFarm.Customers
             SHIPPING.Open(Job.Database, AccessMode.Read, false, false, ServerCursors.Default);
             QPRINT.Printer = "Microsoft Print to PDF";
             QPRINT.Overrider = Job;
-            QPRINT.ManuscriptPath = ASNA.QSys.HostServices.Program.Spooler.GetNewFilePath(QPRINT.DclPrintFileName);
+            QPRINT.ManuscriptPath = ASNA.QSys.Runtime.JobSupport.Program.Spooler.GetNewFilePath(QPRINT.DclPrintFileName);
             QPRINT.Open(Job.PrinterDB);
         }
 

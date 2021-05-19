@@ -2,19 +2,16 @@
 // ASNA Monarch(R) version 10.0.24.0 at 11/4/2020
 // Migrated source location: library NUTSNBOLTS, file QRPGSRC, member CUSTDELIV
 
-using ASNA.QSys;
 using ASNA.DataGate.Common;
-using SunFarm.Customers.Application_Job;
-
-using System;
+using ASNA.QSys.Runtime;
 
 
 namespace SunFarm.Customers
 {
 #warning Field name CUSTDELIV renamed to avoid a clash with the class name.
-    [ASNA.QSys.HostServices.ActivationGroup("*DFTACTGRP")]
+    [ASNA.QSys.Runtime.JobSupport.ActivationGroup("*DFTACTGRP")]
     [ProgramEntry("_ENTRY")]
-    public partial class Custdeliv : ASNA.QSys.HostServices.Program
+    public partial class Custdeliv : ASNA.QSys.Runtime.JobSupport.Program
     {
         protected Indicator _INLR;
         protected Indicator _INRT;

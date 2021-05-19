@@ -2,18 +2,17 @@
 // ASNA Monarch(R) version 10.0.24.0 at 11/4/2020
 // Migrated source location: library NUTSNBOLTS, file QRPGSRC, member ORDDTLINQ
 
-using ASNA.QSys;
+using ASNA.QSys.Runtime;
 using ASNA.DataGate.Common;
-using SunFarm.Customers.Application_Job;
 
 using System;
 
 
 namespace SunFarm.Customers
 {
-    [ASNA.QSys.HostServices.ActivationGroup("*DFTACTGRP")]
+    [ASNA.QSys.Runtime.JobSupport.ActivationGroup("*DFTACTGRP")]
     [ProgramEntry("_ENTRY")]
-    public partial class Orddtlinq : ASNA.QSys.HostServices.Program
+    public partial class Orddtlinq : ASNA.QSys.Runtime.JobSupport.Program
     {
         protected Indicator _INLR;
         protected Indicator _INRT;
