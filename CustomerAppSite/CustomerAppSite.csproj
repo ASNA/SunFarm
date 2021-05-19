@@ -8,8 +8,8 @@
     <NoWarn>NU1701</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ASNA.QSys.Expo" Version="2.0.0" />
-    <PackageReference Include="ASNA.QSys.MonaServer" Version="2.0.0" />
+    <PackageReference Include="ASNA.QSys.Expo" Version="2.1.0" />
+    <PackageReference Include="ASNA.QSys.MonaServer" Version="2.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
       <PrivateAssets>all</PrivateAssets>
